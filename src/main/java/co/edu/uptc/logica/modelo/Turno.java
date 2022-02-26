@@ -8,11 +8,12 @@ public class Turno {
 	private String codigo;
 	private String fecha;
 	private int nivel;
+	private boolean estado;
 	
 	public Turno() {
 		
 	}
-	public Turno(Afiliado afiliado, String modulo, String servicio, String codigo, String fecha, int nivel) {
+	public Turno(Afiliado afiliado, String modulo, String servicio, String codigo, String fecha, int nivel,boolean estado) {
 		super();
 		this.afiliado = afiliado;
 		this.modulo = modulo;
@@ -20,6 +21,7 @@ public class Turno {
 		this.codigo = codigo;
 		this.fecha = fecha;
 		this.nivel = nivel;
+		this.estado = estado;
 	}
 	public Afiliado getAfiliado() {
 		return afiliado;
@@ -58,12 +60,18 @@ public class Turno {
 	public void setNivel(int nivel) {
 		this.nivel = nivel;
 	}
+	
+	public boolean isEstado() {
+		return estado;
+	}
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
 	@Override
 	public String toString() {
 		return "Turno [afiliado=" + afiliado + ", modulo=" + modulo + ", servicio=" + servicio + ", codigo=" + codigo
-				+ ", fecha=" + fecha + "]";
+				+ ", fecha=" + fecha + ", nivel=" + nivel + ", estado=" + estado + "]";
 	}
-	
 	
 	
 	

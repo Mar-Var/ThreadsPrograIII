@@ -39,7 +39,7 @@ public class PersistenciaTurnos {
 		
 		for (int i = 0; i < contenido.size(); i++) {
 			JSONObject ob= new JSONObject();
-			
+			ob.put("estado", contenido.get(i).isEstado());
 			ob.put("nivel", contenido.get(i).getNivel());
 			ob.put("fecha", contenido.get(i).getFecha());
 			ob.put("codigo", contenido.get(i).getCodigo());
@@ -76,7 +76,7 @@ public class PersistenciaTurnos {
 			if(turnos!=null) {
 				for (int i = 0; i < turnos.size(); i++) {
 					JSONObject ob= new JSONObject();
-					
+					ob.put("estado", turnos.get(i).isEstado());
 					ob.put("nivel", turnos.get(i).getNivel());
 					ob.put("fecha", turnos.get(i).getFecha());
 					ob.put("codigo", turnos.get(i).getCodigo());
@@ -92,6 +92,7 @@ public class PersistenciaTurnos {
 				}
 			}
 			JSONObject nuevoTurno= new JSONObject();
+			nuevoTurno.put("estado", TurnoAgregar.isEstado());
 			nuevoTurno.put("nivel", TurnoAgregar.getNivel());
 			nuevoTurno.put("fecha", TurnoAgregar.getFecha());
 			nuevoTurno.put("codigo", TurnoAgregar.getCodigo());

@@ -30,7 +30,7 @@ public class App
 			e.printStackTrace();
 		}
 		
-		Turno t = new Turno(new Afiliado("Marcos", 1052416590), "Caja1", "nada", "A0111", new Date().toString(),1);
+		Turno t = new Turno(new Afiliado("Marcos", 1052416590), "Caja1", "nada", "A0111", new Date().toString(),1,true);
 		ArrayList<Turno> turnos = new ArrayList();
 		turnos.add(t);
 		turnos.add(t);
@@ -39,7 +39,7 @@ public class App
 		pt.SobreEscribirArchivoProducto(turnos);
 		pt.TraerTodoslosTurnos().forEach(System.out::println);
 		
-		Turno a = new Turno(new Afiliado("Yasser", 1041416590), "Caja1", "nada", "A0111", new Date().toString(), 0);
+		Turno a = new Turno(new Afiliado("Yasser", 1041416590), "Caja1", "nada", "A0111", new Date().toString(), 0,false);
 		System.out.println("-----------------------------------------------");
 		pt.agregarUnNuevoDomiciliario(a);
 		pt.agregarUnNuevoDomiciliario(a);
