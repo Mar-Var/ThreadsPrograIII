@@ -10,6 +10,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -26,6 +27,13 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
+
+import co.edu.uptc.threads.ModuloPagos;
+import co.edu.uptc.logica.modelo.Modulo;
+import co.edu.uptc.logica.modelo.Tramite;
+import co.edu.uptc.persistencia.PersistenciaModulos;
+import co.edu.uptc.persistencia.PersistenciaTramite;
+import co.edu.uptc.threads.*;
 
 public class MainWindow extends JFrame {
 	Font fuenteDigital;
@@ -74,9 +82,13 @@ public class MainWindow extends JFrame {
 	JTable tCP;
 	DefaultTableModel dtmCP;
 	
-	
+	ChartPanel chtpModulos;
+	ChartPanel chtpServicios;
 	JFreeChart fcEstadisticaModulos;
 	JFreeChart fcEstadisticaServicios;
+	ModuloEstadisticas rneModuloPagos;
+	Thread thrEstModulo;
+	PersistenciaTramite perTra;
 	
 	
 	public MainWindow() {
@@ -91,6 +103,9 @@ public class MainWindow extends JFrame {
 	public void begin() {
 		createComponents();
 		addComponents();
+		rneModuloPagos = new ModuloEstadisticas(pnEstadisticas,chtpModulos,chtpServicios);
+		thrEstModulo = new Thread(rneModuloPagos);
+		thrEstModulo.start();
 	}
 	
 	public void createComponents() {
@@ -177,8 +192,21 @@ public class MainWindow extends JFrame {
 		
 		lbCBModulo = new JLabel("Seleccione a que modulo desea acceder");
 		cbModulos= new JComboBox<String>();
-		lbCBTipoTramite= new JLabel("Seleccione el tipo de tramite");
+		lbCBTipoTramite= new JLabel("Seleccione el tipo de tramite");////-----------AQUIIIIIIIIIII
+		perTra= new PersistenciaTramite();
 		cbTipoTramite = new JComboBox<String>();
+		ArrayList<Tramite> tramites;
+		
+		if(perTra.TraerTodoslosTramites()!=null) {
+			tramites=perTra.TraerTodoslosTramites();
+			for (int i = 0; i < tramites.size(); i++) {
+				System.out.println(tramites.get(i).getNombre());
+				cbTipoTramite.addItem(tramites.get(i).getNombre());
+			}
+			
+		}
+
+		
 		btnGenerarTurno= new JButton("Generar Turno");
 		
 		lbCCCodigoTurno = new JLabel("1XXX");
@@ -201,20 +229,32 @@ public class MainWindow extends JFrame {
 		dtmCP = new DefaultTableModel();
 		
 //		Dejemoslo pendiente
+		DefaultPieDataset datos1= new DefaultPieDataset();
+		datos1.setValue("Caja 1", 5);
+		datos1.setValue("Caja 2", 5);
+		datos1.setValue("Caja 3", 5);
 		
 		fcEstadisticaModulos = ChartFactory.createPieChart(
 				"Estadisticas por Modulos",//Nombre del grafico
-				new DefaultPieDataset(),// datos
+				datos1,// datos
 				true, // nombre de las categorias f o v
 				true, // herramientas f o t
 				true); // generacion de URL false
 			
 		fcEstadisticaServicios = ChartFactory.createPieChart(
 				"Estadisticas por Modulos",//Nombre del grafico
-				new DefaultPieDataset(),// datos
+				datos1,// datos
 				true, // nombre de las categorias f o v
 				true, // herramientas f o t
 				true); // generacion de URL false);
+		
+		
+		chtpModulos=new ChartPanel(fcEstadisticaModulos);
+		chtpModulos.setPreferredSize(new Dimension(200,200));;
+		
+		chtpServicios = new ChartPanel(fcEstadisticaServicios);
+		chtpServicios.setPreferredSize(new Dimension(200,200));;
+
 		
 	}
 	
@@ -225,15 +265,21 @@ public class MainWindow extends JFrame {
 		g.gridx=0;
 		g.gridy=0;
 		g.gridheight=3;
+		g.fill = GridBagConstraints.BOTH;
+		g.weighty=1.0;
+
 		addComponentspnValidacion();
 		add(pnValidacion,g);
+
 		g.gridx=1;
 		g.gridy=0;
 		g.gridheight=2;
 		addComponentspnZonaTurnos();
+
 		add(pnZonaTurnos,g);
 		g.gridheight=1;
 		g.gridy=2;
+		g.fill = GridBagConstraints.NONE;
 		g.fill=GridBagConstraints.HORIZONTAL;
 		addComponentspnEstadisticas();
 		add(pnEstadisticas,g);
@@ -251,6 +297,7 @@ public class MainWindow extends JFrame {
 		pnValidacion.add(pnVerficaUsuario,g);
 		g.gridy=1;
 		addComponentspnGenerarTurno();
+		g.fill = GridBagConstraints.HORIZONTAL;
 		pnValidacion.add(pnGenerarTurno,g);
 		
 	}
@@ -258,7 +305,9 @@ public class MainWindow extends JFrame {
 		GridBagConstraints g = new GridBagConstraints();
 		g.gridx=0;
 		g.gridy=0;
+		g.weightx=1.0;
 		addComponentspnCajaCitas();
+		g.fill=GridBagConstraints.HORIZONTAL;
 		pnZonaTurnos.add(pnCajaCitas,g);
 		g.gridx=1;
 		addComponentspnCajaMedicamentos();
@@ -272,9 +321,10 @@ public class MainWindow extends JFrame {
 		GridBagConstraints g = new GridBagConstraints();
 		g.gridx=0;
 		g.gridy=0;
-		pnEstadisticas.add(pnEstModulo,g);
+		g.insets= new Insets(10, 10, 10, 10);
+		pnEstadisticas.add(chtpModulos,g);
 		g.gridx=1;
-		pnEstadisticas.add(pnEstServicios,g);
+		pnEstadisticas.add(chtpServicios,g);
 		
 	}
 	
@@ -298,19 +348,24 @@ public class MainWindow extends JFrame {
 		g.gridx=0;
 		g.gridy=0;
 		g.insets = new Insets(10, 10, 10, 10);
-		pnGenerarTurno.add(lbCBModulo,g);
-		g.gridy=1;
-		pnGenerarTurno.add(cbModulos,g);
-		g.gridy=2;
+
 		pnGenerarTurno.add(lbCBTipoTramite,g);
-		g.gridy=3;
+		g.gridy=1;
 		pnGenerarTurno.add(cbTipoTramite,g);
+//		g.gridy=2;
+//		pnGenerarTurno.add(lbCBTipoTramite,g);
+//		g.gridy=3;
+//		pnGenerarTurno.add(cbTipoTramite,g);
+		g.gridy=2;
+		pnGenerarTurno.add(btnGenerarTurno,g);
 		
 	}
 	public void addComponentspnCajaCitas() {
 		GridBagConstraints g = new GridBagConstraints();
 		g.gridx=0;
 		g.gridy=0;
+		g.weightx=1.0;
+		g.fill=GridBagConstraints.HORIZONTAL;
 		addComponentspnCCTurno();
 		pnCajaCitas.add(pnCCTurno,g);
 		g.gridy=1;
@@ -321,6 +376,8 @@ public class MainWindow extends JFrame {
 		GridBagConstraints g = new GridBagConstraints();
 		g.gridx=0;
 		g.gridy=0;
+		g.weightx=1.0;
+		g.fill=GridBagConstraints.HORIZONTAL;
 		addComponentspnCMTurno();
 		pnCajaMedicamentos.add(pnCMTurno,g);
 		g.gridy=1;
@@ -331,6 +388,8 @@ public class MainWindow extends JFrame {
 		GridBagConstraints g = new GridBagConstraints();
 		g.gridx=0;
 		g.gridy=0;
+		g.weightx=1.0;
+		g.fill=GridBagConstraints.HORIZONTAL;
 		addComponentspnCPTurno();
 		pnCajaPagos.add(pnCPTurno,g);
 		g.gridy=1;
@@ -367,15 +426,15 @@ public class MainWindow extends JFrame {
 	}
 	
 	
-	public void addComponentspnEstModulo() {
-		GridBagConstraints g = new GridBagConstraints();
-		g.gridx=0;
-		g.gridy=0;
-		
-	}
-	public void addComponentspnEstServicios() {
-		GridBagConstraints g = new GridBagConstraints();
-		
-	}
+//	public void addComponentspnEstModulo() {
+//		GridBagConstraints g = new GridBagConstraints();
+//		g.gridx=0;
+//		g.gridy=0;
+//		
+//	}
+//	public void addComponentspnEstServicios() {
+//		GridBagConstraints g = new GridBagConstraints();
+//		
+//	}
 
 }

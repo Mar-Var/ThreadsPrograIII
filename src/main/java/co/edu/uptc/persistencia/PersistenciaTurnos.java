@@ -1,6 +1,7 @@
 package co.edu.uptc.persistencia;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -10,6 +11,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.exc.MismatchedInputException;
 
 import co.edu.uptc.logica.modelo.Afiliado;
 import co.edu.uptc.logica.modelo.Turno;
@@ -123,7 +125,23 @@ public class PersistenciaTurnos {
 					mapper.getTypeFactory().constructCollectionType(ArrayList.class, Turno.class));
 
 			return turnos;
-		} catch (Exception e) {
+		}
+		catch(FileNotFoundException e) {
+			try {
+				fileExist();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			return turnos;
+			
+		}
+		catch(MismatchedInputException er) {
+			System.out.println("El archivo aun no tiene contenido");
+			return null;
+
+		}
+		catch (Exception e) {
 			
 			e.printStackTrace();
 			return null;

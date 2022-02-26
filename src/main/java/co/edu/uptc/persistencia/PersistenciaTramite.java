@@ -12,14 +12,12 @@ import org.json.simple.JSONObject;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import co.edu.uptc.logica.modelo.Afiliado;
-import co.edu.uptc.logica.modelo.Turno;
+import co.edu.uptc.logica.modelo.Tramite;
 
-public class PersistenciaAfiliados {
-	
-	private String ruta="archivosJson/afiliados.json";
+public class PersistenciaTramite {
+	private String ruta="archivosJson/tramites.json";
 	File file = new File(ruta);
-	ArrayList<Afiliado> afiliados;
+	ArrayList<Tramite> tramites;
 	
 	
 	public boolean fileExist() throws IOException {
@@ -30,7 +28,7 @@ public class PersistenciaAfiliados {
 		return true;
 	}
 	
-	public boolean SobreEscribirArchivoProducto(ArrayList<Afiliado> contenido){
+	public boolean SobreEscribirArchivoTramite(ArrayList<Tramite> contenido){
 			
 			try {
 				fileExist();
@@ -41,8 +39,8 @@ public class PersistenciaAfiliados {
 			
 			for (int i = 0; i < contenido.size(); i++) {
 				JSONObject ob= new JSONObject();
+				ob.put("codigo", contenido.get(i).getCodigo());
 				ob.put("nombre", contenido.get(i).getNombre());
-				ob.put("cedula", contenido.get(i).getCedula());
 
 				content.add(ob);
 			}
@@ -56,7 +54,7 @@ public class PersistenciaAfiliados {
 		}
 		
 	
-	public boolean agregarUnNuevoAfiliado(Afiliado afiliadoAgregar) {
+	public boolean agregarUnNuevoTramite(Tramite tramiteAgregar) {
 		try {
 			fileExist();
 		} catch (IOException e1) {
@@ -65,22 +63,22 @@ public class PersistenciaAfiliados {
 		try {
 			JSONArray content = new JSONArray();
 			ObjectMapper mapper = new ObjectMapper();
-			afiliados =TraerTodoslosAfiliados();
+			tramites =TraerTodoslosTramites();
 
-			if(afiliados!=null) {
-				for (int i = 0; i < afiliados.size(); i++) {
+			if(tramites!=null) {
+				for (int i = 0; i < tramites.size(); i++) {
 					JSONObject ob= new JSONObject();
-					ob.put("nombre", afiliados.get(i).getNombre());
-					ob.put("cedula", afiliados.get(i).getCedula());
+					ob.put("codigo", tramites.get(i).getCodigo());
+					ob.put("nombre", tramites.get(i).getNombre());
 
 					content.add(ob);
 				}
 			}
-			JSONObject nuevoTurno= new JSONObject();
-			nuevoTurno.put("nombre", afiliadoAgregar.getNombre());
-			nuevoTurno.put("cedula", afiliadoAgregar.getCedula());
+			JSONObject nuevoTramite= new JSONObject();
+			nuevoTramite.put("codigo", tramiteAgregar.getCodigo());
+			nuevoTramite.put("nombre", tramiteAgregar.getNombre());
 
-			content.add(nuevoTurno);
+			content.add(nuevoTramite);
 			Files.write(Paths.get(ruta), content.toJSONString().getBytes());
 			
 			return true;
@@ -91,14 +89,14 @@ public class PersistenciaAfiliados {
 		
 	}	
 	
-	public ArrayList<Afiliado> TraerTodoslosAfiliados(){
+	public ArrayList<Tramite> TraerTodoslosTramites(){
 		ObjectMapper mapper = new ObjectMapper();
-		afiliados= new ArrayList();
+		tramites= new ArrayList();
 		try {
-			afiliados= mapper.readValue(new File(ruta),
-					mapper.getTypeFactory().constructCollectionType(ArrayList.class, Afiliado.class));
+			tramites= mapper.readValue(new File(ruta),
+					mapper.getTypeFactory().constructCollectionType(ArrayList.class, Tramite.class));
 
-			return afiliados;
+			return tramites;
 		} 
 		catch (FileNotFoundException e) {
 			try {
@@ -107,17 +105,15 @@ public class PersistenciaAfiliados {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			return afiliados;
+			return tramites;
 		}
 		
 		catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("pum");
 			return null;
 		}
 	}
 	
-	
-	
-	
-	
+
 }
