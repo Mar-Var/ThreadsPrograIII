@@ -30,7 +30,7 @@ public class PersistenciaAfiliados {
 		return true;
 	}
 	
-	public boolean SobreEscribirArchivoProducto(ArrayList<Afiliado> contenido){
+	public synchronized boolean SobreEscribirArchivoProducto(ArrayList<Afiliado> contenido){
 			
 			try {
 				fileExist();
@@ -56,7 +56,7 @@ public class PersistenciaAfiliados {
 		}
 		
 	
-	public boolean agregarUnNuevoAfiliado(Afiliado afiliadoAgregar) {
+	public synchronized boolean agregarUnNuevoAfiliado(Afiliado afiliadoAgregar) {
 		try {
 			fileExist();
 		} catch (IOException e1) {
@@ -91,7 +91,7 @@ public class PersistenciaAfiliados {
 		
 	}	
 	
-	public ArrayList<Afiliado> TraerTodoslosAfiliados(){
+	public synchronized ArrayList<Afiliado> TraerTodoslosAfiliados(){
 		ObjectMapper mapper = new ObjectMapper();
 		afiliados= new ArrayList();
 		try {

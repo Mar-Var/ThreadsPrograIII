@@ -132,6 +132,7 @@ public class HandlingEvents implements ActionListener {
 							JOptionPane.showMessageDialog(null, "Bienvenido");
 							mainWindow.getBtnConsultar().setEnabled(false);
 							mainWindow.getBtnGenerarTurno().setEnabled(true);
+							mainWindow.getTxtCedula().setEditable(false);
 							cont=0;
 							break;
 						}
@@ -159,6 +160,9 @@ public class HandlingEvents implements ActionListener {
 			break;
 		case GENERAR_TURNO:
 			generarTurno();
+			mainWindow.getBtnGenerarTurno().setEnabled(false);
+			mainWindow.getBtnConsultar().setEnabled(true);
+			mainWindow.getTxtCedula().setEditable(true);
 			try {
 				
 				

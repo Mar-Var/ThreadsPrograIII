@@ -23,7 +23,7 @@ public class PersistenciaModulos {
 	ArrayList<Modulo> modulos;
 	
 	
-	public boolean fileExist() throws IOException {
+	public synchronized boolean fileExist() throws IOException {
 		if(!file.exists()) {
 			file.createNewFile();
 			return false;
@@ -31,7 +31,7 @@ public class PersistenciaModulos {
 		return true;
 	}
 	
-	public boolean SobreEscribirArchivoModulo(ArrayList<Modulo> contenido){
+	public synchronized boolean SobreEscribirArchivoModulo(ArrayList<Modulo> contenido){
 			
 			try {
 				fileExist();
@@ -69,7 +69,7 @@ public class PersistenciaModulos {
 		}
 		
 	
-	public boolean agregarUnNuevoModulo(Modulo moduloAgregar) {
+	public synchronized boolean agregarUnNuevoModulo(Modulo moduloAgregar) {
 		try {
 			fileExist();
 		} catch (IOException e1) {
@@ -132,7 +132,7 @@ public class PersistenciaModulos {
 		
 	}	
 	
-	public ArrayList<Modulo> TraerTodoslosModulos(){
+	public synchronized ArrayList<Modulo> TraerTodoslosModulos(){
 		ObjectMapper mapper = new ObjectMapper();
 		modulos= new ArrayList();
 		try {

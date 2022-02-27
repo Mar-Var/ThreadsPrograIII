@@ -21,7 +21,7 @@ public class PersistenciaTramite {
 	ArrayList<Tramite> tramites;
 	
 	
-	public boolean fileExist() throws IOException {
+	public synchronized boolean fileExist() throws IOException {
 		if(!file.exists()) {
 			file.createNewFile();
 			return false;
@@ -29,7 +29,7 @@ public class PersistenciaTramite {
 		return true;
 	}
 	
-	public boolean SobreEscribirArchivoTramite(ArrayList<Tramite> contenido){
+	public synchronized boolean SobreEscribirArchivoTramite(ArrayList<Tramite> contenido){
 			
 			try {
 				fileExist();
@@ -55,7 +55,7 @@ public class PersistenciaTramite {
 		}
 		
 	
-	public boolean agregarUnNuevoTramite(Tramite tramiteAgregar) {
+	public synchronized boolean agregarUnNuevoTramite(Tramite tramiteAgregar) {
 		try {
 			fileExist();
 		} catch (IOException e1) {
@@ -90,7 +90,7 @@ public class PersistenciaTramite {
 		
 	}	
 	
-	public ArrayList<Tramite> TraerTodoslosTramites(){
+	public synchronized ArrayList<Tramite> TraerTodoslosTramites(){
 		ObjectMapper mapper = new ObjectMapper();
 		tramites= new ArrayList();
 		try {

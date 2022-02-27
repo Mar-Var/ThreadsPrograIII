@@ -131,7 +131,7 @@ public class MainWindow extends JFrame {
 				}
 				lbCCCodigoTurno.setText(queueCC.isEmpty() ? "Sin turnos":queueCC.element().getCodigo());
 				try {
-					Thread.sleep(10000);
+					Thread.sleep(7000);
 				} catch (InterruptedException e) {
 					System.out.println("Me estoy ahogando");
 					e.printStackTrace();
@@ -154,7 +154,7 @@ public class MainWindow extends JFrame {
 
 
 			while ( true) {
-				
+				System.out.println("Me estoy ejecutando threadCM");
 				Queue<Turno> queueCM = new LinkedList<Turno>();
 				ArrayList<Turno> trs = pt.TraerTodoslosTurnos();
 				for (Turno t : trs) {
@@ -166,7 +166,7 @@ public class MainWindow extends JFrame {
 //				queueCM.element().setEstado(true);
 //				//System.out.println(queueCM.element().toString());
 				try {
-					Thread.sleep(10000);
+					Thread.sleep(6000);
 				} catch (InterruptedException e) {
 					System.out.println("Me interrumpieron");
 					e.printStackTrace();
@@ -188,6 +188,7 @@ public class MainWindow extends JFrame {
 		new Thread(()-> {
 
 			while ( true) {
+				System.out.println("Me estoy ejecutando threadCP");
 				Queue<Turno> queueCP = new LinkedList<Turno>();
 				ArrayList<Turno> trs = pt.TraerTodoslosTurnos();
 				for (Turno t : trs ) {
@@ -199,7 +200,7 @@ public class MainWindow extends JFrame {
 //				queueCP.element().setEstado(true);
 				//System.out.println(queueCP.element().toString());
 				try {
-					Thread.sleep(10000);
+					Thread.sleep(5000);
 				} catch (InterruptedException e) {
 					System.out.println("Mes estoy matando");
 					e.printStackTrace();
@@ -220,125 +221,9 @@ public class MainWindow extends JFrame {
 		
 		thrEstModulo.start();
 
-//		threadCP.start();
-//
-//		threadCM.start();
-//
-//		threadCC.start();
-
-//		threads();
 	}
 
-	private void threads() {
-//		MOD_CITAS----------------------------------------------------------------------
-		threadCC = new Thread(()-> {
-
-
-			while ( true ) {
-				System.out.println("Me estoy ejecutando threadCC");
-				Queue<Turno> queueCC = new LinkedList<Turno>();
-				ArrayList<Turno> trs = pt.TraerTodoslosTurnos();
-				System.out.println(trs.size());
-				for (Turno t : trs) {
-					if ( t.getModulo().equals("Caja 1") && !t.isEstado() ) {
-						queueCC.add(t);
-					}
-				}
-				lbCCCodigoTurno.setText(queueCC.isEmpty() ? "Sin turnos":queueCC.element().getCodigo());
-				try {
-					Thread.sleep(3000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				try {
-					int index = trs.indexOf(queueCC.remove());
-					trs.get( index ).setEstado(true);
-					pt.SobreEscribirArchivoProducto(trs);
-					
-				} catch (Exception e2) {
-					// TODO: handle exception
-					lbCCEstadoCaja.setText( queueCC.isEmpty() ? "Esperando..." : "Atendiendo...");
-				}
-
-			}
-			
-		});
-		threadCC.start();
-
-//		MOD_MEDICAMENTOS--------------------------------------------------------
-		threadCM = new Thread(()-> {
-
-
-			while ( true) {
-				Queue<Turno> queueCM = new LinkedList<Turno>();
-				ArrayList<Turno> trs = pt.TraerTodoslosTurnos();
-				for (Turno t : trs) {
-					if ( t.getModulo().equals("Caja 2") && !t.isEstado() ) {
-						queueCM.add(t);
-					}
-				}
-				lbCMCodigoTurno.setText(queueCM.isEmpty() ? "Sin turnos":queueCM.element().getCodigo());
-//				queueCM.element().setEstado(true);
-//				//System.out.println(queueCM.element().toString());
-				try {
-					Thread.sleep(4000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				try {
-					int index = trs.indexOf(queueCM.remove());
-					trs.get( index ).setEstado(true);
-
-					pt.SobreEscribirArchivoProducto(trs);
-					
-				} catch (Exception e2) {
-					// TODO: handle exception
-					lbCMEstadoCaja.setText( queueCM.isEmpty() ? "Esperando..." : "Atendiendo...");
-				}
-
-			}
-		
-		});
-		threadCM.start();
-
-//		MOD_PAGOS----------------------------------------------------------
-		threadCP = new Thread(()-> {
-
-			while ( true) {
-				Queue<Turno> queueCP = new LinkedList<Turno>();
-				ArrayList<Turno> trs = pt.TraerTodoslosTurnos();
-				for (Turno t : trs ) {
-					if ( t.getModulo().equals("Caja 3") && !t.isEstado()) {
-						queueCP.add(t);
-					}
-				}
-				lbCPCodigoTurno.setText( queueCP.isEmpty() ? "Sin turnos..." : queueCP.element().getCodigo());
-//				queueCP.element().setEstado(true);
-				//System.out.println(queueCP.element().toString());
-				try {
-					Thread.sleep(5000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				try {
-					int index = trs.indexOf(queueCP.remove());
-					trs.get( index ).setEstado(true);
-
-					pt.SobreEscribirArchivoProducto(trs);
-					
-				}catch (Exception e) {
-					// TODO: handle exception
-					lbCPEstadoCaja.setText( queueCP.isEmpty() ? "Esperando..." : "Atendiendo...");
-				}
-
-			}
-			
-		});
-		threadCP.start();
-
-
-	}
-
+	
 	public void createComponents() {
 		
 		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();

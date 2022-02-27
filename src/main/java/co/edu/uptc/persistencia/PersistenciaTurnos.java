@@ -21,7 +21,7 @@ public class PersistenciaTurnos {
 	File file = new File(ruta);
 	ArrayList<Turno> turnos;
 	
-	public boolean fileExist() throws IOException {
+	public synchronized boolean fileExist() throws IOException {
 		if(!file.exists()) {
 			file.createNewFile();
 			return false;
@@ -30,7 +30,7 @@ public class PersistenciaTurnos {
 		return true;
 	}
 	
-	public boolean SobreEscribirArchivoProducto(ArrayList<Turno> contenido){
+	public synchronized boolean SobreEscribirArchivoProducto(ArrayList<Turno> contenido){
 		
 		try {
 			fileExist();
@@ -64,7 +64,7 @@ public class PersistenciaTurnos {
 
 	}
 	
-	public boolean agregarUnNuevoTurno(Turno TurnoAgregar) {
+	public synchronized boolean agregarUnNuevoTurno(Turno TurnoAgregar) {
 		try {
 			fileExist();
 		} catch (IOException e1) {
@@ -117,7 +117,7 @@ public class PersistenciaTurnos {
 		
 	}
 	
-	public ArrayList<Turno> TraerTodoslosTurnos(){
+	public synchronized ArrayList<Turno> TraerTodoslosTurnos(){
 		ObjectMapper mapper = new ObjectMapper();
 		turnos= new ArrayList();
 		try {
