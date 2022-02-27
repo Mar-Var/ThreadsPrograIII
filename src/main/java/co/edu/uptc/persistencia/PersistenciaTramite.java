@@ -11,6 +11,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.exc.MismatchedInputException;
 
 import co.edu.uptc.logica.modelo.Tramite;
 
@@ -107,10 +108,15 @@ public class PersistenciaTramite {
 			}
 			return tramites;
 		}
+		catch (MismatchedInputException e) {
+			e.printStackTrace();
+			System.out.println("Estaba vacio: Ahora no");
+			return null;
+		}
 		
 		catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("pum");
+			System.out.println("Error Presistencia Tramite");
 			return null;
 		}
 	}

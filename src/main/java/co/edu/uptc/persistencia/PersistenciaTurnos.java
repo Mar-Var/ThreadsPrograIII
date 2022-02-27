@@ -64,7 +64,7 @@ public class PersistenciaTurnos {
 
 	}
 	
-	public boolean agregarUnNuevoDomiciliario(Turno TurnoAgregar) {
+	public boolean agregarUnNuevoTurno(Turno TurnoAgregar) {
 		try {
 			fileExist();
 		} catch (IOException e1) {

@@ -48,7 +48,6 @@ public class ModuloEstadisticas implements Runnable {
 			removeComponents();
 			crtpM = new ChartPanel(grafico_circularModulos());
 			crtpM.setPreferredSize(new Dimension(400, 200));
-			System.out.println(crtpM.getMaximumDrawHeight());
 			crtpS= new ChartPanel(grafico_circularModulos());
 			crtpS.setPreferredSize(new Dimension(400, 200));
 			añadirComponents();
@@ -92,15 +91,37 @@ public class ModuloEstadisticas implements Runnable {
 	
 	public ArrayList<Turno> filtradoModulos (String filtrado){
 		ArrayList<Turno> lFilter1= new ArrayList<>();
-		turnos.stream().filter(element -> element.getModulo().equals(filtrado) && element.isEstado()==true ).map(element->lFilter1.add(element)).forEach(element->System.out.println());
-		return lFilter1;
+		try {
+			turnos.stream().filter(element -> element.getModulo().equals(filtrado) && element.isEstado()==true ).map(element->lFilter1.add(element)).forEach(element->System.out.println());
+			return lFilter1;
+		}catch (NullPointerException e) {
+			// TODO: handle exception
+			return null;
+		}
+		
+		
 	}
 	public JFreeChart grafico_circularModulos() {
 		this.turnos = pt.TraerTodoslosTurnos();
-		int m1=filtradoModulos("Caja 1").size();
-		int m2=filtradoModulos("Caja 2").size();
-		int m3=filtradoModulos("Caja 3").size();
 		
+		int m1=0,m2=0,m3=0;
+		try {
+			m1=filtradoModulos("Caja 1").size();
+		} catch (Exception e) {
+			m2=0;
+			
+		}
+		try {
+			m2=filtradoModulos("Caja 2").size();
+		} catch (Exception e) {
+			m2=0;
+		}
+		try {
+			m3=filtradoModulos("Caja 3").size();
+		} catch (Exception e) {
+			m3=0;
+		}
+
 		datos = new DefaultPieDataset();
 		datos.setValue("Caja 1", m1);
 		datos.setValue("Caja 2", m2);

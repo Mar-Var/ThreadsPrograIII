@@ -111,6 +111,7 @@ public class PersistenciaAfiliados {
 		}
 		
 		catch (Exception e) {
+			System.out.println(e.getMessage());
 			e.printStackTrace();
 			return null;
 		}

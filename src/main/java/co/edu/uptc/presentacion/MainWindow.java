@@ -89,6 +89,7 @@ public class MainWindow extends JFrame {
 	ModuloEstadisticas rneModuloPagos;
 	Thread thrEstModulo;
 	PersistenciaTramite perTra;
+	HandlingEvents he;
 	
 	
 	public MainWindow() {
@@ -98,6 +99,7 @@ public class MainWindow extends JFrame {
 		setMinimumSize(new Dimension(1000,700));
 		setLayout(new GridBagLayout());
 		setResizable(true);
+		he = new HandlingEvents(this);
 	}
 	
 	public void begin() {
@@ -188,7 +190,10 @@ public class MainWindow extends JFrame {
 		
 		lbCedula = new JLabel("Ingrese su numero de identificacion");;
 		txtCedula = new JTextField(20);
+
 		btnConsultar = new JButton("Ingresar");
+		btnConsultar.setActionCommand(HandlingEvents.CONSULTAR);
+		btnConsultar.addActionListener(new HandlingEvents(this));
 		
 		lbCBModulo = new JLabel("Seleccione a que modulo desea acceder");
 		cbModulos= new JComboBox<String>();
@@ -200,14 +205,15 @@ public class MainWindow extends JFrame {
 		if(perTra.TraerTodoslosTramites()!=null) {
 			tramites=perTra.TraerTodoslosTramites();
 			for (int i = 0; i < tramites.size(); i++) {
-				System.out.println(tramites.get(i).getNombre());
 				cbTipoTramite.addItem(tramites.get(i).getNombre());
 			}
 			
 		}
-
 		
 		btnGenerarTurno= new JButton("Generar Turno");
+		btnGenerarTurno.setActionCommand(HandlingEvents.GENERAR_TURNO);
+		btnGenerarTurno.addActionListener(new HandlingEvents(this));
+		
 		
 		lbCCCodigoTurno = new JLabel("1XXX");
 		lbCCCodigoTurno.setForeground(new Color(57,255,20));;
@@ -425,6 +431,39 @@ public class MainWindow extends JFrame {
 		
 	}
 	
+
+	public JButton getBtnConsultar() {
+		return btnConsultar;
+	}
+
+	public void setBtnConsultar(JButton btnConsultar) {
+		this.btnConsultar = btnConsultar;
+	}
+
+	public JButton getBtnGenerarTurno() {
+		return btnGenerarTurno;
+	}
+
+	public void setBtnGenerarTurno(JButton btnGenerarTurno) {
+		this.btnGenerarTurno = btnGenerarTurno;
+	}
+
+	public JTextField getTxtCedula() {
+		return txtCedula;
+	}
+
+	public void setTxtCedula(JTextField txtCedula) {
+		this.txtCedula = txtCedula;
+	}
+
+	public JComboBox<String> getCbTipoTramite() {
+		return cbTipoTramite;
+	}
+
+	public void setCbTipoTramite(JComboBox<String> cbTipoTramite) {
+		this.cbTipoTramite = cbTipoTramite;
+	}
+	
 	
 //	public void addComponentspnEstModulo() {
 //		GridBagConstraints g = new GridBagConstraints();
@@ -436,5 +475,7 @@ public class MainWindow extends JFrame {
 //		GridBagConstraints g = new GridBagConstraints();
 //		
 //	}
+	
+	
 
 }

@@ -11,6 +11,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.exc.MismatchedInputException;
 
 import co.edu.uptc.logica.modelo.Modulo;
 import co.edu.uptc.logica.modelo.Tramite;
@@ -148,6 +149,9 @@ public class PersistenciaModulos {
 				e1.printStackTrace();
 			}
 			return modulos;
+		} catch (MismatchedInputException e) {
+			// TODO: handle exception
+			return null;
 		}
 		
 		catch (Exception e) {
