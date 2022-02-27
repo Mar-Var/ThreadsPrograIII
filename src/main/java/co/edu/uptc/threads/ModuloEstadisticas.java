@@ -41,6 +41,7 @@ public class ModuloEstadisticas implements Runnable {
 		LocalTime time = null;
 		int i = 0;
 		while(true) {
+			this.pt= new PersistenciaTurnos();
 			if(i!=0) {
 				panelEstadisticas.remove(crtpM);
 				panelEstadisticas.remove(crtpS);
@@ -92,7 +93,7 @@ public class ModuloEstadisticas implements Runnable {
 	public ArrayList<Turno> filtradoModulos (String filtrado){
 		ArrayList<Turno> lFilter1= new ArrayList<>();
 		try {
-			turnos.stream().filter(element -> element.getModulo().equals(filtrado) && element.isEstado()==true ).map(element->lFilter1.add(element)).forEach(element->System.out.println());
+			turnos.stream().filter(element -> element.getModulo().equals(filtrado) && element.isEstado()==true ).map(element->lFilter1.add(element)).forEach(element->System.out.println("1"));
 			return lFilter1;
 		}catch (NullPointerException e) {
 			// TODO: handle exception
@@ -108,17 +109,20 @@ public class ModuloEstadisticas implements Runnable {
 		try {
 			m1=filtradoModulos("Caja 1").size();
 		} catch (Exception e) {
+			System.out.println("Problemas Caja 1");
 			m2=0;
 			
 		}
 		try {
 			m2=filtradoModulos("Caja 2").size();
 		} catch (Exception e) {
+			System.out.println("Problemas Caja 2");
 			m2=0;
 		}
 		try {
 			m3=filtradoModulos("Caja 3").size();
 		} catch (Exception e) {
+			System.out.println("Problemas Caja 3");
 			m3=0;
 		}
 
