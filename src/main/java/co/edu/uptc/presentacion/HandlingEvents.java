@@ -106,7 +106,7 @@ public class HandlingEvents implements ActionListener {
 				"-"+encontrarObTramite().getCodigo()+
 				"-"+"0"+"-"+(ptu.TraerTodoslosTurnos()!=null?ptu.TraerTodoslosTurnos().size():0);
 		System.out.println(codigo);
-		Turno turno = new Turno(buscarAfiliado(), encontrarModulo(), servicio, servicio,new Date().toString(), 0, false);
+		Turno turno = new Turno(buscarAfiliado(), encontrarModulo(), encontrarObTramite().getCodigo(), servicio,new Date().toString(), 0, false);
 		ptu.agregarUnNuevoTurno(turno);
 		
 		return null;

@@ -10,7 +10,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.*;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -23,6 +23,8 @@ import javax.swing.border.TitledBorder;
 import javax.swing.plaf.basic.BasicLookAndFeel;
 import javax.swing.table.DefaultTableModel;
 
+import co.edu.uptc.logica.modelo.Turno;
+import co.edu.uptc.persistencia.PersistenciaTurnos;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -86,12 +88,19 @@ public class MainWindow extends JFrame {
 	ChartPanel chtpServicios;
 	JFreeChart fcEstadisticaModulos;
 	JFreeChart fcEstadisticaServicios;
+
+	Thread threadCC;
+	Thread threadCM;
+	Thread threadCP;
+
+	PersistenciaTurnos pt = new PersistenciaTurnos();
+
 	ModuloEstadisticas rneModuloPagos;
 	Thread thrEstModulo;
 	PersistenciaTramite perTra;
 	HandlingEvents he;
-	
-	
+
+
 	public MainWindow() {
 		super("Super EPS");
 		setExtendedState(MAXIMIZED_BOTH);
@@ -108,8 +117,91 @@ public class MainWindow extends JFrame {
 		rneModuloPagos = new ModuloEstadisticas(pnEstadisticas,chtpModulos,chtpServicios);
 		thrEstModulo = new Thread(rneModuloPagos);
 		thrEstModulo.start();
+		threads();
 	}
-	
+
+	private void threads() {
+//		MOD_CITAS----------------------------------------------------------------------
+		threadCC = new Thread(()-> {
+			Queue<Turno> queueCC = new LinkedList<Turno>();
+			ArrayList<Turno> trs = pt.TraerTodoslosTurnos();
+			for (Turno t : trs) {
+				if ( t.getModulo().equals("Caja 1") && !t.isEstado() ) {
+					queueCC.add(t);
+				}
+			}
+
+			while ( !queueCC.isEmpty() ) {
+				lbCCCodigoTurno.setText(queueCC.element().getCodigo());
+				try {
+					Thread.sleep(1200);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				int index = trs.indexOf(queueCC.remove());
+				trs.get( index ).setEstado(true);
+				lbCCEstadoCaja.setText( queueCC.isEmpty() ? "Disponible" : "Atendiendo...");
+			}
+			pt.SobreEscribirArchivoProducto(trs);
+		});
+		threadCC.start();
+
+//		MOD_MEDICAMENTOS--------------------------------------------------------
+		threadCM = new Thread(()-> {
+			Queue<Turno> queueCM = new LinkedList<Turno>();
+			ArrayList<Turno> trs = pt.TraerTodoslosTurnos();
+			for (Turno t : trs) {
+				if ( t.getModulo().equals("Caja 2") && !t.isEstado() ) {
+					queueCM.add(t);
+				}
+			}
+
+			while ( !queueCM.isEmpty() ) {
+				lbCMCodigoTurno.setText(queueCM.element().getCodigo());
+				queueCM.element().setEstado(true);
+				//System.out.println(queueCM.element().toString());
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				int index = trs.indexOf(queueCM.remove());
+				trs.get( index ).setEstado(true);
+				lbCMEstadoCaja.setText( queueCM.isEmpty() ? "Disponible" : "Atendiendo...");
+			}
+			pt.SobreEscribirArchivoProducto(trs);
+		});
+		threadCM.start();
+
+//		MOD_PAGOS----------------------------------------------------------
+		threadCP = new Thread(()-> {
+			Queue<Turno> queueCP = new LinkedList<Turno>();
+			ArrayList<Turno> trs = pt.TraerTodoslosTurnos();
+			for (Turno t : trs ) {
+				if ( t.getModulo().equals("Caja 3") ) {
+					queueCP.add(t);
+				}
+			}
+
+			while ( !queueCP.isEmpty() ) {
+				lbCPCodigoTurno.setText(queueCP.element().getCodigo());
+				queueCP.element().setEstado(true);
+				//System.out.println(queueCP.element().toString());
+				try {
+					Thread.sleep(950);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				int index = trs.indexOf(queueCP.remove());
+				trs.get( index ).setEstado(true);
+				lbCPEstadoCaja.setText( queueCP.isEmpty() ? "Disponible" : "Atendiendo...");
+			}
+			pt.SobreEscribirArchivoProducto(trs);
+		});
+		threadCP.start();
+
+	}
+
 	public void createComponents() {
 		
 		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -201,13 +293,13 @@ public class MainWindow extends JFrame {
 		perTra= new PersistenciaTramite();
 		cbTipoTramite = new JComboBox<String>();
 		ArrayList<Tramite> tramites;
-		
+
 		if(perTra.TraerTodoslosTramites()!=null) {
 			tramites=perTra.TraerTodoslosTramites();
 			for (int i = 0; i < tramites.size(); i++) {
 				cbTipoTramite.addItem(tramites.get(i).getNombre());
 			}
-			
+
 		}
 		
 		btnGenerarTurno= new JButton("Generar Turno");
@@ -219,18 +311,26 @@ public class MainWindow extends JFrame {
 		lbCCCodigoTurno.setForeground(new Color(57,255,20));;
 		lbCCCodigoTurno.setFont(fuenteDigital);
 		lbCCEstadoCaja = new JLabel("xXXXXXXX");
+		lbCCEstadoCaja.setForeground(Color.WHITE);;
+		lbCCEstadoCaja.setFont(fuenteDigital);
 		tCC = new JTable(dtmCC) ;
 		dtmCC = new DefaultTableModel();
 		
 		lbCMCodigoTurno = new JLabel("XXXX");
+		lbCMCodigoTurno.setForeground(new Color(57,255,20));;
 		lbCMCodigoTurno.setFont(fuenteDigital);
 		lbCMEstadoCaja = new JLabel("XXXXXXXX");
+		lbCMEstadoCaja.setForeground(Color.WHITE);;
+		lbCMEstadoCaja.setFont(fuenteDigital);
 		tCM = new JTable(dtmCM);
 		dtmCM = new DefaultTableModel();
 		
 		lbCPCodigoTurno = new JLabel("XXXX");
+		lbCPCodigoTurno.setForeground(new Color(57,255,20));;
 		lbCPCodigoTurno.setFont(fuenteDigital);
 		lbCPEstadoCaja = new JLabel("XXXXXXXX");
+		lbCPEstadoCaja.setForeground(Color.WHITE);;
+		lbCPEstadoCaja.setFont(fuenteDigital);
 		tCP = new JTable(dtmCP);
 		dtmCP = new DefaultTableModel();
 		
@@ -239,7 +339,7 @@ public class MainWindow extends JFrame {
 		datos1.setValue("Caja 1", 5);
 		datos1.setValue("Caja 2", 5);
 		datos1.setValue("Caja 3", 5);
-		
+
 		fcEstadisticaModulos = ChartFactory.createPieChart(
 				"Estadisticas por Modulos",//Nombre del grafico
 				datos1,// datos
@@ -253,15 +353,16 @@ public class MainWindow extends JFrame {
 				true, // nombre de las categorias f o v
 				true, // herramientas f o t
 				true); // generacion de URL false);
-		
-		
+
+
 		chtpModulos=new ChartPanel(fcEstadisticaModulos);
 		chtpModulos.setPreferredSize(new Dimension(200,200));;
-		
+
 		chtpServicios = new ChartPanel(fcEstadisticaServicios);
 		chtpServicios.setPreferredSize(new Dimension(200,200));;
 
-		
+
+
 	}
 	
 	
@@ -469,11 +570,11 @@ public class MainWindow extends JFrame {
 //		GridBagConstraints g = new GridBagConstraints();
 //		g.gridx=0;
 //		g.gridy=0;
-//		
+//
 //	}
 //	public void addComponentspnEstServicios() {
 //		GridBagConstraints g = new GridBagConstraints();
-//		
+//
 //	}
 	
 	
