@@ -64,9 +64,11 @@ public class HandlingEvents implements ActionListener {
 			for(Modulo modulo:pm.TraerTodoslosModulos()) {
 				for(Tramite tramite : modulo.getTramites()) {
 					if(tramite.getNombre().equals(mainWindow.getCbTipoTramite().getSelectedItem().toString())) {
+						System.out.println("Encontrado---");
 						return modulo;
 					}
 				}
+			System.out.println(modulo);
 			}
 		} catch (NullPointerException e) {
 			// TODO: handle exception
@@ -97,6 +99,9 @@ public class HandlingEvents implements ActionListener {
 	
 	public Turno generarTurno() {
 		String servicio = mainWindow.getCbTipoTramite().getSelectedItem().toString();
+		
+		String verifi = encontrarObModulo().toString();
+		System.out.println(verifi);
 		String codigo= encontrarObModulo().getCodigo()+
 				"-"+encontrarObTramite().getCodigo()+
 				"-"+"0"+"-"+(ptu.TraerTodoslosTurnos()!=null?ptu.TraerTodoslosTurnos().size():0);
@@ -153,8 +158,9 @@ public class HandlingEvents implements ActionListener {
 			
 			break;
 		case GENERAR_TURNO:
+			generarTurno();
 			try {
-				generarTurno();
+				
 				
 			} catch (NullPointerException e2) {
 				// TODO: handle exception
