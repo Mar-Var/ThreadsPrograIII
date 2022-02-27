@@ -110,7 +110,7 @@ public class ModuloEstadisticas implements Runnable {
 			m1=filtradoModulos("Caja 1").size();
 		} catch (Exception e) {
 			System.out.println("Problemas Caja 1");
-			m2=0;
+			m1=0;
 			
 		}
 		try {

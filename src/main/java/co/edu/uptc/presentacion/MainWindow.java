@@ -123,13 +123,19 @@ public class MainWindow extends JFrame {
 				System.out.println("Me estoy ejecutando threadCC");
 				Queue<Turno> queueCC = new LinkedList<Turno>();
 				ArrayList<Turno> trs = pt.TraerTodoslosTurnos();
-				System.out.println(trs.size());
-				for (Turno t : trs) {
-					if ( t.getModulo().equals("Caja 1") && !t.isEstado() ) {
-						queueCC.add(t);
+				try {
+					for (Turno t : trs) {
+						if ( t.getModulo().equals("Caja 1") && !t.isEstado() ) {
+							queueCC.add(t);
+						}
 					}
+					
+				} catch (Exception e) {
+					// TODO: handle exception
 				}
+
 				lbCCCodigoTurno.setText(queueCC.isEmpty() ? "Sin turnos":queueCC.element().getCodigo());
+				lbCCEstadoCaja.setText( queueCC.isEmpty() ? "Esperando..." : "Atendiendo...");
 				try {
 					Thread.sleep(7000);
 				} catch (InterruptedException e) {
@@ -145,7 +151,7 @@ public class MainWindow extends JFrame {
 					// TODO: handle exception
 				}
 				
-				lbCCEstadoCaja.setText( queueCC.isEmpty() ? "Esperando..." : "Atendiendo...");
+
 	
 			}
 			
@@ -157,12 +163,19 @@ public class MainWindow extends JFrame {
 				System.out.println("Me estoy ejecutando threadCM");
 				Queue<Turno> queueCM = new LinkedList<Turno>();
 				ArrayList<Turno> trs = pt.TraerTodoslosTurnos();
-				for (Turno t : trs) {
-					if ( t.getModulo().equals("Caja 2") && !t.isEstado() ) {
-						queueCM.add(t);
+				try {
+					for (Turno t : trs) {
+						if ( t.getModulo().equals("Caja 2") && !t.isEstado() ) {
+							queueCM.add(t);
+						}
 					}
+					
+				} catch (Exception e) {
+					// TODO: handle exception
 				}
+
 				lbCMCodigoTurno.setText(queueCM.isEmpty() ? "Sin turnos":queueCM.element().getCodigo());
+				lbCMEstadoCaja.setText( queueCM.isEmpty() ? "Esperando..." : "Atendiendo...");
 //				queueCM.element().setEstado(true);
 //				//System.out.println(queueCM.element().toString());
 				try {
@@ -180,7 +193,7 @@ public class MainWindow extends JFrame {
 					// TODO: handle exception
 				}
 				
-				lbCMEstadoCaja.setText( queueCM.isEmpty() ? "Esperando..." : "Atendiendo...");
+				
 			
 			}
 		
@@ -191,12 +204,20 @@ public class MainWindow extends JFrame {
 				System.out.println("Me estoy ejecutando threadCP");
 				Queue<Turno> queueCP = new LinkedList<Turno>();
 				ArrayList<Turno> trs = pt.TraerTodoslosTurnos();
-				for (Turno t : trs ) {
-					if ( t.getModulo().equals("Caja 3") && !t.isEstado()) {
-						queueCP.add(t);
+				try {
+					
+					for (Turno t : trs ) {
+						if ( t.getModulo().equals("Caja 3") && !t.isEstado()) {
+							queueCP.add(t);
+						}
 					}
+					
+				}catch (Exception e) {
+					// TODO: handle exception
 				}
+
 				lbCPCodigoTurno.setText( queueCP.isEmpty() ? "Sin turnos..." : queueCP.element().getCodigo());
+				lbCPEstadoCaja.setText( queueCP.isEmpty() ? "Esperando..." : "Atendiendo...");
 //				queueCP.element().setEstado(true);
 				//System.out.println(queueCP.element().toString());
 				try {
@@ -213,7 +234,7 @@ public class MainWindow extends JFrame {
 					
 				} catch (Exception e) {
 					// TODO: handle exception
-					lbCPEstadoCaja.setText( queueCP.isEmpty() ? "Esperando..." : "Atendiendo...");
+					
 				}
 			}
 			
