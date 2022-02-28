@@ -4,12 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c824b87-4c15-4d20-9f39-ef861d3d348c" name="Changes" comment="GUI 2.0 completo-faltan estadisticas y tablas">
+    <list default="true" id="efe3b3ad-49fb-4a4c-acfa-efc83cc2ab3c" name="Changes" comment="tablasHechas">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/Afiliado.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/AppTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/HandlingEvents.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/Icono.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/JPanelRound.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/MainWindow$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/MainWindow.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/Modulo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/ModuloCitas.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/ModuloEstadisticas.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/ModuloMedicamentos.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/ModuloPagos.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/PersistenciaAfiliados.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/PersistenciaModulos.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/PersistenciaTramite.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/PersistenciaTurnos.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/Registro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/RoundedBorder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/TablePanel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/Tramite.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/Turno.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/TurnsManagement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/fondo.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m___Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/archivosJson/turnos.json" beforeDir="false" afterPath="$PROJECT_DIR$/archivosJson/turnos.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uptc/presentacion/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/presentacion/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/afiliados.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uptc/presentacion/MainWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/presentacion/MainWindow$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uptc/presentacion/MainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/presentacion/MainWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uptc/presentacion/digital-7.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/modulos.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tramites.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/turnos.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +53,8 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="25jjhUiDpnURKHK5cwqMrpgor7G" />
+  <component name="ProjectId" id="25joZs2XmLIQyf80DhSlWNzgCqg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -27,12 +62,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/jfreechart-1.0.19.jar" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -48,6 +78,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
@@ -57,32 +98,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6c824b87-4c15-4d20-9f39-ef861d3d348c" name="Changes" comment="" />
-      <created>1646047523994</created>
+      <changelist id="efe3b3ad-49fb-4a4c-acfa-efc83cc2ab3c" name="Changes" comment="" />
+      <created>1646049916704</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1646047523994</updated>
-      <workItem from="1646047531103" duration="6832000" />
+      <updated>1646049916704</updated>
     </task>
-    <task id="LOCAL-00001" summary="GUI completo-faltan estadisticas y tablas">
-      <created>1646048131410</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1646048131410</updated>
-    </task>
-    <task id="LOCAL-00002" summary="GUI 2.0 completo-faltan estadisticas y tablas">
-      <created>1646049522278</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1646049522278</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -96,8 +118,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="GUI completo-faltan estadisticas y tablas" />
-    <MESSAGE value="GUI 2.0 completo-faltan estadisticas y tablas" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI 2.0 completo-faltan estadisticas y tablas" />
+    <MESSAGE value="tablasHechas" />
+    <option name="LAST_COMMIT_MESSAGE" value="tablasHechas" />
   </component>
 </project>

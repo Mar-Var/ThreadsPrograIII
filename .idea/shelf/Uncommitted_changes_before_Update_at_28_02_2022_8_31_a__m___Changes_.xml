@@ -1,0 +1,159 @@
+<changelist name="Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]" date="1646055775946" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 28/02/2022 8:31 a. m. [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="Imagenes/6.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/6.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/co/edu/uptc/persistencia/PersistenciaModulos.class" />
+    <option name="AFTER_PATH" value="target/classes/co/edu/uptc/persistencia/PersistenciaModulos.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/PersistenciaModulos.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/co/edu/uptc/threads/ModuloMedicamentos.class" />
+    <option name="AFTER_PATH" value="target/classes/co/edu/uptc/threads/ModuloMedicamentos.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/ModuloMedicamentos.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/co/edu/uptc/persistencia/PersistenciaTramite.class" />
+    <option name="AFTER_PATH" value="target/classes/co/edu/uptc/persistencia/PersistenciaTramite.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/PersistenciaTramite.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="target/classes/co/edu/uptc/presentacion/TablePanel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/TablePanel.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/co/edu/uptc/presentacion/HandlingEvents.class" />
+    <option name="AFTER_PATH" value="target/classes/co/edu/uptc/presentacion/HandlingEvents.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/HandlingEvents.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/co/edu/uptc/threads/ModuloEstadisticas.class" />
+    <option name="AFTER_PATH" value="target/classes/co/edu/uptc/threads/ModuloEstadisticas.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/ModuloEstadisticas.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/test/App.class" />
+    <option name="AFTER_PATH" value="target/classes/test/App.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/App.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="Imagenes/fondo.jpeg" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/fondo.jpeg" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/co/edu/uptc/logica/control/TurnsManagement.class" />
+    <option name="AFTER_PATH" value="target/classes/co/edu/uptc/logica/control/TurnsManagement.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/TurnsManagement.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/co/edu/uptc/logica/modelo/Turno.class" />
+    <option name="AFTER_PATH" value="target/classes/co/edu/uptc/logica/modelo/Turno.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/Turno.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/co/edu/uptc/presentacion/MainWindow$1.class" />
+    <option name="AFTER_PATH" value="target/classes/co/edu/uptc/presentacion/MainWindow$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/MainWindow$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="Imagenes/4.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/4.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/co/edu/uptc/logica/modelo/Modulo.class" />
+    <option name="AFTER_PATH" value="target/classes/co/edu/uptc/logica/modelo/Modulo.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/Modulo.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="target/classes/co/edu/uptc/presentacion/RoundedBorder.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/RoundedBorder.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/co/edu/uptc/threads/ModuloPagos.class" />
+    <option name="AFTER_PATH" value="target/classes/co/edu/uptc/threads/ModuloPagos.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/ModuloPagos.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="target/classes/co/edu/uptc/presentacion/JPanelRound.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/JPanelRound.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/co/edu/uptc/presentacion/digital-7.ttf" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/co/edu/uptc/logica/modelo/Tramite.class" />
+    <option name="AFTER_PATH" value="target/classes/co/edu/uptc/logica/modelo/Tramite.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/Tramite.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/test-classes/HospitalHilos/HH/AppTest.class" />
+    <option name="AFTER_PATH" value="target/test-classes/HospitalHilos/HH/AppTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/AppTest.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".settings/org.eclipse.core.resources.prefs" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".settings/org.eclipse.m2e.core.prefs" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/co/edu/uptc/threads/ModuloCitas.class" />
+    <option name="AFTER_PATH" value="target/classes/co/edu/uptc/threads/ModuloCitas.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/ModuloCitas.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="Imagenes/Icono.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/Icono.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/co/edu/uptc/presentacion/MainWindow.class" />
+    <option name="AFTER_PATH" value="target/classes/co/edu/uptc/presentacion/MainWindow.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/MainWindow.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/co/edu/uptc/persistencia/PersistenciaTurnos.class" />
+    <option name="AFTER_PATH" value="target/classes/co/edu/uptc/persistencia/PersistenciaTurnos.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/PersistenciaTurnos.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/co/edu/uptc/logica/modelo/Afiliado.class" />
+    <option name="AFTER_PATH" value="target/classes/co/edu/uptc/logica/modelo/Afiliado.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/Afiliado.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".settings/org.eclipse.jdt.core.prefs" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="Imagenes/5.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/5.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="Imagenes/Registro.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/Registro.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/co/edu/uptc/persistencia/PersistenciaAfiliados.class" />
+    <option name="AFTER_PATH" value="target/classes/co/edu/uptc/persistencia/PersistenciaAfiliados.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_02_2022_8_31_a__m__[Changes]/PersistenciaAfiliados.class" />
+  </binary>
+</changelist>

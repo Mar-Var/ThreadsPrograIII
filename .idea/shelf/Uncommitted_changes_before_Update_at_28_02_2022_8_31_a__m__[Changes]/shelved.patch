@@ -1,0 +1,1535 @@
+Index: target/classes/afiliados.json
+===================================================================
+diff --git a/target/classes/afiliados.json b/target/classes/afiliados.json
+deleted file mode 100644
+--- a/target/classes/afiliados.json	(revision 10d505bbad180fd669c4673bf91218d7b08aaab0)
++++ /dev/null	(revision 10d505bbad180fd669c4673bf91218d7b08aaab0)
+@@ -1,1 +0,0 @@
+-[{"cedula":0,"nombre":"Afiliado 01"},{"cedula":100,"nombre":"Afiliado 11"},{"cedula":200,"nombre":"Afiliado 21"},{"cedula":300,"nombre":"Afiliado 31"},{"cedula":400,"nombre":"Afiliado 41"},{"cedula":500,"nombre":"Afiliado 51"},{"cedula":600,"nombre":"Afiliado 61"},{"cedula":700,"nombre":"Afiliado 71"},{"cedula":800,"nombre":"Afiliado 81"},{"cedula":900,"nombre":"Afiliado 91"}]
+\ No newline at end of file
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	(revision 10d505bbad180fd669c4673bf91218d7b08aaab0)
++++ /dev/null	(revision 10d505bbad180fd669c4673bf91218d7b08aaab0)
+@@ -1,3 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+Index: target/classes/tramites.json
+===================================================================
+diff --git a/target/classes/tramites.json b/target/classes/tramites.json
+deleted file mode 100644
+--- a/target/classes/tramites.json	(revision 10d505bbad180fd669c4673bf91218d7b08aaab0)
++++ /dev/null	(revision 10d505bbad180fd669c4673bf91218d7b08aaab0)
+@@ -1,1 +0,0 @@
+-[{"codigo":"S11","nombre":"Cita Odontologia"},{"codigo":"S12","nombre":"Cita Pediatria"},{"codigo":"S13","nombre":"Cita Oftalmologia"},{"codigo":"S14","nombre":"Cita Medicina General"},{"codigo":"S15","nombre":"Cita Optometria"},{"codigo":"S16","nombre":"Cita Laboratorio"},{"codigo":"S17","nombre":"Solicitar Afiliacion"},{"codigo":"S21","nombre":"Reclamar medicamentos"},{"codigo":"S22","nombre":"Aplicar inyeccion"},{"codigo":"S31","nombre":"Pagar cita"},{"codigo":"S31","nombre":"Pagar medicamentos"},{"codigo":"S31","nombre":"Pagar afiliacion"}]
+\ No newline at end of file
+Index: target/classes/modulos.json
+===================================================================
+diff --git a/target/classes/modulos.json b/target/classes/modulos.json
+deleted file mode 100644
+--- a/target/classes/modulos.json	(revision 10d505bbad180fd669c4673bf91218d7b08aaab0)
++++ /dev/null	(revision 10d505bbad180fd669c4673bf91218d7b08aaab0)
+@@ -1,1 +0,0 @@
+-[{"codigo":"C1","tramites":[{"codigo":"S11","nombre":"Cita Odontologia"},{"codigo":"S12","nombre":"Cita Pediatria"},{"codigo":"S13","nombre":"Cita Oftalmologia"},{"codigo":"S14","nombre":"Cita Medicina General"},{"codigo":"S15","nombre":"Cita Optometria"},{"codigo":"S16","nombre":"Cita Laboratorio"},{"codigo":"S17","nombre":"Solicitar Afiliacion"}],"nombre":"Caja 1"},{"codigo":"C2","tramites":[{"codigo":"S21","nombre":"Reclamar medicamentos"},{"codigo":"S22","nombre":"Aplicar inyeccion"}],"nombre":"Caja 2"},{"codigo":"C3","tramites":[{"codigo":"S31","nombre":"Pagar cita"},{"codigo":"S31","nombre":"Pagar medicamentos"},{"codigo":"S31","nombre":"Pagar afiliacion"}],"nombre":"Caja 3"}]
+\ No newline at end of file
+Index: .classpath
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<classpath>\r\n\t<classpathentry kind=\"src\" output=\"target/classes\" path=\"src/main/java\">\r\n\t\t<attributes>\r\n\t\t\t<attribute name=\"optional\" value=\"true\"/>\r\n\t\t\t<attribute name=\"maven.pomderived\" value=\"true\"/>\r\n\t\t</attributes>\r\n\t</classpathentry>\r\n\t<classpathentry kind=\"src\" output=\"target/test-classes\" path=\"src/test/java\">\r\n\t\t<attributes>\r\n\t\t\t<attribute name=\"optional\" value=\"true\"/>\r\n\t\t\t<attribute name=\"maven.pomderived\" value=\"true\"/>\r\n\t\t</attributes>\r\n\t</classpathentry>\r\n\t<classpathentry kind=\"src\" path=\"archivosJson\"/>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5\">\r\n\t\t<attributes>\r\n\t\t\t<attribute name=\"maven.pomderived\" value=\"true\"/>\r\n\t\t</attributes>\r\n\t</classpathentry>\r\n\t<classpathentry kind=\"con\" path=\"org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER\">\r\n\t\t<attributes>\r\n\t\t\t<attribute name=\"maven.pomderived\" value=\"true\"/>\r\n\t\t</attributes>\r\n\t</classpathentry>\r\n\t<classpathentry kind=\"lib\" path=\"lib/jcommon-1.0.23.jar\"/>\r\n\t<classpathentry kind=\"lib\" path=\"lib/jfreechart-1.0.19.jar\"/>\r\n\t<classpathentry kind=\"output\" path=\"target/classes\"/>\r\n</classpath>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.classpath b/.classpath
+--- a/.classpath	(revision 10d505bbad180fd669c4673bf91218d7b08aaab0)
++++ b/.classpath	(date 1646033121233)
+@@ -25,5 +25,6 @@
+ 	</classpathentry>
+ 	<classpathentry kind="lib" path="lib/jcommon-1.0.23.jar"/>
+ 	<classpathentry kind="lib" path="lib/jfreechart-1.0.19.jar"/>
++	<classpathentry kind="src" path="/Proyecto Hilos"/>
+ 	<classpathentry kind="output" path="target/classes"/>
+ </classpath>
+Index: src/main/java/co/edu/uptc/presentacion/HandlingEvents.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package co.edu.uptc.presentacion;\r\n\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\nimport java.util.ArrayList;\r\nimport java.util.Date;\r\n\r\nimport javax.swing.JOptionPane;\r\n\r\nimport co.edu.uptc.logica.modelo.Afiliado;\r\nimport co.edu.uptc.logica.modelo.Modulo;\r\nimport co.edu.uptc.logica.modelo.Tramite;\r\nimport co.edu.uptc.logica.modelo.Turno;\r\nimport co.edu.uptc.persistencia.PersistenciaAfiliados;\r\nimport co.edu.uptc.persistencia.PersistenciaModulos;\r\nimport co.edu.uptc.persistencia.PersistenciaTramite;\r\nimport co.edu.uptc.persistencia.PersistenciaTurnos;\r\n\r\npublic class HandlingEvents implements ActionListener {\r\n\t\r\n\tprivate MainWindow mainWindow;\r\n\tprivate PersistenciaTramite pt = new PersistenciaTramite();\r\n\tprivate PersistenciaModulos pm = new PersistenciaModulos();\r\n\tprivate PersistenciaAfiliados pa = new PersistenciaAfiliados();\r\n\tprivate PersistenciaTurnos ptu = new PersistenciaTurnos();\r\n\tArrayList<Modulo> modulos;\r\n\tArrayList<Tramite> tramites;\r\n\tArrayList<Afiliado> afiliados;\r\n\t\r\n\tstatic final String CONSULTAR = \"Consultar\";\r\n\tstatic final String GENERAR_TURNO = \"Generar turno\";\r\n\t\r\n\t\r\n\tpublic HandlingEvents(MainWindow mainWindow) {\r\n\t\tthis.mainWindow = mainWindow;\r\n\r\n\t}\r\n\t\r\n\tpublic Afiliado buscarAfiliado() {\r\n\r\n\t\treturn pa\r\n\t\t\t\t.TraerTodoslosAfiliados()\r\n\t\t\t\t.stream()\r\n\t\t\t\t.filter(element->element.getCedula()==Long.parseLong(mainWindow.getTxtCedula().getText()))\r\n\t\t\t\t.map(element->element)\r\n\t\t\t\t.findFirst()\r\n\t\t\t\t.orElse(null);\r\n\t}\r\n\t\r\n\tpublic String encontrarModulo() {\r\n\t\tfor(Modulo modulo:pm.TraerTodoslosModulos()) {\r\n\t\t\tfor(Tramite tramite : modulo.getTramites()) {\r\n\t\t\t\tif(tramite.getNombre().equals(mainWindow.getCbTipoTramite().getSelectedItem().toString())) {\r\n\t\t\t\t\treturn modulo.getNombre();\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn null;\r\n\t}\r\n\tpublic Modulo encontrarObModulo() {\r\n\t\ttry {\r\n\t\t\tfor(Modulo modulo:pm.TraerTodoslosModulos()) {\r\n\t\t\t\tfor(Tramite tramite : modulo.getTramites()) {\r\n\t\t\t\t\tif(tramite.getNombre().equals(mainWindow.getCbTipoTramite().getSelectedItem().toString())) {\r\n\t\t\t\t\t\tSystem.out.println(\"Encontrado---\");\r\n\t\t\t\t\t\treturn modulo;\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\tSystem.out.println(modulo);\r\n\t\t\t}\r\n\t\t} catch (NullPointerException e) {\r\n\t\t\t// TODO: handle exception\r\n\t\t\tJOptionPane.showMessageDialog(null, \"El archivo modulos.json no encontrado\");\r\n\t\t}\r\n\r\n\t\treturn null;\r\n\t}\r\n\t\r\n\tpublic Tramite encontrarObTramite() {\r\n\t\ttry {\r\n\t\t\tfor(Tramite tramite : pt.TraerTodoslosTramites()) {\r\n\t\t\t\tif(tramite.getNombre().equals(mainWindow.getCbTipoTramite().getSelectedItem().toString())) {\r\n\t\t\t\t\treturn tramite;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\t\r\n\t\t} catch (NullPointerException e) {\r\n\t\t\tJOptionPane.showMessageDialog(null, \"El archivo tramites.json no encontrado\");\r\n\t\t\t\r\n\t\t}\r\n\t\treturn null;\r\n\t\t\r\n\t\t\r\n\t}\r\n\t\r\n\t\r\n\t\r\n\tpublic Turno generarTurno() {\r\n\t\tString servicio = mainWindow.getCbTipoTramite().getSelectedItem().toString();\r\n\t\t\r\n\t\tString verifi = encontrarObModulo().getCodigo().toString();\r\n\t\tSystem.out.println(verifi);\r\n\t\tString codigo= encontrarObModulo().getCodigo()+\r\n\t\t\t\t\"-\"+encontrarObTramite().getCodigo()+\r\n\t\t\t\t\"-\"+\"0\"+\"-\"+(ptu.TraerTodoslosTurnos()!=null?ptu.TraerTodoslosTurnos().size():0);\r\n\t\tSystem.out.println(codigo);\r\n\t\tTurno turno = new Turno(buscarAfiliado(), encontrarModulo(),servicio, codigo, new Date().toString(), 0, false);\r\n\t\tptu.agregarUnNuevoTurno(turno);\r\n\t\t\r\n\t\treturn null;\r\n\t}\r\n\t@SuppressWarnings(\"deprecation\")\r\n\t@Override\r\n\tpublic void actionPerformed(ActionEvent e) {\r\n\t\t// TODO Auto-generated method stub\r\n\t\t\r\n\t\tswitch (e.getActionCommand()) {\r\n\t\tcase CONSULTAR:\r\n\t\t\ttry {\r\n\t\t\t\tafiliados=pa.TraerTodoslosAfiliados();\r\n\t\t\t} catch (Exception e2) {\r\n\t\t\t\tSystem.out.println(e2.getMessage());\r\n\t\t\t}\r\n\t\t\t\r\n\t\t\ttry {\r\n\t\t\t\tint cont =0;\r\n\t\t\t\tif(afiliados!=null) {\r\n\t\t\t\t\tfor (Afiliado afiliado : afiliados) {\r\n\t\t\t\t\t\tif(afiliado.getCedula()==Long.parseLong(mainWindow.getTxtCedula().getText())) {\r\n\t\t\t\t\t\t\tJOptionPane.showMessageDialog(null, \"Bienvenido\");\r\n\t\t\t\t\t\t\tmainWindow.getBtnConsultar().setEnabled(false);\r\n\t\t\t\t\t\t\tmainWindow.getBtnGenerarTurno().setEnabled(true);\r\n\t\t\t\t\t\t\tmainWindow.getTxtCedula().setEditable(false);\r\n\t\t\t\t\t\t\tcont=0;\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\tcont=1;\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t}\r\n\t\t\t\t\t\r\n\t\t\t\t\tif(cont==1) {\r\n\t\t\t\t\t\tmainWindow.getBtnGenerarTurno().setEnabled(false);\r\n\t\t\t\t\t\tJOptionPane.showMessageDialog(null, \"El usuario no esta dentro de los registros\");\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t\t\r\n\t\t\t} catch (NumberFormatException e2) {\r\n\t\t\t\tJOptionPane.showMessageDialog(null, \"Debe ingresar por lo menos un dijito\");\r\n\t\t\t\tmainWindow.getBtnGenerarTurno().disable();\r\n\t\t\t\t\r\n\t\t\t\t// TODO: handle exception\r\n\t\t\t} catch (Exception e2) {\r\n\t\t\t\t// TODO: handle exception\r\n\t\t\t}\r\n\r\n\r\n\t\t\t\r\n\t\t\tbreak;\r\n\t\tcase GENERAR_TURNO:\r\n\t\t\tgenerarTurno();\r\n\t\t\tmainWindow.getBtnGenerarTurno().setEnabled(false);\r\n\t\t\tmainWindow.getBtnConsultar().setEnabled(true);\r\n\t\t\tmainWindow.getTxtCedula().setEditable(true);\r\n\t\t\ttry {\r\n\t\t\t\t\r\n\t\t\t\t\r\n\t\t\t} catch (NullPointerException e2) {\r\n\t\t\t\t// TODO: handle exception\r\n\t\t\t\tJOptionPane.showMessageDialog(null, \"Archivos raiz no encontrados\");\r\n\t\t\t}\r\n\r\n\t\t\tbreak;\r\n\t\tdefault:\r\n\t\t\tbreak;\r\n\t\t}\r\n\t\t\r\n\t}\r\n\t\r\n\t\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/co/edu/uptc/presentacion/HandlingEvents.java b/src/main/java/co/edu/uptc/presentacion/HandlingEvents.java
+--- a/src/main/java/co/edu/uptc/presentacion/HandlingEvents.java	(revision 10d505bbad180fd669c4673bf91218d7b08aaab0)
++++ b/src/main/java/co/edu/uptc/presentacion/HandlingEvents.java	(date 1646037010639)
+@@ -62,14 +62,11 @@
+ 			for(Modulo modulo:pm.TraerTodoslosModulos()) {
+ 				for(Tramite tramite : modulo.getTramites()) {
+ 					if(tramite.getNombre().equals(mainWindow.getCbTipoTramite().getSelectedItem().toString())) {
+-						System.out.println("Encontrado---");
+ 						return modulo;
+ 					}
+ 				}
+-			System.out.println(modulo);
+ 			}
+ 		} catch (NullPointerException e) {
+-			// TODO: handle exception
+ 			JOptionPane.showMessageDialog(null, "El archivo modulos.json no encontrado");
+ 		}
+ 
+@@ -99,27 +96,24 @@
+ 		String servicio = mainWindow.getCbTipoTramite().getSelectedItem().toString();
+ 		
+ 		String verifi = encontrarObModulo().getCodigo().toString();
+-		System.out.println(verifi);
+ 		String codigo= encontrarObModulo().getCodigo()+
+ 				"-"+encontrarObTramite().getCodigo()+
+ 				"-"+"0"+"-"+(ptu.TraerTodoslosTurnos()!=null?ptu.TraerTodoslosTurnos().size():0);
+-		System.out.println(codigo);
+ 		Turno turno = new Turno(buscarAfiliado(), encontrarModulo(),servicio, codigo, new Date().toString(), 0, false);
+ 		ptu.agregarUnNuevoTurno(turno);
++		mainWindow.getLblDarTurnoValidacion().setText(codigo);
+ 		
+ 		return null;
+ 	}
+ 	@SuppressWarnings("deprecation")
+ 	@Override
+ 	public void actionPerformed(ActionEvent e) {
+-		// TODO Auto-generated method stub
+ 		
+ 		switch (e.getActionCommand()) {
+ 		case CONSULTAR:
+ 			try {
+ 				afiliados=pa.TraerTodoslosAfiliados();
+ 			} catch (Exception e2) {
+-				System.out.println(e2.getMessage());
+ 			}
+ 			
+ 			try {
+@@ -128,8 +122,8 @@
+ 					for (Afiliado afiliado : afiliados) {
+ 						if(afiliado.getCedula()==Long.parseLong(mainWindow.getTxtCedula().getText())) {
+ 							JOptionPane.showMessageDialog(null, "Bienvenido");
+-							mainWindow.getBtnConsultar().setEnabled(false);
+-							mainWindow.getBtnGenerarTurno().setEnabled(true);
++							mainWindow.getBtnConsultar().setVisible(false);
++							mainWindow.getBtnGenerarTurno().setVisible(true);
+ 							mainWindow.getTxtCedula().setEditable(false);
+ 							cont=0;
+ 							break;
+@@ -139,18 +133,16 @@
+ 					}
+ 					
+ 					if(cont==1) {
+-						mainWindow.getBtnGenerarTurno().setEnabled(false);
++						mainWindow.getBtnGenerarTurno().setVisible(false);
+ 						JOptionPane.showMessageDialog(null, "El usuario no esta dentro de los registros");
+ 					}
+ 				}
+ 				
+ 			} catch (NumberFormatException e2) {
+-				JOptionPane.showMessageDialog(null, "Debe ingresar por lo menos un dijito");
++				JOptionPane.showMessageDialog(null, "Debe ingresar por lo menos un digito");
+ 				mainWindow.getBtnGenerarTurno().disable();
+ 				
+-				// TODO: handle exception
+ 			} catch (Exception e2) {
+-				// TODO: handle exception
+ 			}
+ 
+ 
+@@ -158,14 +150,14 @@
+ 			break;
+ 		case GENERAR_TURNO:
+ 			generarTurno();
+-			mainWindow.getBtnGenerarTurno().setEnabled(false);
+-			mainWindow.getBtnConsultar().setEnabled(true);
++			mainWindow.getBtnGenerarTurno().setVisible(false);
++			mainWindow.getBtnConsultar().setVisible(true);
++			mainWindow.getTxtCedula().setText("");
+ 			mainWindow.getTxtCedula().setEditable(true);
+ 			try {
+ 				
+ 				
+ 			} catch (NullPointerException e2) {
+-				// TODO: handle exception
+ 				JOptionPane.showMessageDialog(null, "Archivos raiz no encontrados");
+ 			}
+ 
+Index: src/main/java/co/edu/uptc/presentacion/MainWindow.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package co.edu.uptc.presentacion;\r\n\r\nimport java.awt.Color;\r\nimport java.awt.Dimension;\r\nimport java.awt.Font;\r\nimport java.awt.FontFormatException;\r\nimport java.awt.GraphicsEnvironment;\r\nimport java.awt.GridBagConstraints;\r\nimport java.awt.GridBagLayout;\r\nimport java.awt.Insets;\r\nimport java.awt.event.KeyAdapter;\r\nimport java.awt.event.KeyEvent;\r\nimport java.io.File;\r\nimport java.io.IOException;\r\nimport java.util.*;\r\n\r\nimport javax.swing.JButton;\r\nimport javax.swing.JComboBox;\r\nimport javax.swing.JFrame;\r\nimport javax.swing.JLabel;\r\nimport javax.swing.JPanel;\r\nimport javax.swing.JTable;\r\nimport javax.swing.JTextField;\r\nimport javax.swing.border.TitledBorder;\r\nimport javax.swing.table.DefaultTableModel;\r\n\r\nimport co.edu.uptc.logica.modelo.Turno;\r\nimport co.edu.uptc.persistencia.PersistenciaTurnos;\r\nimport org.jfree.chart.ChartFactory;\r\nimport org.jfree.chart.ChartPanel;\r\nimport org.jfree.chart.JFreeChart;\r\nimport org.jfree.data.general.DefaultPieDataset;\r\n\r\n\r\nimport co.edu.uptc.logica.modelo.Tramite;\r\n\r\nimport co.edu.uptc.persistencia.PersistenciaTramite;\r\nimport co.edu.uptc.threads.*;\r\n\r\n@SuppressWarnings(\"serial\")\r\npublic class MainWindow extends JFrame {\r\n\tFont fuenteDigital;\r\n\t\r\n\t\r\n\tJPanel pnValidacion;\r\n\tJPanel pnZonaTurnos;\r\n\tJPanel pnEstModulo;\r\n\tJPanel pnEstServicios;\r\n\tJPanel pnEstadisticas;\r\n\t\r\n\t\r\n\tJPanel pnVerficaUsuario;\r\n\tJPanel pnGenerarTurno;\r\n\t\r\n\tJPanel pnCajaCitas;\r\n\tJPanel pnCajaMedicamentos;\r\n\tJPanel pnCajaPagos;\r\n\t\r\n\tJPanel pnCCTurno;\r\n\tJPanel pnCMTurno;\r\n\tJPanel pnCPTurno;\r\n\t\r\n\tJLabel lbCedula;\r\n\tJTextField txtCedula;\r\n\tJButton btnConsultar;\r\n\t\r\n\tJLabel lbCBModulo;\r\n\tJComboBox<String> cbModulos;\r\n\tJLabel lbCBTipoTramite;\r\n\tJComboBox<String> cbTipoTramite;\r\n\tJButton btnGenerarTurno;\r\n\t\r\n\tJLabel lbCCCodigoTurno;\r\n\tJLabel lbCCEstadoCaja;\r\n\tJTable tCC;\r\n\tDefaultTableModel dtmCC;\r\n\t\r\n\tJLabel lbCMCodigoTurno;\r\n\tJLabel lbCMEstadoCaja;\r\n\tJTable tCM;\r\n\tDefaultTableModel dtmCM;\r\n\t\r\n\tJLabel lbCPCodigoTurno;\r\n\tJLabel lbCPEstadoCaja;\r\n\tJTable tCP;\r\n\tDefaultTableModel dtmCP;\r\n\t\r\n\tChartPanel chtpModulos;\r\n\tChartPanel chtpServicios;\r\n\tJFreeChart fcEstadisticaModulos;\r\n\tJFreeChart fcEstadisticaServicios;\r\n\r\n\tThread threadCC;\r\n\tThread threadCM;\r\n\tThread threadCP;\r\n\r\n\tPersistenciaTurnos pt = new PersistenciaTurnos();\r\n\r\n\tModuloEstadisticas rneModuloPagos;\r\n\tThread thrEstModulo;\r\n\tPersistenciaTramite perTra;\r\n\tHandlingEvents he;\r\n\r\n\r\n\tpublic MainWindow() {\r\n\t\tsuper(\"Super EPS\");\r\n\t\tsetExtendedState(MAXIMIZED_BOTH);\r\n\t\tsetDefaultCloseOperation(EXIT_ON_CLOSE);// Decir que pasa cuando se cierre la ventana\r\n\t\tsetMinimumSize(new Dimension(1000,700));\r\n\t\tsetLayout(new GridBagLayout());\r\n\t\tsetResizable(true);\r\n\t\the = new HandlingEvents(this);\r\n\t}\r\n\t\r\n\tpublic void begin() {\r\n\t\tcreateComponents();\r\n\t\taddComponents();\r\n\t\trneModuloPagos = new ModuloEstadisticas(pnEstadisticas,chtpModulos,chtpServicios);\r\n\t\tthrEstModulo = new Thread(rneModuloPagos);\r\n\t\tnew Thread(()-> {\r\n\r\n\r\n\t\t\twhile ( true ) {\r\n\t\t\t\tSystem.out.println(\"Me estoy ejecutando threadCC\");\r\n\t\t\t\tQueue<Turno> queueCC = new LinkedList<Turno>();\r\n\t\t\t\tArrayList<Turno> trs = pt.TraerTodoslosTurnos();\r\n\t\t\t\ttry {\r\n\t\t\t\t\tfor (Turno t : trs) {\r\n\t\t\t\t\t\tif ( t.getModulo().equals(\"Caja 1\") && !t.isEstado() ) {\r\n\t\t\t\t\t\t\tqueueCC.add(t);\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t\t\r\n\t\t\t\t} catch (Exception e) {\r\n\t\t\t\t\t// TODO: handle exception\r\n\t\t\t\t}\r\n\r\n\t\t\t\tlbCCCodigoTurno.setText(queueCC.isEmpty() ? \"Sin turnos\":queueCC.element().getCodigo());\r\n\t\t\t\tlbCCEstadoCaja.setText( queueCC.isEmpty() ? \"Esperando...\" : \"Atendiendo...\");\r\n\t\t\t\ttry {\r\n\t\t\t\t\tThread.sleep(7000);\r\n\t\t\t\t} catch (InterruptedException e) {\r\n\t\t\t\t\tSystem.out.println(\"Me estoy ahogando\");\r\n\t\t\t\t\te.printStackTrace();\r\n\t\t\t\t}\r\n\t\t\t\ttry {\r\n\t\t\t\t\tint index = trs.indexOf(queueCC.remove());\r\n\t\t\t\t\ttrs.get( index ).setEstado(true);\r\n\t\t\t\t\tpt.SobreEscribirArchivoProducto(trs);\r\n\t\t\t\t\t\r\n\t\t\t\t} catch (Exception e2) {\r\n\t\t\t\t\t// TODO: handle exception\r\n\t\t\t\t}\r\n\t\t\t\t\r\n\r\n\t\r\n\t\t\t}\r\n\t\t\t\r\n\t\t}).start();\r\n\t\tnew Thread(()-> {\r\n\r\n\r\n\t\t\twhile ( true) {\r\n\t\t\t\tSystem.out.println(\"Me estoy ejecutando threadCM\");\r\n\t\t\t\tQueue<Turno> queueCM = new LinkedList<Turno>();\r\n\t\t\t\tArrayList<Turno> trs = pt.TraerTodoslosTurnos();\r\n\t\t\t\ttry {\r\n\t\t\t\t\tfor (Turno t : trs) {\r\n\t\t\t\t\t\tif ( t.getModulo().equals(\"Caja 2\") && !t.isEstado() ) {\r\n\t\t\t\t\t\t\tqueueCM.add(t);\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t\t\r\n\t\t\t\t} catch (Exception e) {\r\n\t\t\t\t\t// TODO: handle exception\r\n\t\t\t\t}\r\n\r\n\t\t\t\tlbCMCodigoTurno.setText(queueCM.isEmpty() ? \"Sin turnos\":queueCM.element().getCodigo());\r\n\t\t\t\tlbCMEstadoCaja.setText( queueCM.isEmpty() ? \"Esperando...\" : \"Atendiendo...\");\r\n//\t\t\t\tqueueCM.element().setEstado(true);\r\n//\t\t\t\t//System.out.println(queueCM.element().toString());\r\n\t\t\t\ttry {\r\n\t\t\t\t\tThread.sleep(6000);\r\n\t\t\t\t} catch (InterruptedException e) {\r\n\t\t\t\t\tSystem.out.println(\"Me interrumpieron\");\r\n\t\t\t\t\te.printStackTrace();\r\n\t\t\t\t}\r\n\t\t\t\ttry {\r\n\t\t\t\t\tint index = trs.indexOf(queueCM.remove());\r\n\t\t\t\t\ttrs.get( index ).setEstado(true);\r\n\t\t\t\t\tpt.SobreEscribirArchivoProducto(trs);\r\n\t\t\t\t\t\r\n\t\t\t\t} catch (Exception e) {\r\n\t\t\t\t\t// TODO: handle exception\r\n\t\t\t\t}\r\n\t\t\t\t\r\n\t\t\t\t\r\n\t\t\t\r\n\t\t\t}\r\n\t\t\r\n\t\t}).start();;\r\n\t\tnew Thread(()-> {\r\n\r\n\t\t\twhile ( true) {\r\n\t\t\t\tSystem.out.println(\"Me estoy ejecutando threadCP\");\r\n\t\t\t\tQueue<Turno> queueCP = new LinkedList<Turno>();\r\n\t\t\t\tArrayList<Turno> trs = pt.TraerTodoslosTurnos();\r\n\t\t\t\ttry {\r\n\t\t\t\t\t\r\n\t\t\t\t\tfor (Turno t : trs ) {\r\n\t\t\t\t\t\tif ( t.getModulo().equals(\"Caja 3\") && !t.isEstado()) {\r\n\t\t\t\t\t\t\tqueueCP.add(t);\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t\t\r\n\t\t\t\t}catch (Exception e) {\r\n\t\t\t\t\t// TODO: handle exception\r\n\t\t\t\t}\r\n\r\n\t\t\t\tlbCPCodigoTurno.setText( queueCP.isEmpty() ? \"Sin turnos...\" : queueCP.element().getCodigo());\r\n\t\t\t\tlbCPEstadoCaja.setText( queueCP.isEmpty() ? \"Esperando...\" : \"Atendiendo...\");\r\n//\t\t\t\tqueueCP.element().setEstado(true);\r\n\t\t\t\t//System.out.println(queueCP.element().toString());\r\n\t\t\t\ttry {\r\n\t\t\t\t\tThread.sleep(5000);\r\n\t\t\t\t} catch (InterruptedException e) {\r\n\t\t\t\t\tSystem.out.println(\"Mes estoy matando\");\r\n\t\t\t\t\te.printStackTrace();\r\n\t\t\t\t}\r\n\t\t\t\ttry {\r\n\t\t\t\t\tint index = trs.indexOf(queueCP.remove());\r\n\t\t\t\t\ttrs.get( index ).setEstado(true);\r\n\t\t\t\t\tpt.SobreEscribirArchivoProducto(trs);\r\n\t\t\t\t\tpnZonaTurnos.updateUI();\r\n\t\t\t\t\t\r\n\t\t\t\t} catch (Exception e) {\r\n\t\t\t\t\t// TODO: handle exception\r\n\t\t\t\t\t\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\t\r\n\t\t}).start();;\r\n\t\t\r\n\t\tthrEstModulo.start();\r\n\r\n\t}\r\n\r\n\t\r\n\tpublic void createComponents() {\r\n\t\t\r\n\t\tGraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();\r\n\t\ttry {\r\n\t\t\tge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(\"src/main/java/co/edu/uptc/presentacion/digital-7.ttf\")));\r\n\t\t} catch (FontFormatException e) {\r\n\t\t\t// TODO Auto-generated catch block\r\n\t\t\te.printStackTrace();\r\n\t\t} catch (IOException e) {\r\n\t\t\t// TODO Auto-generated catch block\r\n\t\t\te.printStackTrace();\r\n\t\t}\r\n\t\t\r\n\t\tfuenteDigital = new Font(\"Times New Roman\",Font.PLAIN, 30); //--------------------------FUENTE\r\n\t\t\r\n\t\tpnValidacion = new JPanel();\r\n\t\tpnValidacion.setBorder(new TitledBorder(\"Validacion de usuario\"));\r\n\t\tpnValidacion.setSize(new Dimension(50, 50));\r\n\t\tpnValidacion.setLayout( new GridBagLayout());\r\n\t\t\r\n\t\tpnZonaTurnos = new JPanel();\r\n\t\tpnZonaTurnos.setBorder(new TitledBorder(\"Generar Turnos\"));\r\n\t\tpnZonaTurnos.setLayout( new GridBagLayout());\r\n\t\t\r\n\t\tpnEstadisticas = new JPanel();\r\n\t\tpnEstadisticas.setBorder(new TitledBorder(\"Estadisticas\"));\r\n\t\tpnEstadisticas.setLayout( new GridBagLayout());\r\n\t\t\r\n\t\tpnEstModulo = new JPanel();\r\n\t\tpnEstModulo.setBorder(new TitledBorder(\"Estadisticas por Modulo\"));\r\n\t\tpnEstModulo.setLayout( new GridBagLayout());\r\n\t\t\r\n\t\tpnEstServicios = new JPanel();\r\n\t\tpnEstServicios.setBorder(new TitledBorder(\"Estadisticas por Servicio\"));\r\n\t\tpnEstServicios.setLayout( new GridBagLayout());\r\n\r\n\t\tpnVerficaUsuario = new JPanel();\r\n\t\tpnVerficaUsuario.setBorder(new TitledBorder(\"Verificar usuario\"));\r\n\t\tpnVerficaUsuario.setLayout( new GridBagLayout());\r\n\t\t\r\n\t\tpnGenerarTurno = new JPanel();\r\n\t\tpnGenerarTurno.setBorder(new TitledBorder(\"Generar turno\"));\r\n\t\tpnGenerarTurno.setLayout( new GridBagLayout());\r\n\t\t\r\n\t\tpnCajaCitas = new JPanel();\r\n\t\tpnCajaCitas.setBorder(new TitledBorder(\"Caja 1: Ordenar citas\"));\r\n\t\tpnCajaCitas.setLayout( new GridBagLayout());\r\n\t\t\r\n\t\tpnCajaMedicamentos = new JPanel();\r\n\t\tpnCajaMedicamentos.setBorder(new TitledBorder(\"Caja 2: Medicamentos\"));\r\n\t\tpnCajaMedicamentos.setLayout( new GridBagLayout());\r\n\t\t\r\n\t\tpnCajaPagos = new JPanel();\r\n\t\tpnCajaPagos.setBorder(new TitledBorder(\"Caja 3 : Pagos\"));\r\n\t\tpnCajaPagos.setLayout( new GridBagLayout());\r\n\t\t\r\n\t\t\r\n\t\tpnCCTurno = new JPanel();\r\n\t\tpnCCTurno.setBorder(new TitledBorder(\"Turno Actual\"));\r\n\t\tpnCCTurno.setBackground(Color.BLACK);\r\n\t\tpnCCTurno.setLayout( new GridBagLayout());\r\n\t\t\r\n\t\tpnCMTurno = new JPanel();\r\n\t\tpnCMTurno.setBorder(new TitledBorder(\"Turno Actual\"));\r\n\t\tpnCMTurno.setBackground(Color.BLACK);\r\n\t\tpnCMTurno.setLayout( new GridBagLayout());\r\n\t\t\r\n\t\tpnCPTurno = new JPanel();\r\n\t\tpnCPTurno.setBorder(new TitledBorder(\"Turno Actual\"));\r\n\r\n\t\tpnCPTurno.setBackground(Color.BLACK);\r\n\t\tpnCPTurno.setLayout( new GridBagLayout());\r\n\t\t\r\n\t\t\r\n\t\tlbCedula = new JLabel(\"Ingrese su numero de identificacion\");;\r\n\t\ttxtCedula = new JTextField(20);\r\n\t\ttxtCedula.addKeyListener(new KeyAdapter()\r\n\t\t{\r\n\t\t   public void keyTyped(KeyEvent e)\r\n\t\t   {\r\n\t\t      char caracter = e.getKeyChar();\r\n\r\n\t\t      // Verificar si la tecla pulsada no es un digito\r\n\t\t      if(((caracter < '0') ||\r\n\t\t         (caracter > '9')) &&\r\n\t\t         (caracter != '\\b' /*corresponde a BACK_SPACE*/))\r\n\t\t      {\r\n\t\t         e.consume();  // ignorar el evento de teclado\r\n\t\t      }\r\n\t\t   }\r\n\t\t});\r\n\r\n\t\tbtnConsultar = new JButton(\"Ingresar\");\r\n\t\tbtnConsultar.setActionCommand(HandlingEvents.CONSULTAR);\r\n\t\tbtnConsultar.addActionListener(new HandlingEvents(this));\r\n\t\t\r\n\t\tlbCBModulo = new JLabel(\"Seleccione a que modulo desea acceder\");\r\n\t\tcbModulos= new JComboBox<String>();\r\n\t\tlbCBTipoTramite= new JLabel(\"Seleccione el tipo de tramite\");////-----------AQUIIIIIIIIIII\r\n\t\tperTra= new PersistenciaTramite();\r\n\t\tcbTipoTramite = new JComboBox<String>();\r\n\t\tArrayList<Tramite> tramites;\r\n\r\n\t\tif(perTra.TraerTodoslosTramites()!=null) {\r\n\t\t\ttramites=perTra.TraerTodoslosTramites();\r\n\t\t\tfor (int i = 0; i < tramites.size(); i++) {\r\n\t\t\t\tcbTipoTramite.addItem(tramites.get(i).getNombre());\r\n\t\t\t}\r\n\r\n\t\t}\r\n\t\t\r\n\t\tbtnGenerarTurno= new JButton(\"Generar Turno\");\r\n\t\tbtnGenerarTurno.setActionCommand(HandlingEvents.GENERAR_TURNO);\r\n\t\tbtnGenerarTurno.addActionListener(new HandlingEvents(this));\r\n\t\t\r\n\t\t\r\n\t\tlbCCCodigoTurno = new JLabel(\"1XXX\");\r\n\t\tlbCCCodigoTurno.setForeground(new Color(57,255,20));;\r\n\t\tlbCCCodigoTurno.setFont(fuenteDigital);\r\n\t\tlbCCEstadoCaja = new JLabel(\"xXXXXXXX\");\r\n\t\tlbCCEstadoCaja.setForeground(Color.WHITE);;\r\n\t\tlbCCEstadoCaja.setFont(fuenteDigital);\r\n\t\ttCC = new JTable(dtmCC) ;\r\n\t\tdtmCC = new DefaultTableModel();\r\n\t\t\r\n\t\tlbCMCodigoTurno = new JLabel(\"XXXX\");\r\n\t\tlbCMCodigoTurno.setForeground(new Color(57,255,20));;\r\n\t\tlbCMCodigoTurno.setFont(fuenteDigital);\r\n\t\tlbCMEstadoCaja = new JLabel(\"XXXXXXXX\");\r\n\t\tlbCMEstadoCaja.setForeground(Color.WHITE);;\r\n\t\tlbCMEstadoCaja.setFont(fuenteDigital);\r\n\t\ttCM = new JTable(dtmCM);\r\n\t\tdtmCM = new DefaultTableModel();\r\n\t\t\r\n\t\tlbCPCodigoTurno = new JLabel(\"XXXX\");\r\n\t\tlbCPCodigoTurno.setForeground(new Color(57,255,20));;\r\n\t\tlbCPCodigoTurno.setFont(fuenteDigital);\r\n\t\tlbCPEstadoCaja = new JLabel(\"XXXXXXXX\");\r\n\t\tlbCPEstadoCaja.setForeground(Color.WHITE);;\r\n\t\tlbCPEstadoCaja.setFont(fuenteDigital);\r\n\t\ttCP = new JTable(dtmCP);\r\n\t\tdtmCP = new DefaultTableModel();\r\n\t\t\r\n//\t\tDejemoslo pendiente\r\n\t\tDefaultPieDataset datos1= new DefaultPieDataset();\r\n\t\tdatos1.setValue(\"Caja 1\", 5);\r\n\t\tdatos1.setValue(\"Caja 2\", 5);\r\n\t\tdatos1.setValue(\"Caja 3\", 5);\r\n\r\n\t\tfcEstadisticaModulos = ChartFactory.createPieChart(\r\n\t\t\t\t\"Estadisticas por Modulos\",//Nombre del grafico\r\n\t\t\t\tdatos1,// datos\r\n\t\t\t\ttrue, // nombre de las categorias f o v\r\n\t\t\t\ttrue, // herramientas f o t\r\n\t\t\t\ttrue); // generacion de URL false\r\n\t\t\t\r\n\t\tfcEstadisticaServicios = ChartFactory.createPieChart(\r\n\t\t\t\t\"Estadisticas por Modulos\",//Nombre del grafico\r\n\t\t\t\tdatos1,// datos\r\n\t\t\t\ttrue, // nombre de las categorias f o v\r\n\t\t\t\ttrue, // herramientas f o t\r\n\t\t\t\ttrue); // generacion de URL false);\r\n\r\n\r\n\t\tchtpModulos=new ChartPanel(fcEstadisticaModulos);\r\n\t\tchtpModulos.setPreferredSize(new Dimension(200,200));;\r\n\r\n\t\tchtpServicios = new ChartPanel(fcEstadisticaServicios);\r\n\t\tchtpServicios.setPreferredSize(new Dimension(200,200));;\r\n\r\n\r\n\r\n\t}\r\n\t\r\n\t\r\n\tpublic void addComponents() {\r\n\t\tGridBagConstraints g = new GridBagConstraints();\r\n\t\tg.insets = new Insets(10, 10, 10, 10);\r\n\t\tg.gridx=0;\r\n\t\tg.gridy=0;\r\n\t\tg.gridheight=3;\r\n\t\tg.fill = GridBagConstraints.BOTH;\r\n\t\tg.weighty=1.0;\r\n\r\n\t\taddComponentspnValidacion();\r\n\t\tadd(pnValidacion,g);\r\n\r\n\t\tg.gridx=1;\r\n\t\tg.gridy=0;\r\n\t\tg.gridheight=2;\r\n\t\taddComponentspnZonaTurnos();\r\n\r\n\t\tadd(pnZonaTurnos,g);\r\n\t\tg.gridheight=1;\r\n\t\tg.gridy=2;\r\n\t\tg.fill = GridBagConstraints.NONE;\r\n\t\tg.fill=GridBagConstraints.HORIZONTAL;\r\n\t\taddComponentspnEstadisticas();\r\n\t\tadd(pnEstadisticas,g);\r\n\t\t\r\n\t}\r\n\t\r\n\t\r\n\t\r\n\tpublic void addComponentspnValidacion() {\r\n\t\tGridBagConstraints g = new GridBagConstraints();\r\n\t\tg.insets = new Insets(10, 10, 10, 10);\r\n\t\tg.gridx=0;\r\n\t\tg.gridy=0;\r\n\t\taddComponentspnVerificarUsuario();\r\n\t\tpnValidacion.add(pnVerficaUsuario,g);\r\n\t\tg.gridy=1;\r\n\t\taddComponentspnGenerarTurno();\r\n\t\tg.fill = GridBagConstraints.HORIZONTAL;\r\n\t\tpnValidacion.add(pnGenerarTurno,g);\r\n\t\t\r\n\t}\r\n\tpublic void addComponentspnZonaTurnos() {\r\n\t\tGridBagConstraints g = new GridBagConstraints();\r\n\t\tg.gridx=0;\r\n\t\tg.gridy=0;\r\n\t\tg.weightx=1.0;\r\n\t\taddComponentspnCajaCitas();\r\n\t\tg.fill=GridBagConstraints.HORIZONTAL;\r\n\t\tpnZonaTurnos.add(pnCajaCitas,g);\r\n\t\tg.gridx=1;\r\n\t\taddComponentspnCajaMedicamentos();\r\n\t\tpnZonaTurnos.add(pnCajaMedicamentos,g);\r\n\t\tg.gridx=2;\r\n\t\taddComponentspnCajaPagos();\r\n\t\tpnZonaTurnos.add(pnCajaPagos,g);\r\n\t\t\r\n\t}\r\n\tpublic void addComponentspnEstadisticas() {\r\n\t\tGridBagConstraints g = new GridBagConstraints();\r\n\t\tg.gridx=0;\r\n\t\tg.gridy=0;\r\n\t\tg.insets= new Insets(10, 10, 10, 10);\r\n\t\tpnEstadisticas.add(chtpModulos,g);\r\n\t\tg.gridx=1;\r\n\t\tpnEstadisticas.add(chtpServicios,g);\r\n\t\t\r\n\t}\r\n\t\r\n\t\r\n\tpublic void addComponentspnVerificarUsuario() {\r\n\t\tGridBagConstraints g = new GridBagConstraints();\r\n\t\tg.gridx=0;\r\n\t\tg.gridy=0;\r\n\t\tg.insets = new Insets(10, 10, 10, 10);\r\n\t\tpnVerficaUsuario.add(lbCedula,g);\r\n\t\tg.gridy=1;\r\n\t\tpnVerficaUsuario.add(txtCedula,g);\r\n\t\tg.gridy=2;\r\n\t\tpnVerficaUsuario.add(btnConsultar,g);\r\n\r\n\t\t\r\n\t\t\r\n\t}\r\n\tpublic void addComponentspnGenerarTurno() {\r\n\t\tGridBagConstraints g = new GridBagConstraints();\r\n\t\tg.gridx=0;\r\n\t\tg.gridy=0;\r\n\t\tg.insets = new Insets(10, 10, 10, 10);\r\n\r\n\t\tpnGenerarTurno.add(lbCBTipoTramite,g);\r\n\t\tg.gridy=1;\r\n\t\tpnGenerarTurno.add(cbTipoTramite,g);\r\n//\t\tg.gridy=2;\r\n//\t\tpnGenerarTurno.add(lbCBTipoTramite,g);\r\n//\t\tg.gridy=3;\r\n//\t\tpnGenerarTurno.add(cbTipoTramite,g);\r\n\t\tg.gridy=2;\r\n\t\tpnGenerarTurno.add(btnGenerarTurno,g);\r\n\t\t\r\n\t}\r\n\tpublic void addComponentspnCajaCitas() {\r\n\t\tGridBagConstraints g = new GridBagConstraints();\r\n\t\tg.gridx=0;\r\n\t\tg.gridy=0;\r\n\t\tg.weightx=1.0;\r\n\t\tg.fill=GridBagConstraints.HORIZONTAL;\r\n\t\taddComponentspnCCTurno();\r\n\t\tpnCajaCitas.add(pnCCTurno,g);\r\n\t\tg.gridy=1;\r\n\t\tpnCajaCitas.add(tCC);\r\n\t\t\r\n\t}\r\n\tpublic void addComponentspnCajaMedicamentos() {\r\n\t\tGridBagConstraints g = new GridBagConstraints();\r\n\t\tg.gridx=0;\r\n\t\tg.gridy=0;\r\n\t\tg.weightx=1.0;\r\n\t\tg.fill=GridBagConstraints.HORIZONTAL;\r\n\t\taddComponentspnCMTurno();\r\n\t\tpnCajaMedicamentos.add(pnCMTurno,g);\r\n\t\tg.gridy=1;\r\n\t\tpnCajaMedicamentos.add(tCM);\r\n\t\t\r\n\t}\r\n\tpublic void addComponentspnCajaPagos() {\r\n\t\tGridBagConstraints g = new GridBagConstraints();\r\n\t\tg.gridx=0;\r\n\t\tg.gridy=0;\r\n\t\tg.weightx=1.0;\r\n\t\tg.fill=GridBagConstraints.HORIZONTAL;\r\n\t\taddComponentspnCPTurno();\r\n\t\tpnCajaPagos.add(pnCPTurno,g);\r\n\t\tg.gridy=1;\r\n\t\tpnCajaPagos.add(tCP);\r\n\t\t\r\n\t}\r\n\t\r\n\tpublic void addComponentspnCCTurno() {\r\n\t\tGridBagConstraints g = new GridBagConstraints();\r\n\t\tg.gridx=0;\r\n\t\tg.gridy=0;\r\n\t\tpnCCTurno.add(lbCCCodigoTurno,g);\r\n\t\tg.gridy=1;\r\n\t\tpnCCTurno.add(lbCCEstadoCaja,g);\r\n\t\t\r\n\t}\r\n\tpublic void addComponentspnCMTurno() {\r\n\t\tGridBagConstraints g = new GridBagConstraints();\r\n\t\tg.gridx=0;\r\n\t\tg.gridy=0;\r\n\t\tpnCMTurno.add(lbCMCodigoTurno,g);\r\n\t\tg.gridy=1;\r\n\t\tpnCMTurno.add(lbCMEstadoCaja,g);\r\n\t\t\r\n\t}\r\n\tpublic void addComponentspnCPTurno() {\r\n\t\tGridBagConstraints g = new GridBagConstraints();\r\n\t\tg.gridx=0;\r\n\t\tg.gridy=0;\r\n\t\tpnCPTurno.add(lbCPCodigoTurno,g);\r\n\t\tg.gridy=1;\r\n\t\tpnCPTurno.add(lbCPEstadoCaja,g);\r\n\t\t\r\n\t}\r\n\t\r\n\r\n\tpublic JButton getBtnConsultar() {\r\n\t\treturn btnConsultar;\r\n\t}\r\n\r\n\tpublic void setBtnConsultar(JButton btnConsultar) {\r\n\t\tthis.btnConsultar = btnConsultar;\r\n\t}\r\n\r\n\tpublic JButton getBtnGenerarTurno() {\r\n\t\treturn btnGenerarTurno;\r\n\t}\r\n\r\n\tpublic void setBtnGenerarTurno(JButton btnGenerarTurno) {\r\n\t\tthis.btnGenerarTurno = btnGenerarTurno;\r\n\t}\r\n\r\n\tpublic JTextField getTxtCedula() {\r\n\t\treturn txtCedula;\r\n\t}\r\n\r\n\tpublic void setTxtCedula(JTextField txtCedula) {\r\n\t\tthis.txtCedula = txtCedula;\r\n\t}\r\n\r\n\tpublic JComboBox<String> getCbTipoTramite() {\r\n\t\treturn cbTipoTramite;\r\n\t}\r\n\r\n\tpublic void setCbTipoTramite(JComboBox<String> cbTipoTramite) {\r\n\t\tthis.cbTipoTramite = cbTipoTramite;\r\n\t}\r\n\t\r\n\t\r\n//\tpublic void addComponentspnEstModulo() {\r\n//\t\tGridBagConstraints g = new GridBagConstraints();\r\n//\t\tg.gridx=0;\r\n//\t\tg.gridy=0;\r\n//\r\n//\t}\r\n//\tpublic void addComponentspnEstServicios() {\r\n//\t\tGridBagConstraints g = new GridBagConstraints();\r\n//\r\n//\t}\r\n\t\r\n\t\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/co/edu/uptc/presentacion/MainWindow.java b/src/main/java/co/edu/uptc/presentacion/MainWindow.java
+--- a/src/main/java/co/edu/uptc/presentacion/MainWindow.java	(revision 10d505bbad180fd669c4673bf91218d7b08aaab0)
++++ b/src/main/java/co/edu/uptc/presentacion/MainWindow.java	(date 1646054740153)
+@@ -7,13 +7,17 @@
+ import java.awt.GraphicsEnvironment;
+ import java.awt.GridBagConstraints;
+ import java.awt.GridBagLayout;
++import java.awt.Image;
+ import java.awt.Insets;
++import java.awt.Toolkit;
+ import java.awt.event.KeyAdapter;
+ import java.awt.event.KeyEvent;
+ import java.io.File;
+ import java.io.IOException;
+ import java.util.*;
+ 
++import javax.swing.Icon;
++import javax.swing.ImageIcon;
+ import javax.swing.JButton;
+ import javax.swing.JComboBox;
+ import javax.swing.JFrame;
+@@ -31,7 +35,6 @@
+ import org.jfree.chart.JFreeChart;
+ import org.jfree.data.general.DefaultPieDataset;
+ 
+-
+ import co.edu.uptc.logica.modelo.Tramite;
+ 
+ import co.edu.uptc.persistencia.PersistenciaTramite;
+@@ -41,35 +44,64 @@
+ public class MainWindow extends JFrame {
+ 	Font fuenteDigital;
+ 	
++	//Panel Validacion de usuario------------------------------------------------------------------------------------------------------------------------
++	private JPanelRound pnlValidacion;
+ 	
+-	JPanel pnValidacion;
+-	JPanel pnZonaTurnos;
++	private JLabel fondoValidacion;
++	private JLabel lblIngUsuarioValidacion;
++	private JTextField txtIdentificacionValidacion;
++
++	private JLabel lblTramiteValidacion;
++	private JComboBox<String> cmbTramiteValidacion;
++	private JButton btnConsultar;
++	private JButton btnGenerarTurno;
++    private JPanelRound pnlTurnoValidacion;
++    private JLabel lblDarTurnoValidacion;
++    private JLabel lblTurnoValidacion;
++    
++    //---------------------------------------------------------------------------------------------------------------------------------------------------
++	//Panel modulos--------------------------------------------------------------------------------------------------------------------------------------
++    
++    private JPanel pnlModulos;
++    private JLabel fondoModulos;
++    
++    //---------------------------------------------------------------------------------------------------------------------------------------------------
++    //modulo citas---------------------------------------------------------------------------------------------------------------------------------------
++    
++    private JPanelRound pnlCitas;
++    private JLabel lblEstadoCitas;
++    private JLabel lblImagenCitas;
++	private TablePanel tablaTurnosCitas;
++    
++    //---------------------------------------------------------------------------------------------------------------------------------------------------
++	//modulo medicamentos--------------------------------------------------------------------------------------------------------------------------------
++	
++	private JPanelRound pnlCajaMedicamentos;
++	private JLabel lblEstadoMedicamentos;
++	private JLabel lblImagenMedicamentos;
++	private TablePanel tablaTurnosMedicamentos;
++	
++	//---------------------------------------------------------------------------------------------------------------------------------------------------
++	//modulo Administrativo------------------------------------------------------------------------------------------------------------------------------
++	
++	private JPanelRound pnlCajaAdministrativo;
++	private JLabel lblEstadoAdministrativo;
++	private JLabel lblImagenAdministrativo;
++	private TablePanel tablaTurnosAdministrativo;
++	
++	//---------------------------------------------------------------------------------------------------------------------------------------------------
++
++    
++	
+ 	JPanel pnEstModulo;
+ 	JPanel pnEstServicios;
+ 	JPanel pnEstadisticas;
+ 	
+ 	
+-	JPanel pnVerficaUsuario;
+-	JPanel pnGenerarTurno;
+ 	
+-	JPanel pnCajaCitas;
+-	JPanel pnCajaMedicamentos;
+-	JPanel pnCajaPagos;
+-	
+-	JPanel pnCCTurno;
+ 	JPanel pnCMTurno;
+ 	JPanel pnCPTurno;
+ 	
+-	JLabel lbCedula;
+-	JTextField txtCedula;
+-	JButton btnConsultar;
+-	
+-	JLabel lbCBModulo;
+-	JComboBox<String> cbModulos;
+-	JLabel lbCBTipoTramite;
+-	JComboBox<String> cbTipoTramite;
+-	JButton btnGenerarTurno;
+-	
+ 	JLabel lbCCCodigoTurno;
+ 	JLabel lbCCEstadoCaja;
+ 	JTable tCC;
+@@ -103,12 +135,16 @@
+ 
+ 
+ 	public MainWindow() {
++		
+ 		super("Super EPS");
+-		setExtendedState(MAXIMIZED_BOTH);
+-		setDefaultCloseOperation(EXIT_ON_CLOSE);// Decir que pasa cuando se cierre la ventana
+-		setMinimumSize(new Dimension(1000,700));
+-		setLayout(new GridBagLayout());
+-		setResizable(true);
++		setLayout(null);
++		setSize(1350,900);
++		setDefaultCloseOperation(EXIT_ON_CLOSE);
++		setLocationRelativeTo(null);
++		setResizable(false);
++		this.getContentPane().setBackground(Color.WHITE);
++		Image icono = Toolkit.getDefaultToolkit().getImage("Imagenes/Icono.png");
++		this.setIconImage(icono);
+ 		he = new HandlingEvents(this);
+ 	}
+ 	
+@@ -121,26 +157,25 @@
+ 
+ 
+ 			while ( true ) {
+-				System.out.println("Me estoy ejecutando threadCC");
+ 				Queue<Turno> queueCC = new LinkedList<Turno>();
+ 				ArrayList<Turno> trs = pt.TraerTodoslosTurnos();
++				ArrayList<Turno> aux = new ArrayList<>();
+ 				try {
++					tablaTurnosCitas.cleanTable();
+ 					for (Turno t : trs) {
+ 						if ( t.getModulo().equals("Caja 1") && !t.isEstado() ) {
+ 							queueCC.add(t);
++							aux.add(t);
+ 						}
+ 					}
+-					
++					llenarTablaCitas(aux);
++
+ 				} catch (Exception e) {
+-					// TODO: handle exception
+-				}
+-
+-				lbCCCodigoTurno.setText(queueCC.isEmpty() ? "Sin turnos":queueCC.element().getCodigo());
+-				lbCCEstadoCaja.setText( queueCC.isEmpty() ? "Esperando..." : "Atendiendo...");
++				};
++				lblEstadoCitas.setText(queueCC.isEmpty() ? "Sin turnos...": "Atendiendo a: "+queueCC.element().getCodigo());
+ 				try {
+ 					Thread.sleep(7000);
+ 				} catch (InterruptedException e) {
+-					System.out.println("Me estoy ahogando");
+ 					e.printStackTrace();
+ 				}
+ 				try {
+@@ -149,7 +184,6 @@
+ 					pt.SobreEscribirArchivoProducto(trs);
+ 					
+ 				} catch (Exception e2) {
+-					// TODO: handle exception
+ 				}
+ 				
+ 
+@@ -161,28 +195,26 @@
+ 
+ 
+ 			while ( true) {
+-				System.out.println("Me estoy ejecutando threadCM");
+ 				Queue<Turno> queueCM = new LinkedList<Turno>();
+ 				ArrayList<Turno> trs = pt.TraerTodoslosTurnos();
++				ArrayList<Turno> aux = new ArrayList<>();
+ 				try {
++					tablaTurnosMedicamentos.cleanTable();
+ 					for (Turno t : trs) {
+ 						if ( t.getModulo().equals("Caja 2") && !t.isEstado() ) {
+ 							queueCM.add(t);
++							aux.add(t);
+ 						}
+ 					}
++					llenarTablaMed(aux);
+ 					
+ 				} catch (Exception e) {
+-					// TODO: handle exception
+ 				}
+ 
+-				lbCMCodigoTurno.setText(queueCM.isEmpty() ? "Sin turnos":queueCM.element().getCodigo());
+-				lbCMEstadoCaja.setText( queueCM.isEmpty() ? "Esperando..." : "Atendiendo...");
+-//				queueCM.element().setEstado(true);
+-//				//System.out.println(queueCM.element().toString());
++				lblEstadoMedicamentos.setText(queueCM.isEmpty() ? "Sin turnos...":"Atendiendo a: "+queueCM.element().getCodigo());
+ 				try {
+ 					Thread.sleep(6000);
+ 				} catch (InterruptedException e) {
+-					System.out.println("Me interrumpieron");
+ 					e.printStackTrace();
+ 				}
+ 				try {
+@@ -191,7 +223,6 @@
+ 					pt.SobreEscribirArchivoProducto(trs);
+ 					
+ 				} catch (Exception e) {
+-					// TODO: handle exception
+ 				}
+ 				
+ 				
+@@ -202,39 +233,34 @@
+ 		new Thread(()-> {
+ 
+ 			while ( true) {
+-				System.out.println("Me estoy ejecutando threadCP");
+ 				Queue<Turno> queueCP = new LinkedList<Turno>();
+ 				ArrayList<Turno> trs = pt.TraerTodoslosTurnos();
++				ArrayList<Turno> aux = new ArrayList<>();
+ 				try {
+-					
++					tablaTurnosAdministrativo.cleanTable();
+ 					for (Turno t : trs ) {
+ 						if ( t.getModulo().equals("Caja 3") && !t.isEstado()) {
+ 							queueCP.add(t);
++							aux.add(t);
+ 						}
+ 					}
+-					
++					llenarTablaPagos(aux);
+ 				}catch (Exception e) {
+-					// TODO: handle exception
+ 				}
+ 
+-				lbCPCodigoTurno.setText( queueCP.isEmpty() ? "Sin turnos..." : queueCP.element().getCodigo());
+-				lbCPEstadoCaja.setText( queueCP.isEmpty() ? "Esperando..." : "Atendiendo...");
+-//				queueCP.element().setEstado(true);
+-				//System.out.println(queueCP.element().toString());
++				lblEstadoAdministrativo.setText( queueCP.isEmpty() ? "Sin turnos..." : "Atendiendo a: "+queueCP.element().getCodigo());
+ 				try {
+ 					Thread.sleep(5000);
+ 				} catch (InterruptedException e) {
+-					System.out.println("Mes estoy matando");
+ 					e.printStackTrace();
+ 				}
+ 				try {
+ 					int index = trs.indexOf(queueCP.remove());
+ 					trs.get( index ).setEstado(true);
+ 					pt.SobreEscribirArchivoProducto(trs);
+-					pnZonaTurnos.updateUI();
++					pnlModulos.updateUI();
+ 					
+ 				} catch (Exception e) {
+-					// TODO: handle exception
+ 					
+ 				}
+ 			}
+@@ -246,33 +272,224 @@
+ 	}
+ 
+ 	
++	public void llenarTablaCitas(ArrayList<Turno> aux) {
++		aux.forEach( t -> System.out.println(t));
++		String[][] tabla=new String[aux.size()][2];
++		for(int i=0; i< aux.size(); i++) {
++			tabla[i][0] = ""+aux.get(i).getAfiliado().getCedula();
++			tabla[i][1] = aux.get(i).getCodigo();
++		}
++		tablaTurnosCitas.showTable(tabla);
++		
++	}
++
++	public void llenarTablaMed(ArrayList<Turno> aux) {
++		aux.forEach( t -> System.out.println(t));
++		String[][] tabla=new String[aux.size()][2];
++		for(int i=0; i< aux.size(); i++) {
++			tabla[i][0] = ""+aux.get(i).getAfiliado().getCedula();
++			tabla[i][1] = aux.get(i).getCodigo();
++		}
++		tablaTurnosMedicamentos.showTable(tabla);
++
++	}
++
++	public void llenarTablaPagos(ArrayList<Turno> aux) {
++		aux.forEach( t -> System.out.println(t));
++		String[][] tabla=new String[aux.size()][2];
++		for(int i=0; i< aux.size(); i++) {
++			tabla[i][0] = ""+aux.get(i).getAfiliado().getCedula();
++			tabla[i][1] = aux.get(i).getCodigo();
++		}
++		tablaTurnosAdministrativo.showTable(tabla);
++
++	}
++
+ 	public void createComponents() {
+ 		
+ 		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+ 		try {
+ 			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("src/main/java/co/edu/uptc/presentacion/digital-7.ttf")));
+ 		} catch (FontFormatException e) {
+-			// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		} catch (IOException e) {
+-			// TODO Auto-generated catch block
+ 			e.printStackTrace();
+ 		}
+ 		
+ 		fuenteDigital = new Font("Times New Roman",Font.PLAIN, 30); //--------------------------FUENTE
+ 		
+-		pnValidacion = new JPanel();
+-		pnValidacion.setBorder(new TitledBorder("Validacion de usuario"));
+-		pnValidacion.setSize(new Dimension(50, 50));
+-		pnValidacion.setLayout( new GridBagLayout());
++		//Inicio componentes panel validacion-----------------------------------------------------------------------------------------------------------
++		
++		pnlValidacion = new JPanelRound();
++		pnlValidacion.setLayout(null);
++		pnlValidacion.setBounds(9, 11, 292, 636);
++		
++		fondoValidacion = new JLabel();
++		fondoValidacion.setBounds(0, 0, 292, 636);
++		ImageIcon imgIcon = new ImageIcon("Imagenes/Registro.png");
++	    Image imgEscalada = imgIcon.getImage().getScaledInstance(fondoValidacion.getWidth(),fondoValidacion.getHeight(), Image.SCALE_SMOOTH);
++	    Icon iconoEscalado = new ImageIcon(imgEscalada);
++        fondoValidacion.setIcon(iconoEscalado);
++        
++        lblIngUsuarioValidacion=new JLabel();
++		lblIngUsuarioValidacion.setText("<html><center><p>Ingrese su numero de <br> identificacion </br></p></center></html>");
++		lblIngUsuarioValidacion.setBounds(85, 81, 170, 37);
++		
++		txtIdentificacionValidacion = new JTextField(20);
++		txtIdentificacionValidacion.setBounds(61, 129, 170, 27);
++		txtIdentificacionValidacion.addKeyListener(new KeyAdapter()
++		{
++		   public void keyTyped(KeyEvent e)
++		   {
++		      char caracter = e.getKeyChar();
++
++		      // Verificar si la tecla pulsada no es un digito
++		      if(((caracter < '0') ||
++		         (caracter > '9')) &&
++		         (caracter != '\b' /*corresponde a BACK_SPACE*/))
++		      {
++		         e.consume();  // ignorar el evento de teclado
++		      }
++		   }
++		});
++		
++		lblTramiteValidacion = new JLabel("Seleccione el tipo de tramite");
++        lblTramiteValidacion.setBounds(62, 172, 173, 37);
++        
++        perTra= new PersistenciaTramite();
++        cmbTramiteValidacion = new JComboBox<String>();
++        cmbTramiteValidacion.setBounds(65, 216, 168, 27);
++		ArrayList<Tramite> tramites;
++
++		if(perTra.TraerTodoslosTramites()!=null) {
++			tramites=perTra.TraerTodoslosTramites();
++			for (int i = 0; i < tramites.size(); i++) {
++				cmbTramiteValidacion.addItem(tramites.get(i).getNombre());
++			}
++
++		}
++		
++		btnConsultar = new JButton("Ingresar");
++		btnConsultar.setActionCommand(HandlingEvents.CONSULTAR);
++		btnConsultar.addActionListener(new HandlingEvents(this));
++		btnConsultar.setBounds(85, 277, 127, 27);
++		btnConsultar.setBorder(new RoundedBorder(10));
++		
++		btnGenerarTurno= new JButton("Generar Turno");
++		btnGenerarTurno.setActionCommand(HandlingEvents.GENERAR_TURNO);
++		btnGenerarTurno.addActionListener(new HandlingEvents(this));
++		btnGenerarTurno.setBounds(85, 277, 127, 27);
++		btnGenerarTurno.setBorder(new RoundedBorder(10));
++		btnGenerarTurno.setVisible(false);
++		
++		pnlTurnoValidacion = new JPanelRound();
++        pnlTurnoValidacion.setLayout(null);
++        pnlTurnoValidacion.setBackground(Color.BLACK);
++        pnlTurnoValidacion.setBounds(49, 432, 211, 100);
++        pnlTurnoValidacion.setBorder(new RoundedBorder(40));
++
++        
++        lblTurnoValidacion = new JLabel("Su turno es: ");
++        lblTurnoValidacion.setBounds(25,20,211,21);
++        lblTurnoValidacion.setForeground(Color.WHITE);
++        lblTurnoValidacion.setFont(fuenteDigital);
++        
++
++        lblDarTurnoValidacion = new JLabel();
++        lblDarTurnoValidacion.setBounds(40,45,211,40);
++        lblDarTurnoValidacion.setForeground(Color.GREEN);
++        lblDarTurnoValidacion.setFont(fuenteDigital);
++		
++		
++        //---------------------------------------------------------------------------------------------------------------------------------------------
++        //Inicio componentes panel modulos-------------------------------------------------------------------------------------------------------------
++        
++        pnlModulos=new JPanel();
++        pnlModulos.setLayout(null);
++        pnlModulos.setBounds(311, 12, 1011, 538);
++        
++        fondoModulos=new JLabel();
++		fondoModulos.setBounds(0, 0, 1011, 538);
++		ImageIcon imgIconModulos = new ImageIcon("Imagenes/fondo.jpeg");
++	    Image imgEscaladaModulos = imgIconModulos.getImage().getScaledInstance(fondoModulos.getWidth(), fondoModulos.getHeight(), Image.SCALE_SMOOTH);
++	    Icon iconoEscaladoModulos = new ImageIcon(imgEscaladaModulos);
++	    fondoModulos.setIcon(iconoEscaladoModulos);
++        
++        //---------------------------------------------------------------------------------------------------------------------------------------------
++	    //modulo citas---------------------------------------------------------------------------------------------------------------------------------
++	    
++	    pnlCitas = new JPanelRound();
++		pnlCitas.setLayout(null);
++		pnlCitas.setBounds(18, 25, 301, 490);
++		
++		lblEstadoCitas=new JLabel();
++		lblEstadoCitas.setForeground(Color.WHITE);
++		lblEstadoCitas.setBounds(23, 8, 253, 21);
++		
++		lblImagenCitas=new JLabel();
++		lblImagenCitas.setBounds(20, 29, 258, 240);
++		
++		ImageIcon imgIconCitas = new ImageIcon("Imagenes/4.png");
++	    Image imgEscaladaCitas = imgIconCitas.getImage().getScaledInstance(lblImagenCitas.getWidth(), lblImagenCitas.getHeight(), Image.SCALE_SMOOTH);
++	    Icon iconoEscaladoCitas = new ImageIcon(imgEscaladaCitas);
++	    lblImagenCitas.setIcon(iconoEscaladoCitas);
+ 		
+-		pnZonaTurnos = new JPanel();
+-		pnZonaTurnos.setBorder(new TitledBorder("Generar Turnos"));
+-		pnZonaTurnos.setLayout( new GridBagLayout());
++		String[] headCitas= {"Identificacion","Turno"};
++		tablaTurnosCitas = new TablePanel(headCitas, 253, 189);
++		tablaTurnosCitas.setBounds(23,285,253,189);
++	    
++	    //----------------------------------------------------------------------------------------------------------------------------------------------
++		//modulo medicamentos---------------------------------------------------------------------------------------------------------------------------
++		
++		pnlCajaMedicamentos = new JPanelRound();
++		pnlCajaMedicamentos.setLayout(null);
++		pnlCajaMedicamentos.setBounds(356, 28, 301, 490);
++		
++		lblEstadoMedicamentos=new JLabel();
++		lblEstadoMedicamentos.setForeground(Color.WHITE);
++		lblEstadoMedicamentos.setBounds(23, 8, 253, 21);
++		
++		lblImagenMedicamentos=new JLabel();
++		lblImagenMedicamentos.setBounds(20, 29, 258, 240);
++		
++		ImageIcon imgIconMedicamentos = new ImageIcon("Imagenes/6.png");
++	    Image imgEscaladaMedicamentos = imgIconMedicamentos.getImage().getScaledInstance(lblImagenMedicamentos.getWidth(), lblImagenMedicamentos.getHeight(), Image.SCALE_SMOOTH);
++	    Icon iconoEscaladoMedicamentos = new ImageIcon(imgEscaladaMedicamentos);
++	    lblImagenMedicamentos.setIcon(iconoEscaladoMedicamentos);
++		
++		String[] head= {"Identificacion","Turno"};
++		tablaTurnosMedicamentos = new TablePanel(head, 253, 189);
++		tablaTurnosMedicamentos.setBounds(23,285,253,189);
++		
++		//----------------------------------------------------------------------------------------------------------------------------------------------
++		//modulo Administrativo---------------------------------------------------------------------------------------------------------------------------
++		
++		pnlCajaAdministrativo = new JPanelRound();
++		pnlCajaAdministrativo.setLayout(null);
++		pnlCajaAdministrativo.setBounds(686, 28, 301, 490);
++		
++		lblEstadoAdministrativo=new JLabel();
++		lblEstadoAdministrativo.setForeground(Color.WHITE);
++		lblEstadoAdministrativo.setBounds(23, 8, 253, 21);
++		
++		lblImagenAdministrativo=new JLabel();
++		lblImagenAdministrativo.setBounds(20, 29, 258, 240);
++		ImageIcon imgIconAdministrativo = new ImageIcon("Imagenes/5.png");
++	    Image imgEscaladaAdministrativo = imgIconAdministrativo.getImage().getScaledInstance(lblImagenAdministrativo.getWidth(), lblImagenAdministrativo.getHeight(), Image.SCALE_SMOOTH);
++	    Icon iconoEscaladoAdministrativo = new ImageIcon(imgEscaladaAdministrativo);
++	    lblImagenAdministrativo.setIcon(iconoEscaladoAdministrativo);
++		
++		String[] headAdministrativo= {"Identificacion","Turno"};
++		tablaTurnosAdministrativo = new TablePanel(headAdministrativo, 253, 189);
++		tablaTurnosAdministrativo.setBounds(23,285,253,189);
++		
++
++		//---------------------------------------------------------------------------------------------------------------------------------------------
+ 		
+ 		pnEstadisticas = new JPanel();
+ 		pnEstadisticas.setBorder(new TitledBorder("Estadisticas"));
+ 		pnEstadisticas.setLayout( new GridBagLayout());
++		pnEstadisticas.setBounds(311, 562, 1011, 292);
+ 		
+ 		pnEstModulo = new JPanel();
+ 		pnEstModulo.setBorder(new TitledBorder("Estadisticas por Modulo"));
+@@ -282,32 +499,6 @@
+ 		pnEstServicios.setBorder(new TitledBorder("Estadisticas por Servicio"));
+ 		pnEstServicios.setLayout( new GridBagLayout());
+ 
+-		pnVerficaUsuario = new JPanel();
+-		pnVerficaUsuario.setBorder(new TitledBorder("Verificar usuario"));
+-		pnVerficaUsuario.setLayout( new GridBagLayout());
+-		
+-		pnGenerarTurno = new JPanel();
+-		pnGenerarTurno.setBorder(new TitledBorder("Generar turno"));
+-		pnGenerarTurno.setLayout( new GridBagLayout());
+-		
+-		pnCajaCitas = new JPanel();
+-		pnCajaCitas.setBorder(new TitledBorder("Caja 1: Ordenar citas"));
+-		pnCajaCitas.setLayout( new GridBagLayout());
+-		
+-		pnCajaMedicamentos = new JPanel();
+-		pnCajaMedicamentos.setBorder(new TitledBorder("Caja 2: Medicamentos"));
+-		pnCajaMedicamentos.setLayout( new GridBagLayout());
+-		
+-		pnCajaPagos = new JPanel();
+-		pnCajaPagos.setBorder(new TitledBorder("Caja 3 : Pagos"));
+-		pnCajaPagos.setLayout( new GridBagLayout());
+-		
+-		
+-		pnCCTurno = new JPanel();
+-		pnCCTurno.setBorder(new TitledBorder("Turno Actual"));
+-		pnCCTurno.setBackground(Color.BLACK);
+-		pnCCTurno.setLayout( new GridBagLayout());
+-		
+ 		pnCMTurno = new JPanel();
+ 		pnCMTurno.setBorder(new TitledBorder("Turno Actual"));
+ 		pnCMTurno.setBackground(Color.BLACK);
+@@ -320,57 +511,6 @@
+ 		pnCPTurno.setLayout( new GridBagLayout());
+ 		
+ 		
+-		lbCedula = new JLabel("Ingrese su numero de identificacion");;
+-		txtCedula = new JTextField(20);
+-		txtCedula.addKeyListener(new KeyAdapter()
+-		{
+-		   public void keyTyped(KeyEvent e)
+-		   {
+-		      char caracter = e.getKeyChar();
+-
+-		      // Verificar si la tecla pulsada no es un digito
+-		      if(((caracter < '0') ||
+-		         (caracter > '9')) &&
+-		         (caracter != '\b' /*corresponde a BACK_SPACE*/))
+-		      {
+-		         e.consume();  // ignorar el evento de teclado
+-		      }
+-		   }
+-		});
+-
+-		btnConsultar = new JButton("Ingresar");
+-		btnConsultar.setActionCommand(HandlingEvents.CONSULTAR);
+-		btnConsultar.addActionListener(new HandlingEvents(this));
+-		
+-		lbCBModulo = new JLabel("Seleccione a que modulo desea acceder");
+-		cbModulos= new JComboBox<String>();
+-		lbCBTipoTramite= new JLabel("Seleccione el tipo de tramite");////-----------AQUIIIIIIIIIII
+-		perTra= new PersistenciaTramite();
+-		cbTipoTramite = new JComboBox<String>();
+-		ArrayList<Tramite> tramites;
+-
+-		if(perTra.TraerTodoslosTramites()!=null) {
+-			tramites=perTra.TraerTodoslosTramites();
+-			for (int i = 0; i < tramites.size(); i++) {
+-				cbTipoTramite.addItem(tramites.get(i).getNombre());
+-			}
+-
+-		}
+-		
+-		btnGenerarTurno= new JButton("Generar Turno");
+-		btnGenerarTurno.setActionCommand(HandlingEvents.GENERAR_TURNO);
+-		btnGenerarTurno.addActionListener(new HandlingEvents(this));
+-		
+-		
+-		lbCCCodigoTurno = new JLabel("1XXX");
+-		lbCCCodigoTurno.setForeground(new Color(57,255,20));;
+-		lbCCCodigoTurno.setFont(fuenteDigital);
+-		lbCCEstadoCaja = new JLabel("xXXXXXXX");
+-		lbCCEstadoCaja.setForeground(Color.WHITE);;
+-		lbCCEstadoCaja.setFont(fuenteDigital);
+-		tCC = new JTable(dtmCC) ;
+-		dtmCC = new DefaultTableModel();
+-		
+ 		lbCMCodigoTurno = new JLabel("XXXX");
+ 		lbCMCodigoTurno.setForeground(new Color(57,255,20));;
+ 		lbCMCodigoTurno.setFont(fuenteDigital);
+@@ -411,10 +551,10 @@
+ 
+ 
+ 		chtpModulos=new ChartPanel(fcEstadisticaModulos);
+-		chtpModulos.setPreferredSize(new Dimension(200,200));;
++		chtpModulos.setPreferredSize(new Dimension(200,200));
+ 
+ 		chtpServicios = new ChartPanel(fcEstadisticaServicios);
+-		chtpServicios.setPreferredSize(new Dimension(200,200));;
++		chtpServicios.setPreferredSize(new Dimension(200,200));
+ 
+ 
+ 
+@@ -431,14 +571,14 @@
+ 		g.weighty=1.0;
+ 
+ 		addComponentspnValidacion();
+-		add(pnValidacion,g);
++		add(pnlValidacion,g);
+ 
+ 		g.gridx=1;
+ 		g.gridy=0;
+ 		g.gridheight=2;
+ 		addComponentspnZonaTurnos();
+ 
+-		add(pnZonaTurnos,g);
++		add(pnlModulos,g);
+ 		g.gridheight=1;
+ 		g.gridy=2;
+ 		g.fill = GridBagConstraints.NONE;
+@@ -448,37 +588,83 @@
+ 		
+ 	}
+ 	
+-	
++	//A�adir componentes al panel de usuarios------------------------------------------------------------------------------------------------------
+ 	
+ 	public void addComponentspnValidacion() {
+-		GridBagConstraints g = new GridBagConstraints();
+-		g.insets = new Insets(10, 10, 10, 10);
+-		g.gridx=0;
+-		g.gridy=0;
++		
+ 		addComponentspnVerificarUsuario();
+-		pnValidacion.add(pnVerficaUsuario,g);
+-		g.gridy=1;
++		pnlValidacion.add(lblIngUsuarioValidacion);
++		pnlValidacion.add(txtIdentificacionValidacion);
++		pnlValidacion.add(lblTramiteValidacion);
++		pnlValidacion.add(cmbTramiteValidacion);
++		pnlValidacion.add(btnConsultar);
++		pnlValidacion.add(btnGenerarTurno);
++		add(pnlTurnoValidacion);
++        pnlTurnoValidacion.add(lblTurnoValidacion);
++        pnlTurnoValidacion.add(lblDarTurnoValidacion);
+ 		addComponentspnGenerarTurno();
+-		g.fill = GridBagConstraints.HORIZONTAL;
+-		pnValidacion.add(pnGenerarTurno,g);
++		
++		pnlValidacion.add(fondoValidacion);
+ 		
+ 	}
++	
++	//---------------------------------------------------------------------------------------------------------------------------------------------
++	
++	//A�adir componentes al panel de modulos-------------------------------------------------------------------------------------------------------
++	
+ 	public void addComponentspnZonaTurnos() {
+-		GridBagConstraints g = new GridBagConstraints();
+-		g.gridx=0;
+-		g.gridy=0;
+-		g.weightx=1.0;
+ 		addComponentspnCajaCitas();
+-		g.fill=GridBagConstraints.HORIZONTAL;
+-		pnZonaTurnos.add(pnCajaCitas,g);
+-		g.gridx=1;
+ 		addComponentspnCajaMedicamentos();
+-		pnZonaTurnos.add(pnCajaMedicamentos,g);
+-		g.gridx=2;
+ 		addComponentspnCajaPagos();
+-		pnZonaTurnos.add(pnCajaPagos,g);
++		pnlModulos.add(pnlCitas);
++		pnlModulos.add(pnlCajaMedicamentos);
++		pnlModulos.add(pnlCajaAdministrativo);
++		
++		pnlModulos.add(fondoModulos);
++	}
++	
++	//modulo citas----------------------------------------------------------------------------------------------------------------------------------
++    
++	public void addComponentspnCajaCitas() {
++		pnlCitas.add(lblEstadoCitas);
++		pnlCitas.add(lblImagenCitas);
++		pnlCitas.add(tablaTurnosCitas);
++//			pnlCajaCitas.add(pnCCTurno,g);
++//			pnlCajaCitas.add(tCC);
++		
++	}
++		
++	//---------------------------------------------------------------------------------------------------------------------------------------------
++		
++	//modulo medicamentos--------------------------------------------------------------------------------------------------------------------------
++		
++	public void addComponentspnCajaMedicamentos() {
++		pnlCajaMedicamentos.add(lblEstadoMedicamentos);
++		pnlCajaMedicamentos.add(lblImagenMedicamentos);
++		pnlCajaMedicamentos.add(tablaTurnosMedicamentos);
++		addComponentspnCMTurno();
++//		pnlCajaMedicamentos.add(pnCMTurno,g);
++//		pnlCajaMedicamentos.add(tCM);
++		
++	}	
++		
++	//---------------------------------------------------------------------------------------------------------------------------------------------
++	//modulo administrativo--------------------------------------------------------------------------------------------------------------------------------
++	
++	public void addComponentspnCajaPagos() {
++		pnlCajaAdministrativo.add(lblEstadoAdministrativo);
++		pnlCajaAdministrativo.add(lblImagenAdministrativo);
++		pnlCajaAdministrativo.add(tablaTurnosAdministrativo);
++		addComponentspnCPTurno();
++//		pnlCajaPagos.add(pnCPTurno,g);
++//		pnlCajaPagos.add(tCP);
+ 		
+ 	}
++
++	//---------------------------------------------------------------------------------------------------------------------------------------------
++
++	//---------------------------------------------------------------------------------------------------------------------------------------------
++	
+ 	public void addComponentspnEstadisticas() {
+ 		GridBagConstraints g = new GridBagConstraints();
+ 		g.gridx=0;
+@@ -496,11 +682,11 @@
+ 		g.gridx=0;
+ 		g.gridy=0;
+ 		g.insets = new Insets(10, 10, 10, 10);
+-		pnVerficaUsuario.add(lbCedula,g);
++//		pnVerficaUsuario.add(lbCedula,g);
+ 		g.gridy=1;
+-		pnVerficaUsuario.add(txtCedula,g);
++//		pnVerficaUsuario.add(txtCedula,g);
+ 		g.gridy=2;
+-		pnVerficaUsuario.add(btnConsultar,g);
++//		pnVerficaUsuario.add(btnConsultar,g);
+ 
+ 		
+ 		
+@@ -511,63 +697,15 @@
+ 		g.gridy=0;
+ 		g.insets = new Insets(10, 10, 10, 10);
+ 
+-		pnGenerarTurno.add(lbCBTipoTramite,g);
+ 		g.gridy=1;
+-		pnGenerarTurno.add(cbTipoTramite,g);
+ //		g.gridy=2;
+ //		pnGenerarTurno.add(lbCBTipoTramite,g);
+ //		g.gridy=3;
+ //		pnGenerarTurno.add(cbTipoTramite,g);
+ 		g.gridy=2;
+-		pnGenerarTurno.add(btnGenerarTurno,g);
+-		
+-	}
+-	public void addComponentspnCajaCitas() {
+-		GridBagConstraints g = new GridBagConstraints();
+-		g.gridx=0;
+-		g.gridy=0;
+-		g.weightx=1.0;
+-		g.fill=GridBagConstraints.HORIZONTAL;
+-		addComponentspnCCTurno();
+-		pnCajaCitas.add(pnCCTurno,g);
+-		g.gridy=1;
+-		pnCajaCitas.add(tCC);
+-		
+-	}
+-	public void addComponentspnCajaMedicamentos() {
+-		GridBagConstraints g = new GridBagConstraints();
+-		g.gridx=0;
+-		g.gridy=0;
+-		g.weightx=1.0;
+-		g.fill=GridBagConstraints.HORIZONTAL;
+-		addComponentspnCMTurno();
+-		pnCajaMedicamentos.add(pnCMTurno,g);
+-		g.gridy=1;
+-		pnCajaMedicamentos.add(tCM);
+-		
+-	}
+-	public void addComponentspnCajaPagos() {
+-		GridBagConstraints g = new GridBagConstraints();
+-		g.gridx=0;
+-		g.gridy=0;
+-		g.weightx=1.0;
+-		g.fill=GridBagConstraints.HORIZONTAL;
+-		addComponentspnCPTurno();
+-		pnCajaPagos.add(pnCPTurno,g);
+-		g.gridy=1;
+-		pnCajaPagos.add(tCP);
+ 		
+ 	}
+ 	
+-	public void addComponentspnCCTurno() {
+-		GridBagConstraints g = new GridBagConstraints();
+-		g.gridx=0;
+-		g.gridy=0;
+-		pnCCTurno.add(lbCCCodigoTurno,g);
+-		g.gridy=1;
+-		pnCCTurno.add(lbCCEstadoCaja,g);
+-		
+-	}
+ 	public void addComponentspnCMTurno() {
+ 		GridBagConstraints g = new GridBagConstraints();
+ 		g.gridx=0;
+@@ -587,7 +725,16 @@
+ 		
+ 	}
+ 	
++	
+ 
++	public JLabel getLblDarTurnoValidacion() {
++		return lblDarTurnoValidacion;
++	}
++
++	public void setLblDarTurnoValidacion(JLabel lblDarTurnoValidacion) {
++		this.lblDarTurnoValidacion = lblDarTurnoValidacion;
++	}
++
+ 	public JButton getBtnConsultar() {
+ 		return btnConsultar;
+ 	}
+@@ -605,19 +752,19 @@
+ 	}
+ 
+ 	public JTextField getTxtCedula() {
+-		return txtCedula;
++		return txtIdentificacionValidacion;
+ 	}
+ 
+ 	public void setTxtCedula(JTextField txtCedula) {
+-		this.txtCedula = txtCedula;
++		this.txtIdentificacionValidacion = txtCedula;
+ 	}
+ 
+ 	public JComboBox<String> getCbTipoTramite() {
+-		return cbTipoTramite;
++		return cmbTramiteValidacion;
+ 	}
+ 
+ 	public void setCbTipoTramite(JComboBox<String> cbTipoTramite) {
+-		this.cbTipoTramite = cbTipoTramite;
++		this.cmbTramiteValidacion = cbTipoTramite;
+ 	}
+ 	
+ 	
+@@ -631,7 +778,5 @@
+ //		GridBagConstraints g = new GridBagConstraints();
+ //
+ //	}
+-	
+-	
+ 
+ }
+Index: src/main/java/co/edu/uptc/threads/ModuloEstadisticas.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package co.edu.uptc.threads;\r\n\r\nimport java.awt.Dimension;\r\nimport java.util.ArrayList;\r\nimport javax.swing.JPanel;\r\nimport org.jfree.chart.ChartFactory;\r\nimport org.jfree.chart.ChartPanel;\r\nimport org.jfree.chart.JFreeChart;\r\nimport org.jfree.data.general.DefaultPieDataset;\r\n\r\nimport co.edu.uptc.logica.modelo.Tramite;\r\nimport co.edu.uptc.logica.modelo.Turno;\r\nimport co.edu.uptc.persistencia.PersistenciaTramite;\r\nimport co.edu.uptc.persistencia.PersistenciaTurnos;\r\n\r\npublic class ModuloEstadisticas implements Runnable {\r\n\tprivate ArrayList<Turno> turnos;\r\n\tChartPanel crtpM;\r\n\tChartPanel crtpS;\r\n\tJPanel panelEstadisticas;\r\n\tDefaultPieDataset datos;\r\n\tJFreeChart grafico_circular;\r\n\tChartPanel modulos,servicios;\r\n\tprivate PersistenciaTurnos pt;\r\n\tprivate PersistenciaTramite ptramite;\r\n\r\n\tpublic ModuloEstadisticas(JPanel panelEstadisticas,ChartPanel modulos,ChartPanel servicios) {\r\n\t\t// TODO Auto-generated constructor stub\r\n\t\tthis.modulos=modulos;\r\n\t\tthis.servicios=servicios;\r\n\t\tthis.pt= new PersistenciaTurnos();\r\n\t\tthis.ptramite = new PersistenciaTramite();\r\n\t\tthis.panelEstadisticas= panelEstadisticas;\r\n\r\n\t}\r\n\t@Override\r\n\tpublic void run() {\r\n\t\t// TODO Auto-generated method stub\r\n\r\n\t\tint i = 0;\r\n\t\twhile(true) {\r\n\t\t\tthis.pt= new PersistenciaTurnos();\r\n\t\t\tif(i!=0) {\r\n\t\t\t\tpanelEstadisticas.remove(crtpM);\r\n\t\t\t\tpanelEstadisticas.remove(crtpS);\r\n\t\t\t}\r\n\t\t\tremoveComponents();\r\n\t\t\tcrtpM = new ChartPanel(grafico_circularModulos());\r\n\t\t\tcrtpM.setPreferredSize(new Dimension(400, 300));\r\n\t\t\tcrtpS= new ChartPanel(grafico_Circular_Servicios());\r\n\t\t\tcrtpS.setMouseWheelEnabled(true);\r\n\t\t\tcrtpS.setPreferredSize(new Dimension(400, 300));\r\n\t\t\tañadirComponents();\r\n\t\t\tpanelEstadisticas.updateUI();\r\n\t\t\ttry {\r\n\t\t\t\tThread.sleep(3000);\r\n\t\t\t}catch (Exception e) {\r\n\t\t\t\t// TODO: handle exception\r\n\t\t\t}\r\n\t\t\ti++;\r\n\t\t\t\r\n\t\t}\r\n\t\t\r\n//\t\taddComponentspnEstadisticas();\r\n//\t\tSystem.out.println(i++);\r\n\r\n\t\t\r\n\r\n\t}\r\n\tpublic void removeComponents () {\r\n\t\tpanelEstadisticas.remove(modulos);\r\n\t\tpanelEstadisticas.remove(servicios);\r\n\t\t\r\n\t}\r\n\tpublic void añadirComponents () {\r\n\r\n\t\tpanelEstadisticas.add(crtpM);\r\n\t\tpanelEstadisticas.add(crtpS);\t\r\n\t}\r\n\t\r\n//\tpublic void addComponentspnEstadisticas() {\r\n//\t\t\r\n//\t\tg.gridx=0;\r\n//\t\tg.gridy=0;\r\n//\t\tg.insets= new Insets(10, 10, 10, 10);\r\n//\t\tpanelEstadisticas.add(crtpM,g);\r\n//\t\tg.gridx=1;\r\n//\t\tpanelEstadisticas.add(new Label(\"Esto es inservible\"),g);\r\n//\t\t\r\n//\t}\r\n\t\r\n\tpublic ArrayList<Turno> filtradoModulos (String filtrado){\r\n\t\tArrayList<Turno> lFilter1= new ArrayList<>();\r\n\t\ttry {\r\n\t\t\tturnos.stream().filter(element -> element.getModulo().equals(filtrado) && element.isEstado()==true ).map(element->lFilter1.add(element)).forEach(element->System.out.println(\"1\"));\r\n\t\t\treturn lFilter1;\r\n\t\t}catch (NullPointerException e) {\r\n\t\t\t// TODO: handle exception\r\n\t\t\treturn null;\r\n\t\t}\r\n\t\t\r\n\t\t\r\n\t}\r\n\tpublic JFreeChart grafico_circularModulos() {\r\n\t\tthis.turnos = pt.TraerTodoslosTurnos();\r\n\t\t\r\n\t\tint m1=0,m2=0,m3=0;\r\n\t\ttry {\r\n\t\t\tm1=filtradoModulos(\"Caja 1\").size();\r\n\t\t} catch (Exception e) {\r\n\t\t\tSystem.out.println(\"Problemas Caja 1\");\r\n\t\t\tm1=0;\r\n\t\t\t\r\n\t\t}\r\n\t\ttry {\r\n\t\t\tm2=filtradoModulos(\"Caja 2\").size();\r\n\t\t} catch (Exception e) {\r\n\t\t\tSystem.out.println(\"Problemas Caja 2\");\r\n\t\t\tm2=0;\r\n\t\t}\r\n\t\ttry {\r\n\t\t\tm3=filtradoModulos(\"Caja 3\").size();\r\n\t\t} catch (Exception e) {\r\n\t\t\tSystem.out.println(\"Problemas Caja 3\");\r\n\t\t\tm3=0;\r\n\t\t}\r\n\r\n\t\tdatos = new DefaultPieDataset();\r\n\t\tdatos.setValue(\"Caja 1\", m1);\r\n\t\tdatos.setValue(\"Caja 2\", m2);\r\n\t\tdatos.setValue(\"Caja 3\", m3);\r\n\t\tgrafico_circular = ChartFactory.createPieChart(\r\n\t\t\t\t\"Estadistica por Modulo\",\r\n\t\t\t\tdatos,\r\n\t\t\t\ttrue,\r\n\t\t\t\ttrue,\r\n\t\t\t\tfalse);\r\n\t\treturn grafico_circular;\r\n\t\t\r\n\t}\r\n\t\r\n\tpublic ArrayList<Turno> filtrarServicios(String servicio){\r\n\t\tArrayList<Turno> lFilter1= new ArrayList<>();\r\n\t\ttry {\r\n\t\t\tturnos.stream().filter(element -> element.getServicio().equals(servicio) && element.isEstado()==true ).map(element->lFilter1.add(element)).forEach(element->System.out.println(\"\"));\r\n\t\t\treturn lFilter1;\r\n\t\t}catch (NullPointerException e) {\r\n\t\t\t// TODO: handle exception\r\n\t\t\treturn null;\r\n\t\t}\r\n\t\t\r\n\t}\r\n\t\r\n\t\r\n\t\r\n\tpublic JFreeChart grafico_Circular_Servicios() {\r\n\t\t\r\n\t\tArrayList<Tramite> tramites = ptramite.TraerTodoslosTramites();\r\n\t\tthis.turnos=pt.TraerTodoslosTurnos();\r\n\t\tDefaultPieDataset datos= new DefaultPieDataset();\r\n\t\tfor(Tramite tramite : tramites) {\r\n\t\t\ttry {\r\n\t\t\t\tdatos.setValue(tramite.getNombre(), filtrarServicios(tramite.getNombre())!=null?filtrarServicios(tramite.getNombre()).size():0);\r\n\t\t\t} catch (Exception e) {\r\n\t\t\t\t// TODO: handle exception\r\n\t\t\t}\r\n\t\t}\r\n\t\t\r\n\t\tJFreeChart grafico_circular = ChartFactory.createPieChart(\r\n\t\t\t\t\"Estadistica por Servicio\",\r\n\t\t\t\tdatos,\r\n\t\t\t\ttrue,\r\n\t\t\t\ttrue,\r\n\t\t\t\ttrue);\r\n\t\treturn grafico_circular;\r\n\t\t\r\n\r\n\t}\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/co/edu/uptc/threads/ModuloEstadisticas.java b/src/main/java/co/edu/uptc/threads/ModuloEstadisticas.java
+--- a/src/main/java/co/edu/uptc/threads/ModuloEstadisticas.java	(revision 10d505bbad180fd669c4673bf91218d7b08aaab0)
++++ b/src/main/java/co/edu/uptc/threads/ModuloEstadisticas.java	(date 1646050140174)
+@@ -50,7 +50,7 @@
+ 			crtpS= new ChartPanel(grafico_Circular_Servicios());
+ 			crtpS.setMouseWheelEnabled(true);
+ 			crtpS.setPreferredSize(new Dimension(400, 300));
+-			añadirComponents();
++			anadirComponentes();
+ 			panelEstadisticas.updateUI();
+ 			try {
+ 				Thread.sleep(3000);
+@@ -72,7 +72,7 @@
+ 		panelEstadisticas.remove(servicios);
+ 		
+ 	}
+-	public void añadirComponents () {
++	public void anadirComponentes () {
+ 
+ 		panelEstadisticas.add(crtpM);
+ 		panelEstadisticas.add(crtpS);	
+Index: src/main/java/co/edu/uptc/presentacion/TablePanel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/co/edu/uptc/presentacion/TablePanel.java b/src/main/java/co/edu/uptc/presentacion/TablePanel.java
+new file mode 100644
+--- /dev/null	(date 1646032289457)
++++ b/src/main/java/co/edu/uptc/presentacion/TablePanel.java	(date 1646032289457)
+@@ -0,0 +1,145 @@
++package co.edu.uptc.presentacion;
++
++import javax.swing.JPanel;
++import javax.swing.JScrollPane;
++import javax.swing.JTable;
++import javax.swing.table.DefaultTableModel;
++
++/**
++ * The Class TablePanel.
++ */
++public class TablePanel extends JPanel{
++	
++	/** The sp table. */
++	private JScrollPane spTable;
++	
++	/** The dtm table mode. */
++	private DefaultTableModel dtmTableMode;
++	
++	/** The t table. */
++	private JTable tTable;
++	
++	/** The head. */
++	private String[] head;
++	
++	/** The width. */
++	private int width;
++	
++	/** The height. */
++	private int height;
++	
++	/**
++	 * Instantiates a new table panel.
++	 *
++	 * @param head   the head
++	 * @param width  the width
++	 * @param height the height
++	 */
++	public TablePanel(String[] head, int width, int height) {
++		setLayout(null);
++		this.head = head;
++		this.width = width;
++		this.height = height;
++		initialize();
++		insert();
++	}
++
++	/**
++	 * Initialize.
++	 */
++	private void initialize() {
++		dtmTableMode = new DefaultTableModel();
++		dtmTableMode.setColumnIdentifiers(head);
++		tTable = new JTable(dtmTableMode);
++		spTable = new JScrollPane(tTable);
++		spTable.setBounds(0, 0, width, height);
++	}
++
++	/**
++	 * Insert.
++	 */
++	private void insert() {
++		add(spTable);
++	}
++	
++	/**
++	 * Assign controller.
++	 *
++	 * @param controller the controller
++	 */
++//	public void assignController(Control controller) {
++//		tTable.addMouseListener(controller);
++//	}
++	
++	/**
++	 * Clean table.
++	 */
++	public void cleanTable(){
++		int rows = dtmTableMode.getRowCount();
++		for (int i = 0; i < rows; i++) {
++			dtmTableMode.removeRow(0);
++		}
++	}
++
++	/**
++	 * Show table.
++	 *
++	 * @param data the data
++	 */
++	public void showTable(String[][] data) {
++		for (int i = 0; i < data.length; i++) {
++			if (data[i][0]!=null) {
++				dtmTableMode.addRow(data[i]);
++			}
++		}
++	}
++	
++	/**
++	 * Gets the exactly value at.
++	 *
++	 * @return the exactly value at
++	 */
++	public String getExactlyValueAt() {
++		try {
++			if (!((String) tTable.getValueAt(getSelectedRow(), getSelectedColumn())).equals("")) {
++				return (String) tTable.getValueAt(getSelectedRow(), getSelectedColumn());
++			}else;
++			return "-1";
++		} catch (Exception e) {
++			return "-1";
++		}
++	}
++	
++	/**
++	 * Gets the value at.
++	 *
++	 * @return the value at
++	 */
++	public String getValueAt() {
++		try {
++			return (String) tTable.getValueAt(getSelectedRow(), 0);
++		} catch (Exception e) {
++			return "-1";
++		}
++	}
++	
++	
++	/**
++	 * Gets the selected row.
++	 *
++	 * @return the selected row
++	 */
++	public int getSelectedRow() {
++		return tTable.getSelectedRow();
++	}
++	
++	/**
++	 * Gets the selected column.
++	 *
++	 * @return the selected column
++	 */
++	public int getSelectedColumn() {
++		return tTable.getSelectedColumn();
++	}
++	
++}
+Index: src/main/java/co/edu/uptc/logica/modelo/Afiliado.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package co.edu.uptc.logica.modelo;\r\n\r\npublic class Afiliado {\r\n\t\r\n\tprivate String nombre ;\r\n\tprivate long cedula;\r\n\tpublic Afiliado() {\r\n\t\t\r\n\t}\r\n\tpublic Afiliado(String nombre, long cedula) {\r\n\t\tsuper();\r\n\t\tthis.nombre = nombre;\r\n\t\tthis.cedula = cedula;\r\n\t}\r\n\tpublic String getNombre() {\r\n\t\treturn nombre;\r\n\t}\r\n\tpublic void setNombre(String nombre) {\r\n\t\tthis.nombre = nombre;\r\n\t}\r\n\tpublic long getCedula() {\r\n\t\treturn cedula;\r\n\t}\r\n\tpublic void setCedula(long cedula) {\r\n\t\tthis.cedula = cedula;\r\n\t}\r\n\t@Override\r\n\tpublic String toString() {\r\n\t\treturn \"Afiliado [nombre=\" + nombre + \", cedula=\" + cedula + \"]\";\r\n\t}\r\n\t\r\n\t\r\n\t\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/co/edu/uptc/logica/modelo/Afiliado.java b/src/main/java/co/edu/uptc/logica/modelo/Afiliado.java
+--- a/src/main/java/co/edu/uptc/logica/modelo/Afiliado.java	(revision 10d505bbad180fd669c4673bf91218d7b08aaab0)
++++ b/src/main/java/co/edu/uptc/logica/modelo/Afiliado.java	(date 1646031487989)
+@@ -28,8 +28,4 @@
+ 	public String toString() {
+ 		return "Afiliado [nombre=" + nombre + ", cedula=" + cedula + "]";
+ 	}
+-	
+-	
+-	
+-
+ }
+Index: src/main/java/co/edu/uptc/presentacion/JPanelRound.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/co/edu/uptc/presentacion/JPanelRound.java b/src/main/java/co/edu/uptc/presentacion/JPanelRound.java
+new file mode 100644
+--- /dev/null	(date 1646032259494)
++++ b/src/main/java/co/edu/uptc/presentacion/JPanelRound.java	(date 1646032259494)
+@@ -0,0 +1,89 @@
++package co.edu.uptc.presentacion;
++
++import java.awt.BasicStroke;
++import java.awt.Color;
++import java.awt.GradientPaint;
++import java.awt.Graphics;
++import java.awt.Graphics2D;
++import java.awt.Paint;
++import java.awt.RenderingHints; import java.awt.geom.RoundRectangle2D;
++import javax.swing.JPanel;
++
++public class JPanelRound extends JPanel{
++
++    private Color colorPrimario = new Color(0x666f7f);
++    private Color colorSecundario = new Color(0x262d3d);
++    private Color colorContorno = new Color(0x262d3d);
++    private int arcw=20;
++    private int arch=20;
++   
++    public JPanelRound() {
++        super();
++        setOpaque(false);
++    }
++   
++   
++     @Override
++    protected void paintComponent(Graphics g) {
++        Graphics2D g2 = (Graphics2D) g;
++        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
++                RenderingHints.VALUE_ANTIALIAS_ON);
++       
++       
++         Paint oldPaint = g2.getPaint();
++          RoundRectangle2D.Float r2d = new RoundRectangle2D.Float(
++                    0,0,getWidth(),getHeight()-1,getArcw(),getArch());
++            g2.clip(r2d);
++            g2.setPaint(new GradientPaint(0.0f, 0.0f,getColorPrimario().darker(),
++                    0.0f, getHeight(),getColorSecundario().darker()));
++            g2.fillRect(0,0,getWidth(),getHeight());
++           
++            g2.setStroke(new BasicStroke(4f));
++            g2.setPaint(new GradientPaint(0.0f, 0.0f,getColorContorno(),
++                    0.0f, getHeight(), getColorContorno()));
++            g2.drawRoundRect(0, 0, getWidth()-2 , getHeight() -2, 18, 18);
++       
++        g2.setPaint(oldPaint);
++        super.paintComponent(g);
++    }
++
++    public Color getColorPrimario() {
++        return colorPrimario;
++    }
++
++    public void setColorPrimario(Color colorPrimario) {
++        this.colorPrimario = colorPrimario;
++    }
++
++    public Color getColorSecundario() {
++        return colorSecundario;
++    }
++
++    public void setColorSecundario(Color colorSecundario) {
++        this.colorSecundario = colorSecundario;
++    }
++
++    public Color getColorContorno() {
++        return colorContorno;
++    }
++
++    public void setColorContorno(Color colorContorno) {
++        this.colorContorno = colorContorno;
++    }
++
++    public int getArcw() {
++        return arcw;
++    }
++
++    public void setArcw(int arcw) {
++        this.arcw = arcw;
++    }
++
++    public int getArch() {
++        return arch;
++    }
++
++    public void setArch(int arch) {
++        this.arch = arch;
++    }
++}
+\ No newline at end of file
+Index: src/main/java/co/edu/uptc/presentacion/RoundedBorder.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/co/edu/uptc/presentacion/RoundedBorder.java b/src/main/java/co/edu/uptc/presentacion/RoundedBorder.java
+new file mode 100644
+--- /dev/null	(date 1646032239077)
++++ b/src/main/java/co/edu/uptc/presentacion/RoundedBorder.java	(date 1646032239077)
+@@ -0,0 +1,28 @@
++package co.edu.uptc.presentacion;
++
++import java.awt.Component;
++import java.awt.Graphics;
++import java.awt.Insets;
++
++import javax.swing.border.Border;
++
++class RoundedBorder implements Border {
++
++    private int radius;
++
++    RoundedBorder(int radius) {
++        this.radius = radius;
++    }
++
++    public Insets getBorderInsets(Component c) {
++        return new Insets(this.radius+1, this.radius+1, this.radius+2, this.radius);
++    }
++
++    public boolean isBorderOpaque() {
++        return true;
++    }
++
++    public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
++        g.drawRoundRect(x, y, width-1, height-1, radius, radius);
++    }
++}
+\ No newline at end of file
+Index: src/main/java/co/edu/uptc/logica/modelo/Turno.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package co.edu.uptc.logica.modelo;\r\n\r\npublic class Turno {\r\n\t\r\n\tprivate Afiliado afiliado;\r\n\tprivate String modulo;\r\n\tprivate String servicio;\r\n\tprivate String codigo;\r\n\tprivate String fecha;\r\n\tprivate int nivel;\r\n\tprivate boolean estado;\r\n\t\r\n\tpublic Turno() {\r\n\t\t\r\n\t}\r\n\tpublic Turno(Afiliado afiliado, String modulo, String servicio, String codigo, String fecha, int nivel,boolean estado) {\r\n\t\tsuper();\r\n\t\tthis.afiliado = afiliado;\r\n\t\tthis.modulo = modulo;\r\n\t\tthis.servicio = servicio;\r\n\t\tthis.codigo = codigo;\r\n\t\tthis.fecha = fecha;\r\n\t\tthis.nivel = nivel;\r\n\t\tthis.estado = estado;\r\n\t}\r\n\tpublic Afiliado getAfiliado() {\r\n\t\treturn afiliado;\r\n\t}\r\n\tpublic void setAfiliado(Afiliado afiliado) {\r\n\t\tthis.afiliado = afiliado;\r\n\t}\r\n\tpublic String getModulo() {\r\n\t\treturn modulo;\r\n\t}\r\n\tpublic void setModulo(String modulo) {\r\n\t\tthis.modulo = modulo;\r\n\t}\r\n\tpublic String getServicio() {\r\n\t\treturn servicio;\r\n\t}\r\n\tpublic void setServicio(String servicio) {\r\n\t\tthis.servicio = servicio;\r\n\t}\r\n\tpublic String getCodigo() {\r\n\t\treturn codigo;\r\n\t}\r\n\tpublic void setCodigo(String codigo) {\r\n\t\tthis.codigo = codigo;\r\n\t}\r\n\tpublic String getFecha() {\r\n\t\treturn fecha;\r\n\t}\r\n\tpublic void setFecha(String fecha) {\r\n\t\tthis.fecha = fecha;\r\n\t}\r\n\t\r\n\tpublic int getNivel() {\r\n\t\treturn nivel;\r\n\t}\r\n\tpublic void setNivel(int nivel) {\r\n\t\tthis.nivel = nivel;\r\n\t}\r\n\t\r\n\tpublic boolean isEstado() {\r\n\t\treturn estado;\r\n\t}\r\n\tpublic void setEstado(boolean estado) {\r\n\t\tthis.estado = estado;\r\n\t}\r\n\t@Override\r\n\tpublic String toString() {\r\n\t\treturn \"Turno [afiliado=\" + afiliado + \", modulo=\" + modulo + \", servicio=\" + servicio + \", codigo=\" + codigo\r\n\t\t\t\t+ \", fecha=\" + fecha + \", nivel=\" + nivel + \", estado=\" + estado + \"]\";\r\n\t}\r\n\t\r\n\t\r\n\t\r\n\t\r\n\t\r\n\t\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/co/edu/uptc/logica/modelo/Turno.java b/src/main/java/co/edu/uptc/logica/modelo/Turno.java
+--- a/src/main/java/co/edu/uptc/logica/modelo/Turno.java	(revision 10d505bbad180fd669c4673bf91218d7b08aaab0)
++++ b/src/main/java/co/edu/uptc/logica/modelo/Turno.java	(date 1646031487983)
+@@ -72,11 +72,5 @@
+ 		return "Turno [afiliado=" + afiliado + ", modulo=" + modulo + ", servicio=" + servicio + ", codigo=" + codigo
+ 				+ ", fecha=" + fecha + ", nivel=" + nivel + ", estado=" + estado + "]";
+ 	}
+-	
+-	
+-	
+-	
+-	
+-	
+ 
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+new file mode 100644
+--- /dev/null	(date 1646055065581)
++++ b/.idea/workspace.xml	(date 1646055065581)
+@@ -0,0 +1,132 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
++  <component name="ChangeListManager">
++    <list default="true" id="efe3b3ad-49fb-4a4c-acfa-efc83cc2ab3c" name="Changes" comment="tablasHechas">
++      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Imagenes/4.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Imagenes/5.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Imagenes/6.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Imagenes/Icono.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Imagenes/Registro.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Imagenes/fondo.jpeg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/presentacion/JPanelRound.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/presentacion/RoundedBorder.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/presentacion/TablePanel.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/presentacion/JPanelRound.class" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/presentacion/RoundedBorder.class" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/presentacion/TablePanel.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/archivosJson/turnos.json" beforeDir="false" afterPath="$PROJECT_DIR$/archivosJson/turnos.json" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uptc/logica/modelo/Afiliado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/logica/modelo/Afiliado.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uptc/logica/modelo/Turno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/logica/modelo/Turno.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uptc/presentacion/HandlingEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/presentacion/HandlingEvents.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uptc/presentacion/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/presentacion/MainWindow.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uptc/threads/ModuloEstadisticas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/threads/ModuloEstadisticas.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/afiliados.json" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uptc/logica/control/TurnsManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/logica/control/TurnsManagement.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uptc/logica/modelo/Afiliado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/logica/modelo/Afiliado.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uptc/logica/modelo/Modulo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/logica/modelo/Modulo.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uptc/logica/modelo/Tramite.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/logica/modelo/Tramite.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uptc/logica/modelo/Turno.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/logica/modelo/Turno.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uptc/persistencia/PersistenciaAfiliados.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/persistencia/PersistenciaAfiliados.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uptc/persistencia/PersistenciaModulos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/persistencia/PersistenciaModulos.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uptc/persistencia/PersistenciaTramite.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/persistencia/PersistenciaTramite.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uptc/persistencia/PersistenciaTurnos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/persistencia/PersistenciaTurnos.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uptc/presentacion/HandlingEvents.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/presentacion/HandlingEvents.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uptc/presentacion/MainWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/presentacion/MainWindow$1.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uptc/presentacion/MainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/presentacion/MainWindow.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uptc/presentacion/digital-7.ttf" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uptc/threads/ModuloCitas.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/threads/ModuloCitas.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uptc/threads/ModuloEstadisticas.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/threads/ModuloEstadisticas.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uptc/threads/ModuloMedicamentos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/threads/ModuloMedicamentos.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uptc/threads/ModuloPagos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/threads/ModuloPagos.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/modulos.json" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/test/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/App.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/tramites.json" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/turnos.json" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/test-classes/HospitalHilos/HH/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HospitalHilos/HH/AppTest.class" afterDir="false" />
++    </list>
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="ProjectId" id="25joZs2XmLIQyf80DhSlWNzgCqg" />
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent">
++    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
++    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
++  </component>
++  <component name="RunManager">
++    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="test.App" />
++      <module name="HH" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="test.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration default="true" type="JetRunConfigurationType">
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
++      <option name="filePath" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Application.App" />
++      </list>
++    </recent_temporary>
++  </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="efe3b3ad-49fb-4a4c-acfa-efc83cc2ab3c" name="Changes" comment="" />
++      <created>1646049916704</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1646049916704</updated>
++    </task>
++    <servers />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="tablasHechas" />
++    <option name="LAST_COMMIT_MESSAGE" value="tablasHechas" />
++  </component>
++</project>
+\ No newline at end of file
+Index: archivosJson/turnos.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/archivosJson/turnos.json b/archivosJson/turnos.json
+--- a/archivosJson/turnos.json	(revision 10d505bbad180fd669c4673bf91218d7b08aaab0)
++++ b/archivosJson/turnos.json	(date 1646054798324)
+@@ -1,0 +1,1 @@
++[{"fecha":"Mon Feb 28 01:27:08 COT 2022","estado":true,"codigo":"C1-S14-0-0","servicio":"Cita Medicina General","afiliado":{"cedula":0,"nombre":"Afiliado 01"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 01:27:23 COT 2022","estado":true,"codigo":"C1-S11-0-1","servicio":"Cita Odontologia","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 01:27:54 COT 2022","estado":true,"codigo":"C1-S14-0-2","servicio":"Cita Medicina General","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 03:08:57 COT 2022","estado":true,"codigo":"C1-S11-0-3","servicio":"Cita Odontologia","afiliado":{"cedula":0,"nombre":"Afiliado 01"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 03:09:27 COT 2022","estado":true,"codigo":"C1-S11-0-4","servicio":"Cita Odontologia","afiliado":{"cedula":0,"nombre":"Afiliado 01"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 03:10:39 COT 2022","estado":true,"codigo":"C1-S11-0-5","servicio":"Cita Odontologia","afiliado":{"cedula":0,"nombre":"Afiliado 01"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 03:24:36 COT 2022","estado":true,"codigo":"C1-S11-0-6","servicio":"Cita Odontologia","afiliado":{"cedula":0,"nombre":"Afiliado 01"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 03:26:51 COT 2022","estado":true,"codigo":"C1-S11-0-7","servicio":"Cita Odontologia","afiliado":{"cedula":0,"nombre":"Afiliado 01"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 03:27:18 COT 2022","estado":true,"codigo":"C1-S11-0-8","servicio":"Cita Odontologia","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 03:27:35 COT 2022","estado":true,"codigo":"C1-S11-0-9","servicio":"Cita Odontologia","afiliado":{"cedula":0,"nombre":"Afiliado 01"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 03:28:37 COT 2022","estado":true,"codigo":"C1-S11-0-10","servicio":"Cita Odontologia","afiliado":{"cedula":0,"nombre":"Afiliado 01"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 03:29:01 COT 2022","estado":true,"codigo":"C1-S11-0-11","servicio":"Cita Odontologia","afiliado":{"cedula":0,"nombre":"Afiliado 01"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 04:59:44 COT 2022","estado":true,"codigo":"C1-S11-0-12","servicio":"Cita Odontologia","afiliado":{"cedula":0,"nombre":"Afiliado 01"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 05:05:29 COT 2022","estado":true,"codigo":"C2-S21-0-13","servicio":"Reclamar medicamentos","afiliado":{"cedula":0,"nombre":"Afiliado 01"},"nivel":0,"modulo":"Caja 2"},{"fecha":"Mon Feb 28 05:09:19 COT 2022","estado":true,"codigo":"C3-S31-0-14","servicio":"Pagar cita","afiliado":{"cedula":0,"nombre":"Afiliado 01"},"nivel":0,"modulo":"Caja 3"},{"fecha":"Mon Feb 28 05:28:43 COT 2022","estado":true,"codigo":"C1-S11-0-15","servicio":"Cita Odontologia","afiliado":{"cedula":0,"nombre":"Afiliado 01"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 05:30:11 COT 2022","estado":true,"codigo":"C1-S11-0-16","servicio":"Cita Odontologia","afiliado":{"cedula":0,"nombre":"Afiliado 01"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 05:30:34 COT 2022","estado":true,"codigo":"C1-S12-0-17","servicio":"Cita Pediatria","afiliado":{"cedula":0,"nombre":"Afiliado 01"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 05:33:42 COT 2022","estado":true,"codigo":"C1-S11-0-18","servicio":"Cita Odontologia","afiliado":{"cedula":0,"nombre":"Afiliado 01"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 05:38:20 COT 2022","estado":true,"codigo":"C1-S11-0-19","servicio":"Cita Odontologia","afiliado":{"cedula":0,"nombre":"Afiliado 01"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 05:46:01 COT 2022","estado":true,"codigo":"C1-S11-0-20","servicio":"Cita Odontologia","afiliado":{"cedula":0,"nombre":"Afiliado 01"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 05:46:17 COT 2022","estado":true,"codigo":"C1-S11-0-21","servicio":"Cita Odontologia","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 05:51:26 COT 2022","estado":true,"codigo":"C1-S11-0-22","servicio":"Cita Odontologia","afiliado":{"cedula":0,"nombre":"Afiliado 01"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 07:12:30 COT 2022","estado":true,"codigo":"C1-S11-0-23","servicio":"Cita Odontologia","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 07:17:16 COT 2022","estado":true,"codigo":"C1-S11-0-24","servicio":"Cita Odontologia","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 07:19:39 COT 2022","estado":true,"codigo":"C1-S11-0-25","servicio":"Cita Odontologia","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 07:19:56 COT 2022","estado":true,"codigo":"C1-S13-0-26","servicio":"Cita Oftalmologia","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 07:22:53 COT 2022","estado":true,"codigo":"C1-S11-0-27","servicio":"Cita Odontologia","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 07:24:05 COT 2022","estado":true,"codigo":"C1-S11-0-28","servicio":"Cita Odontologia","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 07:24:22 COT 2022","estado":true,"codigo":"C1-S13-0-29","servicio":"Cita Oftalmologia","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 07:26:53 COT 2022","estado":true,"codigo":"C1-S11-0-30","servicio":"Cita Odontologia","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 07:33:29 COT 2022","estado":true,"codigo":"C1-S12-0-31","servicio":"Cita Pediatria","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 07:41:38 COT 2022","estado":true,"codigo":"C1-S13-0-32","servicio":"Cita Oftalmologia","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 08:08:05 COT 2022","estado":true,"codigo":"C1-S14-0-33","servicio":"Cita Medicina General","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 08:08:17 COT 2022","estado":true,"codigo":"C1-S12-0-34","servicio":"Cita Pediatria","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 08:09:03 COT 2022","estado":true,"codigo":"C1-S13-0-35","servicio":"Cita Oftalmologia","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 08:13:43 COT 2022","estado":true,"codigo":"C1-S11-0-36","servicio":"Cita Odontologia","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 08:17:22 COT 2022","estado":true,"codigo":"C1-S11-0-37","servicio":"Cita Odontologia","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 08:17:30 COT 2022","estado":true,"codigo":"C1-S11-0-38","servicio":"Cita Odontologia","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 08:19:02 COT 2022","estado":true,"codigo":"C1-S13-0-39","servicio":"Cita Oftalmologia","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 08:20:17 COT 2022","estado":true,"codigo":"C1-S11-0-40","servicio":"Cita Odontologia","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 08:25:59 COT 2022","estado":true,"codigo":"C1-S17-0-41","servicio":"Solicitar Afiliacion","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 1"},{"fecha":"Mon Feb 28 08:26:14 COT 2022","estado":true,"codigo":"C2-S21-0-42","servicio":"Reclamar medicamentos","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 2"},{"fecha":"Mon Feb 28 08:26:30 COT 2022","estado":true,"codigo":"C3-S31-0-43","servicio":"Pagar afiliacion","afiliado":{"cedula":100,"nombre":"Afiliado 11"},"nivel":0,"modulo":"Caja 3"}]
+\ No newline at end of file
+diff --git a/target/classes/turnos.json b/target/classes/turnos.json
+deleted file mode 100644
