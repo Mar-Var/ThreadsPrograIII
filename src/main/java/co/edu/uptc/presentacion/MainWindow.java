@@ -281,10 +281,7 @@ public class MainWindow extends JFrame {
 		pnEstServicios = new JPanel();
 		pnEstServicios.setBorder(new TitledBorder("Estadisticas por Servicio"));
 		pnEstServicios.setLayout( new GridBagLayout());
-		
 
-		
-		
 		pnVerficaUsuario = new JPanel();
 		pnVerficaUsuario.setBorder(new TitledBorder("Verificar usuario"));
 		pnVerficaUsuario.setLayout( new GridBagLayout());
