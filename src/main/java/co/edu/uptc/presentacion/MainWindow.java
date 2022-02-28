@@ -159,28 +159,20 @@ public class MainWindow extends JFrame {
 		thrEstModulo = new Thread(rneModuloPagos);
 		new Thread(()-> {
 
-
 			while ( true ) {
 				Queue<Turno> queueCC = new LinkedList<Turno>();
 				ArrayList<Turno> trs = pt.TraerTodoslosTurnos();
-				ArrayList<Turno> aux = new ArrayList<>();
+				ArrayList<Turno> auxCitas = new ArrayList<>();
 				try {
 					tablaTurnosCitas.cleanTable();
 					for (Turno t : trs) {
 						if ( t.getModulo().equals("Caja 1") && !t.isEstado()) {
 							queueCC.add(t);
-							aux.add(t);
+							auxCitas.add(t);
 						}
 					}
-					
-					llenarTabla(aux);
-					String[][] tabla = new String[queueCC.size()][1];
-					for(int i=0; i< queueCC.size(); i++) {
-						tabla[i][0] = ""+ queueCC.element().getAfiliado().getCedula();
-						tabla[i][1] = queueCC.element().getCodigo();
-					}
-					tablaTurnosCitas.showTable(tabla);
-					System.out.println(tabla.toString());
+					llenarTablaCitas(auxCitas);
+
 				} catch (Exception e) {
 				};
 				
@@ -205,7 +197,9 @@ public class MainWindow extends JFrame {
 			while ( true) {
 				Queue<Turno> queueCM = new LinkedList<Turno>();
 				ArrayList<Turno> trs = pt.TraerTodoslosTurnos();
+				ArrayList<Turno> auxMedi = new ArrayList<>();
 				try {
+					tablaTurnosMedicamentos.cleanTable();
 					for (Turno t : trs) {
 						if ( t.getModulo().equals("Caja 2") && !t.isEstado() ) {
 							queueCM.add(t);
@@ -214,7 +208,7 @@ public class MainWindow extends JFrame {
 					
 				} catch (Exception e) {
 				}
-
+				llenarTablaMedicamentos(auxMedi);
 				lblEstadoMedicamentos.setText(queueCM.isEmpty() ? "Sin turnos...":"Atendiendo a: "+queueCM.element().getCodigo());
 				try {
 					Thread.sleep(6000);
@@ -236,17 +230,17 @@ public class MainWindow extends JFrame {
 			while ( true) {
 				Queue<Turno> queueCP = new LinkedList<Turno>();
 				ArrayList<Turno> trs = pt.TraerTodoslosTurnos();
+				ArrayList<Turno> auxAdmin = new ArrayList<>();
 				try {
-					
+					tablaTurnosAdministrativo.cleanTable();
 					for (Turno t : trs ) {
 						if ( t.getModulo().equals("Caja 3") && !t.isEstado()) {
 							queueCP.add(t);
 						}
 					}
-					
 				}catch (Exception e) {
 				}
-
+				llenarTablaAdmin(auxAdmin);
 				lblEstadoAdministrativo.setText( queueCP.isEmpty() ? "Sin turnos..." : "Atendiendo a: "+queueCP.element().getCodigo());
 				try {
 					Thread.sleep(5000);
@@ -267,20 +261,34 @@ public class MainWindow extends JFrame {
 		}).start();;
 		
 		thrEstModulo.start();
-
 	}
 
-	
-	private void llenarTabla(ArrayList<Turno> aux) {
-		String[][] tabla=new String[aux.size()][1];
-		for(int i=0; i< aux.size(); i++) {
+	private void llenarTablaCitas(ArrayList<Turno> aux) {
+		String[][] tabla=new String[aux.size()][2];
+		for(int i = 0; i< aux.size(); i++) {
 			tabla[i][0] = ""+aux.get(i).getAfiliado().getCedula();
 			tabla[i][1] = aux.get(i).getCodigo();
 		}
 		tablaTurnosCitas.showTable(tabla);
-		
 	}
 
+	private void llenarTablaMedicamentos(ArrayList<Turno> aux) {
+		String[][] tabla=new String[aux.size()][2];
+		for(int i = 0; i< aux.size(); i++) {
+			tabla[i][0] = ""+aux.get(i).getAfiliado().getCedula();
+			tabla[i][1] = aux.get(i).getCodigo();
+		}
+		tablaTurnosCitas.showTable(tabla);
+	}
+
+	private void llenarTablaAdmin(ArrayList<Turno> aux) {
+		String[][] tabla=new String[aux.size()][2];
+		for(int i = 0; i< aux.size(); i++) {
+			tabla[i][0] = ""+aux.get(i).getAfiliado().getCedula();
+			tabla[i][1] = aux.get(i).getCodigo();
+		}
+		tablaTurnosCitas.showTable(tabla);
+	}
 	public void createComponents() {
 		
 		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -298,7 +306,7 @@ public class MainWindow extends JFrame {
 		
 		pnlValidacion = new JPanelRound();
 		pnlValidacion.setLayout(null);
-		pnlValidacion.setBounds(9, 11, 292, 636);
+		pnlValidacion.setBounds(9, 0, 292, 636);
 		
 		fondoValidacion = new JLabel();
 		fondoValidacion.setBounds(0, 0, 292, 636);
@@ -382,7 +390,7 @@ public class MainWindow extends JFrame {
         
         pnlModulos=new JPanel();
         pnlModulos.setLayout(null);
-        pnlModulos.setBounds(311, 12, 1011, 538);
+        pnlModulos.setBounds(311, 0, 1011, 500);
         
         fondoModulos=new JLabel();
 		fondoModulos.setBounds(0, 0, 1011, 538);
@@ -396,7 +404,7 @@ public class MainWindow extends JFrame {
 	    
 	    pnlCitas = new JPanelRound();
 		pnlCitas.setLayout(null);
-		pnlCitas.setBounds(18, 25, 301, 490);
+		pnlCitas.setBounds(18, 8, 301, 490);
 		
 		lblEstadoCitas=new JLabel();
 		lblEstadoCitas.setForeground(Color.WHITE);
@@ -419,7 +427,7 @@ public class MainWindow extends JFrame {
 		
 		pnlCajaMedicamentos = new JPanelRound();
 		pnlCajaMedicamentos.setLayout(null);
-		pnlCajaMedicamentos.setBounds(356, 28, 301, 490);
+		pnlCajaMedicamentos.setBounds(356, 8, 301, 490);
 		
 		lblEstadoMedicamentos=new JLabel();
 		lblEstadoMedicamentos.setForeground(Color.WHITE);
@@ -442,7 +450,7 @@ public class MainWindow extends JFrame {
 		
 		pnlCajaAdministrativo = new JPanelRound();
 		pnlCajaAdministrativo.setLayout(null);
-		pnlCajaAdministrativo.setBounds(686, 28, 301, 490);
+		pnlCajaAdministrativo.setBounds(686, 8, 301, 490);
 		
 		lblEstadoAdministrativo=new JLabel();
 		lblEstadoAdministrativo.setForeground(Color.WHITE);
@@ -465,7 +473,7 @@ public class MainWindow extends JFrame {
 		pnEstadisticas = new JPanel();
 		pnEstadisticas.setBorder(new TitledBorder("Estadisticas"));
 		pnEstadisticas.setLayout( new GridBagLayout());
-		pnEstadisticas.setBounds(311, 562, 1011, 292);
+		pnEstadisticas.setBounds(311, 490, 1011, 325);
 		
 		pnEstModulo = new JPanel();
 		pnEstModulo.setBorder(new TitledBorder("Estadisticas por Modulo"));
@@ -645,7 +653,7 @@ public class MainWindow extends JFrame {
 		GridBagConstraints g = new GridBagConstraints();
 		g.gridx=0;
 		g.gridy=0;
-		g.insets= new Insets(10, 10, 10, 10);
+		g.insets= new Insets(1, 10, 10, 10);
 		pnEstadisticas.add(chtpModulos,g);
 		g.gridx=1;
 		pnEstadisticas.add(chtpServicios,g);
@@ -657,7 +665,7 @@ public class MainWindow extends JFrame {
 		GridBagConstraints g = new GridBagConstraints();
 		g.gridx=0;
 		g.gridy=0;
-		g.insets = new Insets(10, 10, 10, 10);
+		g.insets = new Insets(3, 10, 10, 10);
 //		pnVerficaUsuario.add(lbCedula,g);
 		g.gridy=1;
 //		pnVerficaUsuario.add(txtCedula,g);

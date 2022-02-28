@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c824b87-4c15-4d20-9f39-ef861d3d348c" name="Changes" comment="GUI completo-faltan estadisticas y tablas">
+    <list default="true" id="6c824b87-4c15-4d20-9f39-ef861d3d348c" name="Changes" comment="GUI 2.0 completo-faltan estadisticas y tablas">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/archivosJson/turnos.json" beforeDir="false" afterPath="$PROJECT_DIR$/archivosJson/turnos.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uptc/presentacion/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/presentacion/MainWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uptc/presentacion/MainWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uptc/presentacion/MainWindow$1.class" afterDir="false" />
@@ -61,7 +62,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1646047523994</updated>
-      <workItem from="1646047531103" duration="1865000" />
+      <workItem from="1646047531103" duration="6832000" />
     </task>
     <task id="LOCAL-00001" summary="GUI completo-faltan estadisticas y tablas">
       <created>1646048131410</created>
@@ -70,7 +71,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646048131410</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="GUI 2.0 completo-faltan estadisticas y tablas">
+      <created>1646049522278</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1646049522278</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -89,6 +97,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="GUI completo-faltan estadisticas y tablas" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI completo-faltan estadisticas y tablas" />
+    <MESSAGE value="GUI 2.0 completo-faltan estadisticas y tablas" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI 2.0 completo-faltan estadisticas y tablas" />
   </component>
 </project>
