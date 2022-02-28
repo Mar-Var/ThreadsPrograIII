@@ -29,6 +29,7 @@ public class PersistenciaTramite {
 		return true;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public synchronized boolean SobreEscribirArchivoTramite(ArrayList<Tramite> contenido){
 			
 			try {
@@ -55,6 +56,7 @@ public class PersistenciaTramite {
 		}
 		
 	
+	@SuppressWarnings("unchecked")
 	public synchronized boolean agregarUnNuevoTramite(Tramite tramiteAgregar) {
 		try {
 			fileExist();
@@ -63,7 +65,6 @@ public class PersistenciaTramite {
 		}
 		try {
 			JSONArray content = new JSONArray();
-			ObjectMapper mapper = new ObjectMapper();
 			tramites =TraerTodoslosTramites();
 
 			if(tramites!=null) {
@@ -90,6 +91,7 @@ public class PersistenciaTramite {
 		
 	}	
 	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public synchronized ArrayList<Tramite> TraerTodoslosTramites(){
 		ObjectMapper mapper = new ObjectMapper();
 		tramites= new ArrayList();

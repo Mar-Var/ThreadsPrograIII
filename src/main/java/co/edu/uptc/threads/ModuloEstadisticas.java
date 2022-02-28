@@ -1,18 +1,15 @@
 package co.edu.uptc.threads;
 
 import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
-import java.awt.Label;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
+
+import co.edu.uptc.logica.modelo.Tramite;
 import co.edu.uptc.logica.modelo.Turno;
-import co.edu.uptc.persistencia.PersistenciaModulos;
 import co.edu.uptc.persistencia.PersistenciaTramite;
 import co.edu.uptc.persistencia.PersistenciaTurnos;
 
@@ -25,20 +22,21 @@ public class ModuloEstadisticas implements Runnable {
 	JFreeChart grafico_circular;
 	ChartPanel modulos,servicios;
 	private PersistenciaTurnos pt;
-	private PersistenciaModulos pm;
-	private PersistenciaTramite ptr;
+	private PersistenciaTramite ptramite;
+
 	public ModuloEstadisticas(JPanel panelEstadisticas,ChartPanel modulos,ChartPanel servicios) {
 		// TODO Auto-generated constructor stub
 		this.modulos=modulos;
 		this.servicios=servicios;
 		this.pt= new PersistenciaTurnos();
+		this.ptramite = new PersistenciaTramite();
 		this.panelEstadisticas= panelEstadisticas;
 
 	}
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		LocalTime time = null;
+
 		int i = 0;
 		while(true) {
 			this.pt= new PersistenciaTurnos();
@@ -48,9 +46,10 @@ public class ModuloEstadisticas implements Runnable {
 			}
 			removeComponents();
 			crtpM = new ChartPanel(grafico_circularModulos());
-			crtpM.setPreferredSize(new Dimension(400, 200));
-			crtpS= new ChartPanel(grafico_circularModulos());
-			crtpS.setPreferredSize(new Dimension(400, 200));
+			crtpM.setPreferredSize(new Dimension(400, 300));
+			crtpS= new ChartPanel(grafico_Circular_Servicios());
+			crtpS.setMouseWheelEnabled(true);
+			crtpS.setPreferredSize(new Dimension(400, 300));
 			añadirComponents();
 			panelEstadisticas.updateUI();
 			try {
@@ -74,7 +73,7 @@ public class ModuloEstadisticas implements Runnable {
 		
 	}
 	public void añadirComponents () {
-		GridBagConstraints g = new GridBagConstraints();
+
 		panelEstadisticas.add(crtpM);
 		panelEstadisticas.add(crtpS);	
 	}
@@ -140,12 +139,42 @@ public class ModuloEstadisticas implements Runnable {
 		
 	}
 	
+	public ArrayList<Turno> filtrarServicios(String servicio){
+		ArrayList<Turno> lFilter1= new ArrayList<>();
+		try {
+			turnos.stream().filter(element -> element.getServicio().equals(servicio) && element.isEstado()==true ).map(element->lFilter1.add(element)).forEach(element->System.out.println(""));
+			return lFilter1;
+		}catch (NullPointerException e) {
+			// TODO: handle exception
+			return null;
+		}
+		
+	}
+	
 	
 	
 	public JFreeChart grafico_Circular_Servicios() {
 		
+		ArrayList<Tramite> tramites = ptramite.TraerTodoslosTramites();
+		this.turnos=pt.TraerTodoslosTurnos();
+		DefaultPieDataset datos= new DefaultPieDataset();
+		for(Tramite tramite : tramites) {
+			try {
+				datos.setValue(tramite.getNombre(), filtrarServicios(tramite.getNombre())!=null?filtrarServicios(tramite.getNombre()).size():0);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
 		
-		return null;
+		JFreeChart grafico_circular = ChartFactory.createPieChart(
+				"Estadistica por Servicio",
+				datos,
+				true,
+				true,
+				true);
+		return grafico_circular;
+		
+
 	}
 
 }

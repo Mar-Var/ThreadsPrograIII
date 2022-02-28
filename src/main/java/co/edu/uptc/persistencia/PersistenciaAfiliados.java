@@ -13,7 +13,6 @@ import org.json.simple.JSONObject;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import co.edu.uptc.logica.modelo.Afiliado;
-import co.edu.uptc.logica.modelo.Turno;
 
 public class PersistenciaAfiliados {
 	
@@ -30,6 +29,7 @@ public class PersistenciaAfiliados {
 		return true;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public synchronized boolean SobreEscribirArchivoProducto(ArrayList<Afiliado> contenido){
 			
 			try {
@@ -56,6 +56,7 @@ public class PersistenciaAfiliados {
 		}
 		
 	
+	@SuppressWarnings("unchecked")
 	public synchronized boolean agregarUnNuevoAfiliado(Afiliado afiliadoAgregar) {
 		try {
 			fileExist();
@@ -64,7 +65,6 @@ public class PersistenciaAfiliados {
 		}
 		try {
 			JSONArray content = new JSONArray();
-			ObjectMapper mapper = new ObjectMapper();
 			afiliados =TraerTodoslosAfiliados();
 
 			if(afiliados!=null) {
@@ -91,6 +91,7 @@ public class PersistenciaAfiliados {
 		
 	}	
 	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public synchronized ArrayList<Afiliado> TraerTodoslosAfiliados(){
 		ObjectMapper mapper = new ObjectMapper();
 		afiliados= new ArrayList();

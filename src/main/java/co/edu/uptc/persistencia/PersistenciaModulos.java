@@ -14,7 +14,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.exc.MismatchedInputException;
 
 import co.edu.uptc.logica.modelo.Modulo;
-import co.edu.uptc.logica.modelo.Tramite;
 
 public class PersistenciaModulos {
 	
@@ -31,6 +30,7 @@ public class PersistenciaModulos {
 		return true;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public synchronized boolean SobreEscribirArchivoModulo(ArrayList<Modulo> contenido){
 			
 			try {
@@ -69,6 +69,7 @@ public class PersistenciaModulos {
 		}
 		
 	
+	@SuppressWarnings("unchecked")
 	public synchronized boolean agregarUnNuevoModulo(Modulo moduloAgregar) {
 		try {
 			fileExist();
@@ -77,7 +78,6 @@ public class PersistenciaModulos {
 		}
 		try {
 			JSONArray content = new JSONArray();
-			ObjectMapper mapper = new ObjectMapper();
 			modulos =TraerTodoslosModulos();
 
 			if(modulos!=null) {
@@ -132,6 +132,7 @@ public class PersistenciaModulos {
 		
 	}	
 	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public synchronized ArrayList<Modulo> TraerTodoslosModulos(){
 		ObjectMapper mapper = new ObjectMapper();
 		modulos= new ArrayList();

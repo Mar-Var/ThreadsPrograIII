@@ -8,6 +8,8 @@ import java.awt.GraphicsEnvironment;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
@@ -20,7 +22,6 @@ import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
-import javax.swing.plaf.basic.BasicLookAndFeel;
 import javax.swing.table.DefaultTableModel;
 
 import co.edu.uptc.logica.modelo.Turno;
@@ -30,13 +31,13 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
 
-import co.edu.uptc.threads.ModuloPagos;
-import co.edu.uptc.logica.modelo.Modulo;
+
 import co.edu.uptc.logica.modelo.Tramite;
-import co.edu.uptc.persistencia.PersistenciaModulos;
+
 import co.edu.uptc.persistencia.PersistenciaTramite;
 import co.edu.uptc.threads.*;
 
+@SuppressWarnings("serial")
 public class MainWindow extends JFrame {
 	Font fuenteDigital;
 	
@@ -250,7 +251,6 @@ public class MainWindow extends JFrame {
 		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		try {
 			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("src/main/java/co/edu/uptc/presentacion/digital-7.ttf")));
-			String fuentes[] = ge.getAvailableFontFamilyNames();
 		} catch (FontFormatException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -325,6 +325,21 @@ public class MainWindow extends JFrame {
 		
 		lbCedula = new JLabel("Ingrese su numero de identificacion");;
 		txtCedula = new JTextField(20);
+		txtCedula.addKeyListener(new KeyAdapter()
+		{
+		   public void keyTyped(KeyEvent e)
+		   {
+		      char caracter = e.getKeyChar();
+
+		      // Verificar si la tecla pulsada no es un digito
+		      if(((caracter < '0') ||
+		         (caracter > '9')) &&
+		         (caracter != '\b' /*corresponde a BACK_SPACE*/))
+		      {
+		         e.consume();  // ignorar el evento de teclado
+		      }
+		   }
+		});
 
 		btnConsultar = new JButton("Ingresar");
 		btnConsultar.setActionCommand(HandlingEvents.CONSULTAR);

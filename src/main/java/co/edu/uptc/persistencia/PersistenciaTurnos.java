@@ -13,7 +13,6 @@ import org.json.simple.JSONObject;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.exc.MismatchedInputException;
 
-import co.edu.uptc.logica.modelo.Afiliado;
 import co.edu.uptc.logica.modelo.Turno;
 
 public class PersistenciaTurnos {
@@ -30,6 +29,7 @@ public class PersistenciaTurnos {
 		return true;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public synchronized boolean SobreEscribirArchivoProducto(ArrayList<Turno> contenido){
 		
 		try {
@@ -64,6 +64,7 @@ public class PersistenciaTurnos {
 
 	}
 	
+	@SuppressWarnings("unchecked")
 	public synchronized boolean agregarUnNuevoTurno(Turno TurnoAgregar) {
 		try {
 			fileExist();
@@ -72,7 +73,6 @@ public class PersistenciaTurnos {
 		}
 		try {
 			JSONArray content = new JSONArray();
-			ObjectMapper mapper = new ObjectMapper();
 			turnos =TraerTodoslosTurnos();
 
 			if(turnos!=null) {
@@ -119,7 +119,7 @@ public class PersistenciaTurnos {
 	
 	public synchronized ArrayList<Turno> TraerTodoslosTurnos(){
 		ObjectMapper mapper = new ObjectMapper();
-		turnos= new ArrayList();
+		turnos= new ArrayList<Turno>();
 		try {
 			turnos= mapper.readValue(new File(ruta),
 					mapper.getTypeFactory().constructCollectionType(ArrayList.class, Turno.class));
