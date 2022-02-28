@@ -28,8 +28,4 @@ public class Afiliado {
 	public String toString() {
 		return "Afiliado [nombre=" + nombre + ", cedula=" + cedula + "]";
 	}
-	
-	
-	
-
 }

@@ -7,19 +7,24 @@ import java.awt.FontFormatException;
 import java.awt.GraphicsEnvironment;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Image;
 import java.awt.Insets;
+import java.awt.Toolkit;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
@@ -31,7 +36,9 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
 
-
+import co.edu.uptc.presentacion.TablePanel;
+import co.edu.uptc.presentacion.RoundedBorder;
+import co.edu.uptc.presentacion.JPanelRound;
 import co.edu.uptc.logica.modelo.Tramite;
 
 import co.edu.uptc.persistencia.PersistenciaTramite;
@@ -41,34 +48,63 @@ import co.edu.uptc.threads.*;
 public class MainWindow extends JFrame {
 	Font fuenteDigital;
 	
+	//Panel Validacion de usuario------------------------------------------------------------------------------------------------------------------------
+	private JPanelRound pnlValidacion;
 	
-	JPanel pnValidacion;
-	JPanel pnZonaTurnos;
+	private JLabel fondoValidacion;
+	private JLabel lblIngUsuarioValidacion;
+	private JTextField txtIdentificacionValidacion;
+
+	private JLabel lblTramiteValidacion;
+	private JComboBox<String> cmbTramiteValidacion;
+	private JButton btnConsultar;
+	private JButton btnGenerarTurno;
+    private JPanelRound pnlTurnoValidacion;
+    private JLabel lblDarTurnoValidacion;
+    private JLabel lblTurnoValidacion;
+    
+    //---------------------------------------------------------------------------------------------------------------------------------------------------
+	//Panel modulos--------------------------------------------------------------------------------------------------------------------------------------
+    
+    private JPanel pnlModulos;
+    private JLabel fondoModulos;
+    
+    //---------------------------------------------------------------------------------------------------------------------------------------------------
+    //modulo citas---------------------------------------------------------------------------------------------------------------------------------------
+    
+    private JPanelRound pnlCitas;
+    private JLabel lblEstadoCitas;
+    private JLabel lblImagenCitas;
+	private TablePanel tablaTurnosCitas;
+    
+    //---------------------------------------------------------------------------------------------------------------------------------------------------
+	//modulo medicamentos--------------------------------------------------------------------------------------------------------------------------------
+	
+	private JPanelRound pnlCajaMedicamentos;
+	private JLabel lblEstadoMedicamentos;
+	private JLabel lblImagenMedicamentos;
+	private TablePanel tablaTurnosMedicamentos;
+	
+	//---------------------------------------------------------------------------------------------------------------------------------------------------
+	//modulo Administrativo------------------------------------------------------------------------------------------------------------------------------
+	
+	private JPanelRound pnlCajaAdministrativo;
+	private JLabel lblEstadoAdministrativo;
+	private JLabel lblImagenAdministrativo;
+	private TablePanel tablaTurnosAdministrativo;
+	
+	//---------------------------------------------------------------------------------------------------------------------------------------------------
+
+    
+	
 	JPanel pnEstModulo;
 	JPanel pnEstServicios;
 	JPanel pnEstadisticas;
 	
 	
-	JPanel pnVerficaUsuario;
-	JPanel pnGenerarTurno;
 	
-	JPanel pnCajaCitas;
-	JPanel pnCajaMedicamentos;
-	JPanel pnCajaPagos;
-	
-	JPanel pnCCTurno;
 	JPanel pnCMTurno;
 	JPanel pnCPTurno;
-	
-	JLabel lbCedula;
-	JTextField txtCedula;
-	JButton btnConsultar;
-	
-	JLabel lbCBModulo;
-	JComboBox<String> cbModulos;
-	JLabel lbCBTipoTramite;
-	JComboBox<String> cbTipoTramite;
-	JButton btnGenerarTurno;
 	
 	JLabel lbCCCodigoTurno;
 	JLabel lbCCEstadoCaja;
@@ -103,12 +139,16 @@ public class MainWindow extends JFrame {
 
 
 	public MainWindow() {
+		
 		super("Super EPS");
-		setExtendedState(MAXIMIZED_BOTH);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);// Decir que pasa cuando se cierre la ventana
-		setMinimumSize(new Dimension(1000,700));
-		setLayout(new GridBagLayout());
-		setResizable(true);
+		setLayout(null);
+		setSize(1350,900);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setResizable(false);
+		this.getContentPane().setBackground(Color.WHITE);
+		Image icono = Toolkit.getDefaultToolkit().getImage("Imagenes/Icono.png");
+		this.setIconImage(icono);
 		he = new HandlingEvents(this);
 	}
 	
@@ -121,26 +161,33 @@ public class MainWindow extends JFrame {
 
 
 			while ( true ) {
-				System.out.println("Me estoy ejecutando threadCC");
 				Queue<Turno> queueCC = new LinkedList<Turno>();
 				ArrayList<Turno> trs = pt.TraerTodoslosTurnos();
+				ArrayList<Turno> aux = new ArrayList<>();
 				try {
+					tablaTurnosCitas.cleanTable();
 					for (Turno t : trs) {
 						if ( t.getModulo().equals("Caja 1") && !t.isEstado() ) {
 							queueCC.add(t);
+							aux.add(t);
 						}
 					}
 					
+					llenarTabla(aux);
+					String[][] tabla=new String[queueCC.size()][1];
+					for(int i=0; i< aux.size(); i++) {
+						tabla[i][0] = ""+aux.get(i).getAfiliado().getCedula();
+						tabla[i][1] = aux.get(i).getCodigo();
+					}
+					tablaTurnosCitas.showTable(tabla);
+					System.out.println(tabla.toString());
 				} catch (Exception e) {
-					// TODO: handle exception
-				}
-
-				lbCCCodigoTurno.setText(queueCC.isEmpty() ? "Sin turnos":queueCC.element().getCodigo());
-				lbCCEstadoCaja.setText( queueCC.isEmpty() ? "Esperando..." : "Atendiendo...");
+				};
+				
+				lblEstadoCitas.setText(queueCC.isEmpty() ? "Sin turnos...": "Atendiendo a: "+queueCC.element().getCodigo());
 				try {
 					Thread.sleep(7000);
 				} catch (InterruptedException e) {
-					System.out.println("Me estoy ahogando");
 					e.printStackTrace();
 				}
 				try {
@@ -149,7 +196,6 @@ public class MainWindow extends JFrame {
 					pt.SobreEscribirArchivoProducto(trs);
 					
 				} catch (Exception e2) {
-					// TODO: handle exception
 				}
 				
 
@@ -161,7 +207,6 @@ public class MainWindow extends JFrame {
 
 
 			while ( true) {
-				System.out.println("Me estoy ejecutando threadCM");
 				Queue<Turno> queueCM = new LinkedList<Turno>();
 				ArrayList<Turno> trs = pt.TraerTodoslosTurnos();
 				try {
@@ -172,17 +217,12 @@ public class MainWindow extends JFrame {
 					}
 					
 				} catch (Exception e) {
-					// TODO: handle exception
 				}
 
-				lbCMCodigoTurno.setText(queueCM.isEmpty() ? "Sin turnos":queueCM.element().getCodigo());
-				lbCMEstadoCaja.setText( queueCM.isEmpty() ? "Esperando..." : "Atendiendo...");
-//				queueCM.element().setEstado(true);
-//				//System.out.println(queueCM.element().toString());
+				lblEstadoMedicamentos.setText(queueCM.isEmpty() ? "Sin turnos...":"Atendiendo a: "+queueCM.element().getCodigo());
 				try {
 					Thread.sleep(6000);
 				} catch (InterruptedException e) {
-					System.out.println("Me interrumpieron");
 					e.printStackTrace();
 				}
 				try {
@@ -191,7 +231,6 @@ public class MainWindow extends JFrame {
 					pt.SobreEscribirArchivoProducto(trs);
 					
 				} catch (Exception e) {
-					// TODO: handle exception
 				}
 				
 				
@@ -202,7 +241,6 @@ public class MainWindow extends JFrame {
 		new Thread(()-> {
 
 			while ( true) {
-				System.out.println("Me estoy ejecutando threadCP");
 				Queue<Turno> queueCP = new LinkedList<Turno>();
 				ArrayList<Turno> trs = pt.TraerTodoslosTurnos();
 				try {
@@ -214,27 +252,21 @@ public class MainWindow extends JFrame {
 					}
 					
 				}catch (Exception e) {
-					// TODO: handle exception
 				}
 
-				lbCPCodigoTurno.setText( queueCP.isEmpty() ? "Sin turnos..." : queueCP.element().getCodigo());
-				lbCPEstadoCaja.setText( queueCP.isEmpty() ? "Esperando..." : "Atendiendo...");
-//				queueCP.element().setEstado(true);
-				//System.out.println(queueCP.element().toString());
+				lblEstadoAdministrativo.setText( queueCP.isEmpty() ? "Sin turnos..." : "Atendiendo a: "+queueCP.element().getCodigo());
 				try {
 					Thread.sleep(5000);
 				} catch (InterruptedException e) {
-					System.out.println("Mes estoy matando");
 					e.printStackTrace();
 				}
 				try {
 					int index = trs.indexOf(queueCP.remove());
 					trs.get( index ).setEstado(true);
 					pt.SobreEscribirArchivoProducto(trs);
-					pnZonaTurnos.updateUI();
+					pnlModulos.updateUI();
 					
 				} catch (Exception e) {
-					// TODO: handle exception
 					
 				}
 			}
@@ -246,83 +278,49 @@ public class MainWindow extends JFrame {
 	}
 
 	
+	private void llenarTabla(ArrayList<Turno> aux) {
+		String[][] tabla=new String[aux.size()][1];
+		for(int i=0; i< aux.size(); i++) {
+			tabla[i][0] = ""+aux.get(i).getAfiliado().getCedula();
+			tabla[i][1] = aux.get(i).getCodigo();
+		}
+		tablaTurnosCitas.showTable(tabla);
+		
+	}
+
 	public void createComponents() {
 		
 		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		try {
 			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("src/main/java/co/edu/uptc/presentacion/digital-7.ttf")));
 		} catch (FontFormatException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		fuenteDigital = new Font("Times New Roman",Font.PLAIN, 30); //--------------------------FUENTE
 		
-		pnValidacion = new JPanel();
-		pnValidacion.setBorder(new TitledBorder("Validacion de usuario"));
-		pnValidacion.setSize(new Dimension(50, 50));
-		pnValidacion.setLayout( new GridBagLayout());
+		//Inicio componentes panel validacion-----------------------------------------------------------------------------------------------------------
 		
-		pnZonaTurnos = new JPanel();
-		pnZonaTurnos.setBorder(new TitledBorder("Generar Turnos"));
-		pnZonaTurnos.setLayout( new GridBagLayout());
+		pnlValidacion = new JPanelRound();
+		pnlValidacion.setLayout(null);
+		pnlValidacion.setBounds(9, 11, 292, 636);
 		
-		pnEstadisticas = new JPanel();
-		pnEstadisticas.setBorder(new TitledBorder("Estadisticas"));
-		pnEstadisticas.setLayout( new GridBagLayout());
+		fondoValidacion = new JLabel();
+		fondoValidacion.setBounds(0, 0, 292, 636);
+		ImageIcon imgIcon = new ImageIcon("Imagenes/Registro.png");
+	    Image imgEscalada = imgIcon.getImage().getScaledInstance(fondoValidacion.getWidth(),fondoValidacion.getHeight(), Image.SCALE_SMOOTH);
+	    Icon iconoEscalado = new ImageIcon(imgEscalada);
+        fondoValidacion.setIcon(iconoEscalado);
+        
+        lblIngUsuarioValidacion=new JLabel();
+		lblIngUsuarioValidacion.setText("<html><center><p>Ingrese su numero de <br> identificacion </br></p></center></html>");
+		lblIngUsuarioValidacion.setBounds(85, 81, 170, 37);
 		
-		pnEstModulo = new JPanel();
-		pnEstModulo.setBorder(new TitledBorder("Estadisticas por Modulo"));
-		pnEstModulo.setLayout( new GridBagLayout());
-		
-		pnEstServicios = new JPanel();
-		pnEstServicios.setBorder(new TitledBorder("Estadisticas por Servicio"));
-		pnEstServicios.setLayout( new GridBagLayout());
-
-		pnVerficaUsuario = new JPanel();
-		pnVerficaUsuario.setBorder(new TitledBorder("Verificar usuario"));
-		pnVerficaUsuario.setLayout( new GridBagLayout());
-		
-		pnGenerarTurno = new JPanel();
-		pnGenerarTurno.setBorder(new TitledBorder("Generar turno"));
-		pnGenerarTurno.setLayout( new GridBagLayout());
-		
-		pnCajaCitas = new JPanel();
-		pnCajaCitas.setBorder(new TitledBorder("Caja 1: Ordenar citas"));
-		pnCajaCitas.setLayout( new GridBagLayout());
-		
-		pnCajaMedicamentos = new JPanel();
-		pnCajaMedicamentos.setBorder(new TitledBorder("Caja 2: Medicamentos"));
-		pnCajaMedicamentos.setLayout( new GridBagLayout());
-		
-		pnCajaPagos = new JPanel();
-		pnCajaPagos.setBorder(new TitledBorder("Caja 3 : Pagos"));
-		pnCajaPagos.setLayout( new GridBagLayout());
-		
-		
-		pnCCTurno = new JPanel();
-		pnCCTurno.setBorder(new TitledBorder("Turno Actual"));
-		pnCCTurno.setBackground(Color.BLACK);
-		pnCCTurno.setLayout( new GridBagLayout());
-		
-		pnCMTurno = new JPanel();
-		pnCMTurno.setBorder(new TitledBorder("Turno Actual"));
-		pnCMTurno.setBackground(Color.BLACK);
-		pnCMTurno.setLayout( new GridBagLayout());
-		
-		pnCPTurno = new JPanel();
-		pnCPTurno.setBorder(new TitledBorder("Turno Actual"));
-
-		pnCPTurno.setBackground(Color.BLACK);
-		pnCPTurno.setLayout( new GridBagLayout());
-		
-		
-		lbCedula = new JLabel("Ingrese su numero de identificacion");;
-		txtCedula = new JTextField(20);
-		txtCedula.addKeyListener(new KeyAdapter()
+		txtIdentificacionValidacion = new JTextField(20);
+		txtIdentificacionValidacion.setBounds(61, 129, 170, 27);
+		txtIdentificacionValidacion.addKeyListener(new KeyAdapter()
 		{
 		   public void keyTyped(KeyEvent e)
 		   {
@@ -337,39 +335,164 @@ public class MainWindow extends JFrame {
 		      }
 		   }
 		});
-
-		btnConsultar = new JButton("Ingresar");
-		btnConsultar.setActionCommand(HandlingEvents.CONSULTAR);
-		btnConsultar.addActionListener(new HandlingEvents(this));
 		
-		lbCBModulo = new JLabel("Seleccione a que modulo desea acceder");
-		cbModulos= new JComboBox<String>();
-		lbCBTipoTramite= new JLabel("Seleccione el tipo de tramite");////-----------AQUIIIIIIIIIII
-		perTra= new PersistenciaTramite();
-		cbTipoTramite = new JComboBox<String>();
+		lblTramiteValidacion = new JLabel("Seleccione el tipo de tramite");
+        lblTramiteValidacion.setBounds(62, 172, 173, 37);
+        
+        perTra= new PersistenciaTramite();
+        cmbTramiteValidacion = new JComboBox<String>();
+        cmbTramiteValidacion.setBounds(65, 216, 168, 27);
 		ArrayList<Tramite> tramites;
 
 		if(perTra.TraerTodoslosTramites()!=null) {
 			tramites=perTra.TraerTodoslosTramites();
 			for (int i = 0; i < tramites.size(); i++) {
-				cbTipoTramite.addItem(tramites.get(i).getNombre());
+				cmbTramiteValidacion.addItem(tramites.get(i).getNombre());
 			}
 
 		}
 		
+		btnConsultar = new JButton("Ingresar");
+		btnConsultar.setActionCommand(HandlingEvents.CONSULTAR);
+		btnConsultar.addActionListener(new HandlingEvents(this));
+		btnConsultar.setBounds(85, 277, 127, 27);
+		btnConsultar.setBorder(new RoundedBorder(10));
+		
 		btnGenerarTurno= new JButton("Generar Turno");
 		btnGenerarTurno.setActionCommand(HandlingEvents.GENERAR_TURNO);
 		btnGenerarTurno.addActionListener(new HandlingEvents(this));
+		btnGenerarTurno.setBounds(85, 277, 127, 27);
+		btnGenerarTurno.setBorder(new RoundedBorder(10));
+		btnGenerarTurno.setVisible(false);
+		
+		pnlTurnoValidacion = new JPanelRound();
+        pnlTurnoValidacion.setLayout(null);
+        pnlTurnoValidacion.setBackground(Color.BLACK);
+        pnlTurnoValidacion.setBounds(49, 432, 211, 100);
+        pnlTurnoValidacion.setBorder(new RoundedBorder(40));
+
+        
+        lblTurnoValidacion = new JLabel("Su turno es: ");
+        lblTurnoValidacion.setBounds(25,20,211,21);
+        lblTurnoValidacion.setForeground(Color.WHITE);
+        lblTurnoValidacion.setFont(fuenteDigital);
+        
+
+        lblDarTurnoValidacion = new JLabel();
+        lblDarTurnoValidacion.setBounds(40,45,211,40);
+        lblDarTurnoValidacion.setForeground(Color.GREEN);
+        lblDarTurnoValidacion.setFont(fuenteDigital);
 		
 		
-		lbCCCodigoTurno = new JLabel("1XXX");
-		lbCCCodigoTurno.setForeground(new Color(57,255,20));;
-		lbCCCodigoTurno.setFont(fuenteDigital);
-		lbCCEstadoCaja = new JLabel("xXXXXXXX");
-		lbCCEstadoCaja.setForeground(Color.WHITE);;
-		lbCCEstadoCaja.setFont(fuenteDigital);
-		tCC = new JTable(dtmCC) ;
-		dtmCC = new DefaultTableModel();
+        //---------------------------------------------------------------------------------------------------------------------------------------------
+        //Inicio componentes panel modulos-------------------------------------------------------------------------------------------------------------
+        
+        pnlModulos=new JPanel();
+        pnlModulos.setLayout(null);
+        pnlModulos.setBounds(311, 12, 1011, 538);
+        
+        fondoModulos=new JLabel();
+		fondoModulos.setBounds(0, 0, 1011, 538);
+		ImageIcon imgIconModulos = new ImageIcon("Imagenes/fondo.jpeg");
+	    Image imgEscaladaModulos = imgIconModulos.getImage().getScaledInstance(fondoModulos.getWidth(), fondoModulos.getHeight(), Image.SCALE_SMOOTH);
+	    Icon iconoEscaladoModulos = new ImageIcon(imgEscaladaModulos);
+	    fondoModulos.setIcon(iconoEscaladoModulos);
+        
+        //---------------------------------------------------------------------------------------------------------------------------------------------
+	    //modulo citas---------------------------------------------------------------------------------------------------------------------------------
+	    
+	    pnlCitas = new JPanelRound();
+		pnlCitas.setLayout(null);
+		pnlCitas.setBounds(18, 25, 301, 490);
+		
+		lblEstadoCitas=new JLabel();
+		lblEstadoCitas.setForeground(Color.WHITE);
+		lblEstadoCitas.setBounds(23, 8, 253, 21);
+		
+		lblImagenCitas=new JLabel();
+		lblImagenCitas.setBounds(20, 29, 258, 240);
+		
+		ImageIcon imgIconCitas = new ImageIcon("Imagenes/4.png");
+	    Image imgEscaladaCitas = imgIconCitas.getImage().getScaledInstance(lblImagenCitas.getWidth(), lblImagenCitas.getHeight(), Image.SCALE_SMOOTH);
+	    Icon iconoEscaladoCitas = new ImageIcon(imgEscaladaCitas);
+	    lblImagenCitas.setIcon(iconoEscaladoCitas);
+		
+		String[] headCitas= {"Identificacion","Turno"};
+		tablaTurnosCitas = new TablePanel(headCitas, 253, 189);
+		tablaTurnosCitas.setBounds(23,285,253,189);
+	    
+	    //----------------------------------------------------------------------------------------------------------------------------------------------
+		//modulo medicamentos---------------------------------------------------------------------------------------------------------------------------
+		
+		pnlCajaMedicamentos = new JPanelRound();
+		pnlCajaMedicamentos.setLayout(null);
+		pnlCajaMedicamentos.setBounds(356, 28, 301, 490);
+		
+		lblEstadoMedicamentos=new JLabel();
+		lblEstadoMedicamentos.setForeground(Color.WHITE);
+		lblEstadoMedicamentos.setBounds(23, 8, 253, 21);
+		
+		lblImagenMedicamentos=new JLabel();
+		lblImagenMedicamentos.setBounds(20, 29, 258, 240);
+		
+		ImageIcon imgIconMedicamentos = new ImageIcon("Imagenes/6.png");
+	    Image imgEscaladaMedicamentos = imgIconMedicamentos.getImage().getScaledInstance(lblImagenMedicamentos.getWidth(), lblImagenMedicamentos.getHeight(), Image.SCALE_SMOOTH);
+	    Icon iconoEscaladoMedicamentos = new ImageIcon(imgEscaladaMedicamentos);
+	    lblImagenMedicamentos.setIcon(iconoEscaladoMedicamentos);
+		
+		String[] head= {"Identificacion","Turno"};
+		tablaTurnosMedicamentos = new TablePanel(head, 253, 189);
+		tablaTurnosMedicamentos.setBounds(23,285,253,189);
+		
+		//----------------------------------------------------------------------------------------------------------------------------------------------
+		//modulo Administrativo---------------------------------------------------------------------------------------------------------------------------
+		
+		pnlCajaAdministrativo = new JPanelRound();
+		pnlCajaAdministrativo.setLayout(null);
+		pnlCajaAdministrativo.setBounds(686, 28, 301, 490);
+		
+		lblEstadoAdministrativo=new JLabel();
+		lblEstadoAdministrativo.setForeground(Color.WHITE);
+		lblEstadoAdministrativo.setBounds(23, 8, 253, 21);
+		
+		lblImagenAdministrativo=new JLabel();
+		lblImagenAdministrativo.setBounds(20, 29, 258, 240);
+		ImageIcon imgIconAdministrativo = new ImageIcon("Imagenes/5.png");
+	    Image imgEscaladaAdministrativo = imgIconAdministrativo.getImage().getScaledInstance(lblImagenAdministrativo.getWidth(), lblImagenAdministrativo.getHeight(), Image.SCALE_SMOOTH);
+	    Icon iconoEscaladoAdministrativo = new ImageIcon(imgEscaladaAdministrativo);
+	    lblImagenAdministrativo.setIcon(iconoEscaladoAdministrativo);
+		
+		String[] headAdministrativo= {"Identificacion","Turno"};
+		tablaTurnosAdministrativo = new TablePanel(headAdministrativo, 253, 189);
+		tablaTurnosAdministrativo.setBounds(23,285,253,189);
+		
+
+		//---------------------------------------------------------------------------------------------------------------------------------------------
+		
+		pnEstadisticas = new JPanel();
+		pnEstadisticas.setBorder(new TitledBorder("Estadisticas"));
+		pnEstadisticas.setLayout( new GridBagLayout());
+		pnEstadisticas.setBounds(311, 562, 1011, 292);
+		
+		pnEstModulo = new JPanel();
+		pnEstModulo.setBorder(new TitledBorder("Estadisticas por Modulo"));
+		pnEstModulo.setLayout( new GridBagLayout());
+		
+		pnEstServicios = new JPanel();
+		pnEstServicios.setBorder(new TitledBorder("Estadisticas por Servicio"));
+		pnEstServicios.setLayout( new GridBagLayout());
+
+		pnCMTurno = new JPanel();
+		pnCMTurno.setBorder(new TitledBorder("Turno Actual"));
+		pnCMTurno.setBackground(Color.BLACK);
+		pnCMTurno.setLayout( new GridBagLayout());
+		
+		pnCPTurno = new JPanel();
+		pnCPTurno.setBorder(new TitledBorder("Turno Actual"));
+
+		pnCPTurno.setBackground(Color.BLACK);
+		pnCPTurno.setLayout( new GridBagLayout());
+		
 		
 		lbCMCodigoTurno = new JLabel("XXXX");
 		lbCMCodigoTurno.setForeground(new Color(57,255,20));;
@@ -411,10 +534,10 @@ public class MainWindow extends JFrame {
 
 
 		chtpModulos=new ChartPanel(fcEstadisticaModulos);
-		chtpModulos.setPreferredSize(new Dimension(200,200));;
+		chtpModulos.setPreferredSize(new Dimension(200,200));
 
 		chtpServicios = new ChartPanel(fcEstadisticaServicios);
-		chtpServicios.setPreferredSize(new Dimension(200,200));;
+		chtpServicios.setPreferredSize(new Dimension(200,200));
 
 
 
@@ -431,14 +554,14 @@ public class MainWindow extends JFrame {
 		g.weighty=1.0;
 
 		addComponentspnValidacion();
-		add(pnValidacion,g);
+		add(pnlValidacion,g);
 
 		g.gridx=1;
 		g.gridy=0;
 		g.gridheight=2;
 		addComponentspnZonaTurnos();
 
-		add(pnZonaTurnos,g);
+		add(pnlModulos,g);
 		g.gridheight=1;
 		g.gridy=2;
 		g.fill = GridBagConstraints.NONE;
@@ -448,37 +571,83 @@ public class MainWindow extends JFrame {
 		
 	}
 	
-	
+	//A�adir componentes al panel de usuarios------------------------------------------------------------------------------------------------------
 	
 	public void addComponentspnValidacion() {
-		GridBagConstraints g = new GridBagConstraints();
-		g.insets = new Insets(10, 10, 10, 10);
-		g.gridx=0;
-		g.gridy=0;
+		
 		addComponentspnVerificarUsuario();
-		pnValidacion.add(pnVerficaUsuario,g);
-		g.gridy=1;
+		pnlValidacion.add(lblIngUsuarioValidacion);
+		pnlValidacion.add(txtIdentificacionValidacion);
+		pnlValidacion.add(lblTramiteValidacion);
+		pnlValidacion.add(cmbTramiteValidacion);
+		pnlValidacion.add(btnConsultar);
+		pnlValidacion.add(btnGenerarTurno);
+		add(pnlTurnoValidacion);
+        pnlTurnoValidacion.add(lblTurnoValidacion);
+        pnlTurnoValidacion.add(lblDarTurnoValidacion);
 		addComponentspnGenerarTurno();
-		g.fill = GridBagConstraints.HORIZONTAL;
-		pnValidacion.add(pnGenerarTurno,g);
+		
+		pnlValidacion.add(fondoValidacion);
 		
 	}
+	
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	
+	//A�adir componentes al panel de modulos-------------------------------------------------------------------------------------------------------
+	
 	public void addComponentspnZonaTurnos() {
-		GridBagConstraints g = new GridBagConstraints();
-		g.gridx=0;
-		g.gridy=0;
-		g.weightx=1.0;
 		addComponentspnCajaCitas();
-		g.fill=GridBagConstraints.HORIZONTAL;
-		pnZonaTurnos.add(pnCajaCitas,g);
-		g.gridx=1;
 		addComponentspnCajaMedicamentos();
-		pnZonaTurnos.add(pnCajaMedicamentos,g);
-		g.gridx=2;
 		addComponentspnCajaPagos();
-		pnZonaTurnos.add(pnCajaPagos,g);
+		pnlModulos.add(pnlCitas);
+		pnlModulos.add(pnlCajaMedicamentos);
+		pnlModulos.add(pnlCajaAdministrativo);
+		
+		pnlModulos.add(fondoModulos);
+	}
+	
+	//modulo citas----------------------------------------------------------------------------------------------------------------------------------
+    
+	public void addComponentspnCajaCitas() {
+		pnlCitas.add(lblEstadoCitas);
+		pnlCitas.add(lblImagenCitas);
+		pnlCitas.add(tablaTurnosCitas);
+//			pnlCajaCitas.add(pnCCTurno,g);
+//			pnlCajaCitas.add(tCC);
 		
 	}
+		
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+		
+	//modulo medicamentos--------------------------------------------------------------------------------------------------------------------------
+		
+	public void addComponentspnCajaMedicamentos() {
+		pnlCajaMedicamentos.add(lblEstadoMedicamentos);
+		pnlCajaMedicamentos.add(lblImagenMedicamentos);
+		pnlCajaMedicamentos.add(tablaTurnosMedicamentos);
+		addComponentspnCMTurno();
+//		pnlCajaMedicamentos.add(pnCMTurno,g);
+//		pnlCajaMedicamentos.add(tCM);
+		
+	}	
+		
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//modulo administrativo--------------------------------------------------------------------------------------------------------------------------------
+	
+	public void addComponentspnCajaPagos() {
+		pnlCajaAdministrativo.add(lblEstadoAdministrativo);
+		pnlCajaAdministrativo.add(lblImagenAdministrativo);
+		pnlCajaAdministrativo.add(tablaTurnosAdministrativo);
+		addComponentspnCPTurno();
+//		pnlCajaPagos.add(pnCPTurno,g);
+//		pnlCajaPagos.add(tCP);
+		
+	}
+
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	
 	public void addComponentspnEstadisticas() {
 		GridBagConstraints g = new GridBagConstraints();
 		g.gridx=0;
@@ -496,11 +665,11 @@ public class MainWindow extends JFrame {
 		g.gridx=0;
 		g.gridy=0;
 		g.insets = new Insets(10, 10, 10, 10);
-		pnVerficaUsuario.add(lbCedula,g);
+//		pnVerficaUsuario.add(lbCedula,g);
 		g.gridy=1;
-		pnVerficaUsuario.add(txtCedula,g);
+//		pnVerficaUsuario.add(txtCedula,g);
 		g.gridy=2;
-		pnVerficaUsuario.add(btnConsultar,g);
+//		pnVerficaUsuario.add(btnConsultar,g);
 
 		
 		
@@ -511,63 +680,15 @@ public class MainWindow extends JFrame {
 		g.gridy=0;
 		g.insets = new Insets(10, 10, 10, 10);
 
-		pnGenerarTurno.add(lbCBTipoTramite,g);
 		g.gridy=1;
-		pnGenerarTurno.add(cbTipoTramite,g);
 //		g.gridy=2;
 //		pnGenerarTurno.add(lbCBTipoTramite,g);
 //		g.gridy=3;
 //		pnGenerarTurno.add(cbTipoTramite,g);
 		g.gridy=2;
-		pnGenerarTurno.add(btnGenerarTurno,g);
-		
-	}
-	public void addComponentspnCajaCitas() {
-		GridBagConstraints g = new GridBagConstraints();
-		g.gridx=0;
-		g.gridy=0;
-		g.weightx=1.0;
-		g.fill=GridBagConstraints.HORIZONTAL;
-		addComponentspnCCTurno();
-		pnCajaCitas.add(pnCCTurno,g);
-		g.gridy=1;
-		pnCajaCitas.add(tCC);
-		
-	}
-	public void addComponentspnCajaMedicamentos() {
-		GridBagConstraints g = new GridBagConstraints();
-		g.gridx=0;
-		g.gridy=0;
-		g.weightx=1.0;
-		g.fill=GridBagConstraints.HORIZONTAL;
-		addComponentspnCMTurno();
-		pnCajaMedicamentos.add(pnCMTurno,g);
-		g.gridy=1;
-		pnCajaMedicamentos.add(tCM);
-		
-	}
-	public void addComponentspnCajaPagos() {
-		GridBagConstraints g = new GridBagConstraints();
-		g.gridx=0;
-		g.gridy=0;
-		g.weightx=1.0;
-		g.fill=GridBagConstraints.HORIZONTAL;
-		addComponentspnCPTurno();
-		pnCajaPagos.add(pnCPTurno,g);
-		g.gridy=1;
-		pnCajaPagos.add(tCP);
 		
 	}
 	
-	public void addComponentspnCCTurno() {
-		GridBagConstraints g = new GridBagConstraints();
-		g.gridx=0;
-		g.gridy=0;
-		pnCCTurno.add(lbCCCodigoTurno,g);
-		g.gridy=1;
-		pnCCTurno.add(lbCCEstadoCaja,g);
-		
-	}
 	public void addComponentspnCMTurno() {
 		GridBagConstraints g = new GridBagConstraints();
 		g.gridx=0;
@@ -587,6 +708,15 @@ public class MainWindow extends JFrame {
 		
 	}
 	
+	
+
+	public JLabel getLblDarTurnoValidacion() {
+		return lblDarTurnoValidacion;
+	}
+
+	public void setLblDarTurnoValidacion(JLabel lblDarTurnoValidacion) {
+		this.lblDarTurnoValidacion = lblDarTurnoValidacion;
+	}
 
 	public JButton getBtnConsultar() {
 		return btnConsultar;
@@ -605,19 +735,19 @@ public class MainWindow extends JFrame {
 	}
 
 	public JTextField getTxtCedula() {
-		return txtCedula;
+		return txtIdentificacionValidacion;
 	}
 
 	public void setTxtCedula(JTextField txtCedula) {
-		this.txtCedula = txtCedula;
+		this.txtIdentificacionValidacion = txtCedula;
 	}
 
 	public JComboBox<String> getCbTipoTramite() {
-		return cbTipoTramite;
+		return cmbTramiteValidacion;
 	}
 
 	public void setCbTipoTramite(JComboBox<String> cbTipoTramite) {
-		this.cbTipoTramite = cbTipoTramite;
+		this.cmbTramiteValidacion = cbTipoTramite;
 	}
 	
 	
@@ -631,7 +761,5 @@ public class MainWindow extends JFrame {
 //		GridBagConstraints g = new GridBagConstraints();
 //
 //	}
-	
-	
 
 }

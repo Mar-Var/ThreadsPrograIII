@@ -1,17 +1,17 @@
 package co.edu.uptc.threads;
 
-import java.awt.Dimension;
-import java.util.ArrayList;
-import javax.swing.JPanel;
+import co.edu.uptc.logica.modelo.Tramite;
+import co.edu.uptc.logica.modelo.Turno;
+import co.edu.uptc.persistencia.PersistenciaTramite;
+import co.edu.uptc.persistencia.PersistenciaTurnos;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
 
-import co.edu.uptc.logica.modelo.Tramite;
-import co.edu.uptc.logica.modelo.Turno;
-import co.edu.uptc.persistencia.PersistenciaTramite;
-import co.edu.uptc.persistencia.PersistenciaTurnos;
+import javax.swing.*;
+import java.awt.*;
+import java.util.ArrayList;
 
 public class ModuloEstadisticas implements Runnable {
 	private ArrayList<Turno> turnos;
@@ -50,7 +50,7 @@ public class ModuloEstadisticas implements Runnable {
 			crtpS= new ChartPanel(grafico_Circular_Servicios());
 			crtpS.setMouseWheelEnabled(true);
 			crtpS.setPreferredSize(new Dimension(400, 300));
-			añadirComponents();
+			añadirComponentes();
 			panelEstadisticas.updateUI();
 			try {
 				Thread.sleep(3000);
@@ -72,7 +72,7 @@ public class ModuloEstadisticas implements Runnable {
 		panelEstadisticas.remove(servicios);
 		
 	}
-	public void añadirComponents () {
+	public void añadirComponentes () {
 
 		panelEstadisticas.add(crtpM);
 		panelEstadisticas.add(crtpS);	

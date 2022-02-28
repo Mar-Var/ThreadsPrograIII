@@ -72,11 +72,5 @@ public class Turno {
 		return "Turno [afiliado=" + afiliado + ", modulo=" + modulo + ", servicio=" + servicio + ", codigo=" + codigo
 				+ ", fecha=" + fecha + ", nivel=" + nivel + ", estado=" + estado + "]";
 	}
-	
-	
-	
-	
-	
-	
 
 }

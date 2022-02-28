@@ -62,14 +62,11 @@ public class HandlingEvents implements ActionListener {
 			for(Modulo modulo:pm.TraerTodoslosModulos()) {
 				for(Tramite tramite : modulo.getTramites()) {
 					if(tramite.getNombre().equals(mainWindow.getCbTipoTramite().getSelectedItem().toString())) {
-						System.out.println("Encontrado---");
 						return modulo;
 					}
 				}
-			System.out.println(modulo);
 			}
 		} catch (NullPointerException e) {
-			// TODO: handle exception
 			JOptionPane.showMessageDialog(null, "El archivo modulos.json no encontrado");
 		}
 
@@ -99,27 +96,24 @@ public class HandlingEvents implements ActionListener {
 		String servicio = mainWindow.getCbTipoTramite().getSelectedItem().toString();
 		
 		String verifi = encontrarObModulo().getCodigo().toString();
-		System.out.println(verifi);
 		String codigo= encontrarObModulo().getCodigo()+
 				"-"+encontrarObTramite().getCodigo()+
 				"-"+"0"+"-"+(ptu.TraerTodoslosTurnos()!=null?ptu.TraerTodoslosTurnos().size():0);
-		System.out.println(codigo);
 		Turno turno = new Turno(buscarAfiliado(), encontrarModulo(),servicio, codigo, new Date().toString(), 0, false);
 		ptu.agregarUnNuevoTurno(turno);
+		mainWindow.getLblDarTurnoValidacion().setText(codigo);
 		
 		return null;
 	}
 	@SuppressWarnings("deprecation")
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		
 		switch (e.getActionCommand()) {
 		case CONSULTAR:
 			try {
 				afiliados=pa.TraerTodoslosAfiliados();
 			} catch (Exception e2) {
-				System.out.println(e2.getMessage());
 			}
 			
 			try {
@@ -128,8 +122,8 @@ public class HandlingEvents implements ActionListener {
 					for (Afiliado afiliado : afiliados) {
 						if(afiliado.getCedula()==Long.parseLong(mainWindow.getTxtCedula().getText())) {
 							JOptionPane.showMessageDialog(null, "Bienvenido");
-							mainWindow.getBtnConsultar().setEnabled(false);
-							mainWindow.getBtnGenerarTurno().setEnabled(true);
+							mainWindow.getBtnConsultar().setVisible(false);
+							mainWindow.getBtnGenerarTurno().setVisible(true);
 							mainWindow.getTxtCedula().setEditable(false);
 							cont=0;
 							break;
@@ -139,18 +133,16 @@ public class HandlingEvents implements ActionListener {
 					}
 					
 					if(cont==1) {
-						mainWindow.getBtnGenerarTurno().setEnabled(false);
+						mainWindow.getBtnGenerarTurno().setVisible(false);
 						JOptionPane.showMessageDialog(null, "El usuario no esta dentro de los registros");
 					}
 				}
 				
 			} catch (NumberFormatException e2) {
-				JOptionPane.showMessageDialog(null, "Debe ingresar por lo menos un dijito");
+				JOptionPane.showMessageDialog(null, "Debe ingresar por lo menos un digito");
 				mainWindow.getBtnGenerarTurno().disable();
 				
-				// TODO: handle exception
 			} catch (Exception e2) {
-				// TODO: handle exception
 			}
 
 
@@ -158,14 +150,14 @@ public class HandlingEvents implements ActionListener {
 			break;
 		case GENERAR_TURNO:
 			generarTurno();
-			mainWindow.getBtnGenerarTurno().setEnabled(false);
-			mainWindow.getBtnConsultar().setEnabled(true);
+			mainWindow.getBtnGenerarTurno().setVisible(false);
+			mainWindow.getBtnConsultar().setVisible(true);
+			mainWindow.getTxtCedula().setText("");
 			mainWindow.getTxtCedula().setEditable(true);
 			try {
 				
 				
 			} catch (NullPointerException e2) {
-				// TODO: handle exception
 				JOptionPane.showMessageDialog(null, "Archivos raiz no encontrados");
 			}
 
