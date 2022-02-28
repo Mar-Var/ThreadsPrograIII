@@ -167,17 +167,17 @@ public class MainWindow extends JFrame {
 				try {
 					tablaTurnosCitas.cleanTable();
 					for (Turno t : trs) {
-						if ( t.getModulo().equals("Caja 1") && !t.isEstado() ) {
+						if ( t.getModulo().equals("Caja 1") && !t.isEstado()) {
 							queueCC.add(t);
 							aux.add(t);
 						}
 					}
 					
 					llenarTabla(aux);
-					String[][] tabla=new String[queueCC.size()][1];
-					for(int i=0; i< aux.size(); i++) {
-						tabla[i][0] = ""+aux.get(i).getAfiliado().getCedula();
-						tabla[i][1] = aux.get(i).getCodigo();
+					String[][] tabla = new String[queueCC.size()][1];
+					for(int i=0; i< queueCC.size(); i++) {
+						tabla[i][0] = ""+ queueCC.element().getAfiliado().getCedula();
+						tabla[i][1] = queueCC.element().getCodigo();
 					}
 					tablaTurnosCitas.showTable(tabla);
 					System.out.println(tabla.toString());
@@ -197,14 +197,10 @@ public class MainWindow extends JFrame {
 					
 				} catch (Exception e2) {
 				}
-				
-
-	
 			}
 			
 		}).start();
 		new Thread(()-> {
-
 
 			while ( true) {
 				Queue<Turno> queueCM = new LinkedList<Turno>();
@@ -232,9 +228,6 @@ public class MainWindow extends JFrame {
 					
 				} catch (Exception e) {
 				}
-				
-				
-			
 			}
 		
 		}).start();;
